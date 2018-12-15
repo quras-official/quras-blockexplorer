@@ -21,6 +21,14 @@ export class ApiService {
       );
   }
 
+  public getBlock(id: number): Observable<Block> {
+    return this.http.get<Block>(`api/blocks/${id}`)
+      .pipe(
+        tap(_ => this.log(`fetched block id=${id}`)),
+        catchError(this.handleError<Block>(`getBlock id=${id}`))
+      );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

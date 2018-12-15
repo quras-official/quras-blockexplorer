@@ -17,9 +17,9 @@
           </thead>
           <tbody>
             <tr *ngFor="let block of blocks">
-              <td><a routerLink="/block/{{block.hash}}">{{block.height}}</a></td>
+              <td><a routerLink="/blocks/{{block.height}}">{{block.height}}</a></td>
               <td>{{ block.time }}</td>
-              <td>{{ block.txlength }}</td>
+              <td>{{ block.txCount }}</td>
               <td><a routerLink="/address/{{block.validator}}">{{block.validator}}</a></td>
               <td>{{ block.size }}</td>
             </tr>
