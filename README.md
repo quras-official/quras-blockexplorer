@@ -34,3 +34,7 @@
 
 # See Also
 https://angular.io/guide/quickstart
+
+https://angular.io/tutorial/
+
+https://angular.io/api

@@ -16,7 +16,7 @@
             <th scope="col">Size</th>
           </thead>
           <tbody>
-            <tr *ngFor="let block of getBlocks()">
+            <tr *ngFor="let block of blocks">
               <td><a routerLink="/block/{{block.hash}}">{{block.height}}</a></td>
               <td>{{ block.time }}</td>
               <td>{{ block.txlength }}</td>
