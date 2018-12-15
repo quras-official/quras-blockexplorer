@@ -9,9 +9,7 @@ import { Block } from '../models/block';
 @Injectable({
   providedIn: 'root'
 })
-export class BlocksService {
-
-  //public readonly blocks: Subject<Array<Block>> = new Subject();
+export class ApiService {
 
   constructor(private http: HttpClient) { }
 
@@ -30,7 +28,7 @@ export class BlocksService {
       this.log(`${operation} failed: ${error.message}`);
 
       return of(result as T);
-    }
+    };
   }
 
   private log(message: string) {

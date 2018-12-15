@@ -26,9 +26,10 @@
 3. Generate Components.
 
     <pre>
-    $ cd app\src
-    $ mkdir components
-    $ ng generate component blocks
+    $ cd app
+    $ ng generate module block
+    $ ng generate component block/blocks
+    $ ng generate component block/block
 
 </pre>
 

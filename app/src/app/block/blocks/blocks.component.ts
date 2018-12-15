@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Block } from '../modles/block';
-import { BlocksService } from '../../services/blocks.service';
+import { Block } from '../../models/block';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-blocks',
@@ -11,18 +10,15 @@ import { BlocksService } from '../../services/blocks.service';
 export class BlocksComponent implements OnInit {
 
   public blocks: Block[];
-  public numBlocks: number = 10;
 
-  constructor(private blocksService: BlocksService) {
-    //this.loadBlocks();
-  }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.getBlocks();
   }
 
   getBlocks(): void {
-    this.blocksService.getBlocks()
+    this.apiService.getBlocks()
     .subscribe(blocks => this.blocks = blocks);
   }
 
