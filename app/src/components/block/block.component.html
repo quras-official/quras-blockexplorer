@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center mb-1">
-          <h2 class="section-heading">Block #560369</h2>
+          <h2 class="section-heading">Block #{{ block.height }}</h2>
       </div>
     </div>
     <div class="row">
@@ -10,15 +10,15 @@
         <tbody>
           <tr>
             <th scope="row">Hash</th>
-            <td>d40e3e1b83261aa81831b27c83b973b9ae8e67415599f9dcef7883ceedd488d4</td>
+            <td>{{ block.hash }}</td>
           </tr>
           <tr>
             <th scope="row">Index</th>
-            <td>560369</td>
+            <td>{{ block.height }}</td>
           </tr>
           <tr>
             <th scope="row">Time</th>
-            <td>Dec 11, 2018, 10:01:42 PM</td>
+            <td>{{ block.time }}</td>
           </tr>
           <tr>
             <th scope="row">Validator</th>
@@ -26,7 +26,7 @@
           </tr>
           <tr>
             <th scope="row">Size</th>
-            <td>948 Bytes</td>
+            <td>{{ block.size }}</td>
           </tr>
           <tr>
             <th scope="row">Version</th>
