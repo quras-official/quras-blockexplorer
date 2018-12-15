@@ -3,10 +3,30 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BlocksComponent } from '../components/blocks/blocks.component';
+import { BlockComponent } from '../components/block/block.component';
+import { TxsComponent } from '../components/txs/txs.component';
+import { AddressesComponent } from '../components/addresses/addresses.component';
+import { AddressComponent } from '../components/address/address.component';
+import { NodesComponent } from '../components/nodes/nodes.component';
+import { NodeComponent } from '../components/node/node.component';
+import { AssetsComponent } from '../components/assets/assets.component';
+import { AssetComponent } from '../components/asset/asset.component';
+import { TxComponent } from '../components/tx/tx.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BlocksComponent,
+    BlockComponent,
+    TxsComponent,
+    TxComponent,
+    AddressesComponent,
+    AddressComponent,
+    NodesComponent,
+    NodeComponent,
+    AssetsComponent,
+    AssetComponent
   ],
   imports: [
     BrowserModule,

@@ -28,7 +28,7 @@
     <pre>
     $ cd app\src
     $ mkdir components
-    $ ng generate component blocks --skipImport=true
+    $ ng generate component blocks
 
 </pre>
 
