@@ -8,6 +8,7 @@ import { Block } from '../models/block';
 import { Tx } from '../models/tx';
 import { Asset } from '../models/asset';
 import { Address } from '../models/address';
+import { Node } from '../models/node';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   public getBlocks(): Observable<Block[]> {
-    return this.http.get<Block[]>('/api/blocks')
+    return this.http.get<Block[]>('api/blocks')
       .pipe(
         tap(_ => this.log('fetched blockes')),
         catchError(this.handleError('getBlocks', []))
@@ -33,7 +34,7 @@ export class ApiService {
   }
 
   public getTxs(): Observable<Tx[]> {
-    return this.http.get<Tx[]>('/api/txs')
+    return this.http.get<Tx[]>('api/txs')
       .pipe(
         tap(_ => this.log('fetched txs')),
         catchError(this.handleError('getTxs', []))
@@ -49,7 +50,7 @@ export class ApiService {
   }
 
   public getAssets(): Observable<Asset[]> {
-    return this.http.get<Asset[]>('/api/assets')
+    return this.http.get<Asset[]>('api/assets')
       .pipe(
         tap(_ => this.log('fetched assets')),
         catchError(this.handleError('getAssets', []))
@@ -65,7 +66,7 @@ export class ApiService {
   }
 
   public getAddresses(): Observable<Address[]> {
-    return this.http.get<Address[]>('/api/addresses')
+    return this.http.get<Address[]>('api/addresses')
       .pipe(
         tap(_ => this.log('fetched addresses')),
         catchError(this.handleError('getAddresses', []))
@@ -80,7 +81,21 @@ export class ApiService {
       );
   }
 
-  
+  public getNodes(): Observable<Node[]> {
+    return this.http.get<Node[]>('api/nodes')
+      .pipe(
+        tap(_ => this.log('fetched nodes')),
+        catchError(this.handleError('getNodes', []))
+      );
+  }
+
+  public getNode(id: number): Observable<Node> {
+    return this.http.get<Node>(`api/nodes/${id}`)
+      .pipe(
+        tap(_ => this.log(`fetched node id=${id}`)),
+        catchError(this.handleError<Node>(`getNode id=${id}`))
+      );
+  }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

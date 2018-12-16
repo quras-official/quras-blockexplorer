@@ -1,3 +1,41 @@
-<p>
-  node works!
-</p>
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-1">
+            <h2 class="section-heading">Consensus Node</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table" *ngIf="node">
+            <tbody>
+              <tr>
+                <th scope="row">Account</th>
+                <td>{{ node.account }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Public Key</th>
+                <td>{{ node.public_key }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Votes</th>
+                <td>{{ node.votes_percent }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Url</th>
+                <td><a href="{{ node.url }}">{{ node.url }}</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Position</th>
+                <td>{{ node.position }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Daily Reward</th>
+                <td>{{ node.daily_reward }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>

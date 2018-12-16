@@ -71,10 +71,22 @@ export class InMemoryDataService implements InMemoryDbService {
       }
     ];
 
-    return {blocks, txs, assets, addresses};
+    const nodes = [
+      { id: 401, account: 'eoshuobipool', public_key: 'EOS5XKswW26cR5VQeDGwgNb5aixv1AMcKkdDNrC59KzNSBfnH6TR7',
+        votes: 108340201, votes_percent: 2.08, url: 'http://eoshuobipool.com', position: 1, daily_reward: '770 QRG'
+      }, { id: 402, account: 'eoshuobipool', public_key: 'EOS5XKswW26cR5VQeDGwgNb5aixv1AMcKkdDNrC59KzNSBfnH6TR7',
+        votes: 108340201, votes_percent: 2.08, url: 'http://eoshuobipool.com', position: 1, daily_reward: '770 QRG'
+      }, { id: 403, account: 'eoshuobipool', public_key: 'EOS5XKswW26cR5VQeDGwgNb5aixv1AMcKkdDNrC59KzNSBfnH6TR7',
+        votes: 108340201, votes_percent: 2.08, url: 'http://eoshuobipool.com', position: 1, daily_reward: '770 QRG'
+      }, { id: 404, account: 'eoshuobipool', public_key: 'EOS5XKswW26cR5VQeDGwgNb5aixv1AMcKkdDNrC59KzNSBfnH6TR7',
+        votes: 108340201, votes_percent: 2.08, url: 'http://eoshuobipool.com', position: 1, daily_reward: '770 QRG'
+      }
+    ];
+
+    return {blocks, txs, assets, addresses, nodes};
   }
 
-  genId(blocks: any[]): number {
-    return blocks.length > 0 ? Math.max(...blocks.map(block => block.id)) + 1 : 10001;
+  genId(records: any[]): number {
+    return records.length > 0 ? Math.max(...records.map(record => record.id)) + 1 : 10001;
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
+import { Node } from 'src/app/models/node';
 
 @Component({
   selector: 'app-nodes',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NodesComponent implements OnInit {
 
-  constructor() { }
+  public nodes: Node[];
+
+  constructor(
+    private apiService: ApiService
+  ) { }
 
   ngOnInit() {
+    this.getNodes();
+  }
+
+  getNodes(): void {
+    this.apiService.getNodes()
+    .subscribe(nodes => this.nodes = nodes);
   }
 
 }
