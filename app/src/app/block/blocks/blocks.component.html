@@ -17,10 +17,10 @@
           </thead>
           <tbody>
             <tr *ngFor="let block of blocks">
-              <td><a routerLink="/blocks/{{ block.height }}">{{ block.height }}</a></td>
+              <td><a [routerLink]="['/blocks', block.height]">{{ block.height }}</a></td>
               <td>{{ block.time }}</td>
               <td>{{ block.txCount }}</td>
-              <td><a routerLink="/address/{{ block.producer }}">{{ block.producer }}</a></td>
+              <td><a [routerLink]="['/addresses'. block.producer]">{{ block.producer }}</a></td>
               <td>{{ block.size }}</td>
             </tr>
           </tbody>

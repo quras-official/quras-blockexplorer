@@ -22,7 +22,7 @@
           </tr>
           <tr>
             <th scope="row">Producer</th>
-            <td><a routerLink="['/address', block.producer]">{{ block.producer }}</a></td>
+            <td><a [routerLink]="['/addresses', block.producer]">{{ block.producer }}</a></td>
           </tr>
           <tr>
             <th scope="row">Size</th>
@@ -42,11 +42,11 @@
           </tr>
           <tr>
             <th scope="row">Previous Block</th>
-            <td><a routerLink="['/blocks',block.height-1]" *ngIf="block.height > 1">{{ block.prev }}</a></td>
+            <td><a [routerLink]="['/blocks', block.height-1]" *ngIf="block.height > 1">{{ block.prev }}</a></td>
           </tr>
           <tr>
             <th scope="row">Next Block</th>
-            <td><a routerLink="['/blocks',block.height+1]">TODO: 62b08b663cce71f3901cb47abd90006c73bd2aff4d74ca6e0f6e0c57953d3645</a></td>
+            <td><a [routerLink]="['/blocks', block.height+1]">TODO: 62b08b663cce71f3901cb47abd90006c73bd2aff4d74ca6e0f6e0c57953d3645</a></td>
           </tr>
         </tbody>
       </table>

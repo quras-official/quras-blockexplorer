@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { Tx } from '../../models/tx';
+import { Tx } from 'src/app/models/tx';
 
 @Component({
   selector: 'app-tx',

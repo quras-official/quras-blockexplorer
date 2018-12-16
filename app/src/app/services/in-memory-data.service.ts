@@ -33,7 +33,26 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 103, type: 'Contract', hash: '1234', size: 100, block_height: 1, block_time: 1239 },
       { id: 104, type: 'Invocation', hash: '1234', size: 100, block_height: 1, block_time: 1239 }
     ];
-    return {blocks, txs};
+    const assets = [
+      { id: 201, hash: 'c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b',
+        type: 'GoverningToken', symbol: 'QRS', name: 'QRS', amount: 10000000, issued: 90000000,
+        precision: 5, owner: 'Abf2qMs1pzQb8kYk9RuxtUb9jtRKJVuBJt', block_time: 15923142125,
+        transaction_count: 10, address_count: 200, transfer_count: 300
+      }, { id: 202, hash: 'c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b',
+        type: 'GoverningToken', symbol: 'QRG', name: 'QRG', amount: 10000000, issued: 90000000,
+        precision: 5, owner: 'Abf2qMs1pzQb8kYk9RuxtUb9jtRKJVuBJt', block_time: 15923142125,
+        transaction_count: 10, address_count: 200, transfer_count: 300
+      }, { id: 203, hash: 'c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b',
+        type: 'GoverningToken', symbol: 'QRA', name: 'QRA', amount: 10000000, issued: 90000000,
+        precision: 5, owner: 'Abf2qMs1pzQb8kYk9RuxtUb9jtRKJVuBJt', block_time: 15923142125,
+        transaction_count: 10, address_count: 200, transfer_count: 300
+      }, { id: 204, hash: 'c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b',
+        type: 'GoverningToken', symbol: 'QRB', name: 'QRB', amount: 10000000, issued: 90000000,
+        precision: 5, owner: 'Abf2qMs1pzQb8kYk9RuxtUb9jtRKJVuBJt', block_time: 15923142125,
+        transaction_count: 10, address_count: 200, transfer_count: 300
+      }
+    ];
+    return {blocks, txs, assets};
   }
 
   genId(blocks: any[]): number {

@@ -17,7 +17,7 @@
             <tbody>
               <tr *ngFor="let tx of txs">
                 <td>{{ tx.type }}</td>
-                <td><a routerLink="/txs/{{ tx.id }}">{{ tx.id }}</a></td>
+                <td><a [routerLink]="['/txs', tx.id]">{{ tx.id }}</a></td>
                 <td>{{ tx.block_time }}</td>
                 <td>Show/Hide</td>
               </tr>

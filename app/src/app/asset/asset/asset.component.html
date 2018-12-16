@@ -1,3 +1,290 @@
-<p>
-  asset works!
-</p>
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-1">
+            <h2 class="section-heading">Asset</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table" *ngIf="asset">
+            <tbody>
+              <tr>
+                <th scope="row">Hash</th>
+                <td>{{ asset.hash }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Type</th>
+                <td>{{ asset.type }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Name</th>
+                <td>{{ asset.name }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Symbol</th>
+                <td>{{ asset.symbol }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Supply</th>
+                <td>{{ asset.amount }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Issued</th>
+                <td>{{ asset.issued }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Precision</th>
+                <td>{{ asset.precision }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Owner</th>
+                <td><a [routerLink]="['/addresses', asset.owner]">{{ asset.owner }}</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Created</th>
+                <td>{{ asset.block_time }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Transactions</th>
+                <td>{{ asset.transaction_count }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Addresses</th>
+                <td>{{ asset.address_count }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--<section class="pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-1">
+            <h2 class="section-heading">Registered</h2>
+        </div>
+      </div>
+    </div>
+  </section>-->
+  
+  <section class="pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-1">
+            <h2 class="section-heading">Addresses</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table">
+            <thead>
+              <th scope="col">Address ID</th>
+              <th scope="col">Created</th>
+              <th scope="col">Transactions</th>
+              <th scope="col">Last Transaction</th>
+              <th scope="col">Coins</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="address.html?Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp">Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp</a></td>
+                <td>Dec 11, 2018, 10:15:47 PM </td>
+                <td>46</td>
+                <td>1 minute ago</td>
+                <td>9 QRS</td>
+              </tr>
+              <tr>
+                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ</a></td>
+                <td>Dec 11, 2018, 10:04:38 PM </td>
+                <td>2,976</td>
+                <td>27 seconds ago</td>
+                <td>0 QRS</td>
+              </tr>
+              <tr>
+                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk</a></td>
+                <td>Dec 11, 2018, 10:01:42 PM </td>
+                <td>5,289</td>
+                <td>27 seconds ago</td>
+                <td>809 QRS</td>
+              </tr>
+              <tr>
+                <td><a href="address.html?Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp">Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp</a></td>
+                <td>Dec 11, 2018, 10:15:47 PM </td>
+                <td>46</td>
+                <td>1 minute ago</td>
+                <td>9 QRS</td>
+              </tr>
+              <tr>
+                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ</a></td>
+                <td>Dec 11, 2018, 10:04:38 PM </td>
+                <td>2,976</td>
+                <td>27 seconds ago</td>
+                <td>0 QRS</td>
+              </tr>
+              <tr>
+                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk</a></td>
+                <td>Dec 11, 2018, 10:01:42 PM </td>
+                <td>5,289</td>
+                <td>27 seconds ago</td>
+                <td>809 QRS</td>
+              </tr>
+              <tr>
+                <td><a href="address.html?Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp">Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp</a></td>
+                <td>Dec 11, 2018, 10:15:47 PM </td>
+                <td>46</td>
+                <td>1 minute ago</td>
+                <td>9 QRS</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="float-right" aria-label="Page navigation example">
+              <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-1">
+            <h2 class="section-heading">Transactions</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table">
+            <thead>
+              <th scope="col">Type</th>
+              <th scope="col">Transaction ID</th>
+              <th scope="col">Completed on</th>
+              <th scope="col"></th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Invocation</td>
+                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506</a></td>
+                <td>Dec 11, 2018, 10:15:47 PM </td>
+                <td>Show/Hide</td>
+              </tr>
+              <tr>
+                <td>Gas Claim</td>
+                <td><a href="tx.html?bb6e0b82b3dc8fc725a91b46c0ef187692e9565ab1dea939142f6461f1551ce2">bb6e0b82b3dc8fc725a91b46c0ef187692e9565ab1dea939142f6461f1551ce2</a></td>
+                <td>Dec 11, 2018, 10:04:38 PM </td>
+                <td>Show/Hide</td>
+              </tr>
+              <tr>
+                <td>Contract</td>
+                <td><a href="tx.html?aa5996f291632cf0dacdc6b5694fbda5be3dac292ff4ead4627ddc6b66151ccc">aa5996f291632cf0dacdc6b5694fbda5be3dac292ff4ead4627ddc6b66151ccc</a></td>
+                <td>Dec 11, 2018, 10:01:42 PM </td>
+                <td>Show/Hide</td>
+              </tr>
+              <tr>
+                <td>Invocation</td>
+                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506</a></td>
+                <td>Dec 11, 2018, 10:15:47 PM </td>
+                <td>Show/Hide</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="float-right" aria-label="Page navigation example">
+              <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-1">
+            <h2 class="section-heading">Transfers</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table">
+            <thead>
+              <th scope="col">Transaction ID</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Value</th>
+              <th scope="col">Asset</th>
+              <th scope="col">Time</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad22...</a></td>
+                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3t...</a></td>
+                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7...</a></td>
+                <td>9</td>
+                <td>QRS</td>
+                <td>Dec 11, 2018, 10:04:38 PM</td>
+              </tr>
+              <tr>
+                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad22...</a></td>
+                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3t...</a></td>
+                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7...</a></td>
+                <td>9</td>
+                <td>QRS</td>
+                <td>Dec 11, 2018, 10:04:38 PM</td>
+              </tr>
+              <tr>
+                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad22...</a></td>
+                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3t...</a></td>
+                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7...</a></td>
+                <td>9</td>
+                <td>QRS</td>
+                <td>Dec 11, 2018, 10:04:38 PM</td>
+              </tr>
+              <tr>
+                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad22...</a></td>
+                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3t...</a></td>
+                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7...</a></td>
+                <td>9</td>
+                <td>QRS</td>
+                <td>Dec 11, 2018, 10:04:38 PM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="float-right" aria-label="Page navigation example">
+              <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'txs', loadChildren: './tx/tx.module#TxModule' },
   { path: 'addresses', loadChildren: './address/address.module#AddressModule' },
   { path: 'nodes', loadChildren: './node/node.module#NodeModule' },
-  { path: 'assets2', loadChildren: './asset/asset.module#AssetModule' }
+  { path: 'assets', loadChildren: './asset/asset.module#AssetModule' }
 ];
 
 @NgModule({

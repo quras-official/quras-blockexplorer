@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Tx } from '../../models/tx';
-import { ApiService } from '../../services/api.service';
+import { ApiService } from 'src/app/services/api.service';
+import { Tx } from 'src/app/models/tx';
 
 @Component({
   selector: 'app-txs',
@@ -11,7 +11,9 @@ export class TxsComponent implements OnInit {
 
   public txs: Tx[];
 
-  constructor(private apiService: ApiService) { }
+  constructor(
+    private apiService: ApiService
+  ) { }
 
   ngOnInit() {
     this.getTxs();

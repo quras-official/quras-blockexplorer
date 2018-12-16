@@ -35,7 +35,7 @@
               </tr>
               <tr>
                 <th scope="row">Block</th>
-                <td><a routerLink="/blocks/{{ tx.block_height  }}">{{ tx.block_height }}</a></td>
+                <td><a [routerLink]="['/blocks', tx.block_height]">{{ tx.block_height }}</a></td>
               </tr>
             </tbody>
           </table>
