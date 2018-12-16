@@ -7,6 +7,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { Block } from '../models/block';
 import { Tx } from '../models/tx';
 import { Asset } from '../models/asset';
+import { Address } from '../models/address';
 
 @Injectable({
   providedIn: 'root'
@@ -62,6 +63,24 @@ export class ApiService {
         catchError(this.handleError<Asset>(`getAsset id=${id}`))
       );
   }
+
+  public getAddresses(): Observable<Address[]> {
+    return this.http.get<Address[]>('/api/addresses')
+      .pipe(
+        tap(_ => this.log('fetched addresses')),
+        catchError(this.handleError('getAddresses', []))
+      );
+  }
+
+  public getAddress(id: number): Observable<Address> {
+    return this.http.get<Address>(`api/addresses/${id}`)
+      .pipe(
+        tap(_ => this.log(`fetched address id=${id}`)),
+        catchError(this.handleError<Address>(`getAddress id=${id}`))
+      );
+  }
+
+  
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

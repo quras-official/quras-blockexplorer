@@ -1,3 +1,44 @@
-<p>
-  addresses works!
-</p>
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-1">
+            <h2 class="section-heading">Addresses</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table">
+            <thead>
+              <th scope="col">Address ID</th>
+              <th scope="col">Created</th>
+              <th scope="col">Transactions</th>
+              <th scope="col">Last Transaction</th>
+              <th scope="col">Coins</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let address of addresses">
+                <td><a [routerLink]="['/addresses', address.id]">{{ address.id }}</a></td>
+                <td>{{ address.block_time }}</td>
+                <td>{{ address.transaction_count }}</td>
+                <td>TODO 1 minute ago</td>
+                <td>{{ address.balance }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="float-right" aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
