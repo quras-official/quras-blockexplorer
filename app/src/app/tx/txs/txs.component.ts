@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Tx } from '../../models/tx';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-txs',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TxsComponent implements OnInit {
 
-  constructor() { }
+  public txs: Tx[];
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.getTxs();
+  }
+
+  getTxs(): void {
+    this.apiService.getTxs()
+    .subscribe(txs => this.txs = txs);
   }
 
 }

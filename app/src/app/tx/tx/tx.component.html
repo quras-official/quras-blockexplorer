@@ -1,3 +1,87 @@
-<p>
-  tx works!
-</p>
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-1">
+            <h2 class="section-heading">Transaction</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table" *ngIf="tx">
+            <tbody>
+              <tr>
+                <th scope="row">Type</th>
+                <td>{{ tx.type }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Hash</th>
+                <td>{{ tx.id }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Time</th>
+                <td>{{ tx.block_time }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Network Fee</th>
+                <td>{{ tx.net_fee }} QRG</td>
+              </tr>
+              <tr>
+                <th scope="row">System Fee</th>
+                <td>{{ tx.sys_fee }} QRG</td>
+              </tr>
+              <tr>
+                <th scope="row">Size</th>
+                <td>{{ tx.size }} Bytes</td>
+              </tr>
+              <tr>
+                <th scope="row">Block</th>
+                <td><a routerLink="/blocks/{{ tx.block_height  }}">{{ tx.block_height }}</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="pt-0">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              Invocation Script
+            </div>
+            <div class="card-body">
+              <p class="card-text">40e0efa71e538e9537ffa0776f5bae0cce313ab156b1fa6d44d33000bc2bbae2e4cf9c8c2ca476c641a75f7508f525df950774fb971a7102ac14736c523439c771</p>
+              <a href="#" class="btn btn-primary float-right">VIEW OPCODE</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              Verification Script
+            </div>
+            <div class="card-body">
+              <p class="card-text">210202008015935b7c56e7af01559fb4fd5e05bb2713d91f25dd3dcac518fe006c1cac</p>
+              <a href="#" class="btn btn-primary float-right">VIEW OPCODE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              Script
+            </div>
+            <div class="card-body">
+              <p class="card-text">0800e1f505000000001419684c2d407152221c4ecf565aacbf1fdd51f57514fd8d0f84b8db897d6eebe3e0177ed5c5b47fc32253c1087472616e7366657267f9e6e770af783d809bd1a65e1bb5b6042953bcac</p>
+              <a href="#" class="btn btn-primary float-right">VIEW OPCODE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

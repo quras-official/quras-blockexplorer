@@ -12,9 +12,8 @@ import { BlockComponent } from '../components/block/block.component';
 import { TxComponent } from '../components/tx/tx.component';*/
 
 const routes: Routes = [
-  { path: 'blocks', loadChildren: './block/block.module#BlockModule' }/*,
-  { path: 'block/:id', component: BlockComponent },
-  { path: 'txs', component: TxsComponent},
+  { path: 'blocks', loadChildren: './block/block.module#BlockModule' },
+  { path: 'txs', loadChildren: './tx/tx.module#TxModule' }/*,
   { path: 'tx/:id', component: TxComponent },
   { path: 'addresses', component: AddressesComponent },
   { path: 'address/:id', component: AddressComponent },

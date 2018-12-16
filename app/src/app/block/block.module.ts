@@ -8,7 +8,7 @@ import { BlockRoutingModule } from './block-routing.module';
 @NgModule({
   declarations: [
     BlocksComponent,
-    BlockComponent,
+    BlockComponent
   ],
   imports: [
     CommonModule,

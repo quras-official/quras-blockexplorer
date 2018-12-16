@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
+import { Tx } from '../../models/tx';
 
 @Component({
   selector: 'app-tx',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TxComponent implements OnInit {
 
-  constructor() { }
+  public tx: Tx;
+
+  constructor(
+    private route: ActivatedRoute,
+    private apiService: ApiService
+  ) { }
 
   ngOnInit() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.apiService.getTx(id)
+      .subscribe(tx => this.tx = tx);
   }
 
 }

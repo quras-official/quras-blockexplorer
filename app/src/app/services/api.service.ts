@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 import { Block } from '../models/block';
+import { Tx } from '../models/tx';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,22 @@ export class ApiService {
       .pipe(
         tap(_ => this.log(`fetched block id=${id}`)),
         catchError(this.handleError<Block>(`getBlock id=${id}`))
+      );
+  }
+
+  public getTxs(): Observable<Tx[]> {
+    return this.http.get<Tx[]>('/api/txs')
+      .pipe(
+        tap(_ => this.log('fetched txs')),
+        catchError(this.handleError('getTxs', []))
+      );
+  }
+
+  public getTx(id: number): Observable<Tx> {
+    return this.http.get<Tx>(`api/txs/${id}`)
+      .pipe(
+        tap(_ => this.log(`fetched tx id=${id}`)),
+        catchError(this.handleError<Tx>(`getTx id=${id}`))
       );
   }
 
