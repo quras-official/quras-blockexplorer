@@ -18,4 +18,8 @@ export class AppComponent {
     const browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|ja/) ? browserLang : 'en');
   }
+
+  public setLang(lang: string): void {
+    this.translate.use(lang);
+  }
 }

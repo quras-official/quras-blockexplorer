@@ -11,5 +11,6 @@
     "Transaction": "ブロック",
     "Address": "アドレス",
     "Consensus Node": "ノード",
-    "Time": "日時"
+    "Time": "日時",
+    "Testnet": "テストネット"
 }

@@ -47,3 +47,26 @@
 </header>
 
 <router-outlet></router-outlet>
+
+<footer id="footer" class="bg-primary text-white py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <small><a href="https://testnet.chain.quras.com">{{ 'Testnet' | translate }}</a></small>
+      </div>
+      <div class="col-lg-4 text-center">
+        <small>Copyright &copy; QURAS 2018</small>
+      </div>
+      <div class="col-lg-4">
+        <div class="d-flex justify-content-end">
+          <div class="mr-3"><a [routerLink]="" (click)="setLang('en')"><span class="flag-icon flag-icon-us"></span>&nbsp;English</a></div>
+          <div><a [routerLink]="" (click)="setLang('ja')"><span class="flag-icon flag-icon-jp"></span>&nbsp;Japanese</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="back-to-top">
+
+</div>

@@ -11,5 +11,6 @@
     "Transaction": "Transaction",
     "Address": "Address",
     "Consensus Node": "Consensus Node",
-    "Time": "Time"
+    "Time": "Time",
+    "Testnet": "Testnet"
 }
