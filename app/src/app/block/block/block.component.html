@@ -42,11 +42,11 @@
           </tr>
           <tr>
             <th scope="row">Previous Block</th>
-            <td><a [routerLink]="['/blocks', block.id-1]" *ngIf="block.id > 1">{{ block.prev }}</a></td>
+            <td><a [routerLink]="['/blocks', block.id-1]" *ngIf="block.id > 1">{{ block.prev_block_hash }}</a></td>
           </tr>
           <tr>
             <th scope="row">Next Block</th>
-            <td><a [routerLink]="['/blocks', block.id+1]">TODO: 62b08b663cce71f3901cb47abd90006c73bd2aff4d74ca6e0f6e0c57953d3645</a></td>
+            <td><a [routerLink]="['/blocks', block.id+1]">Visit</a></td>
           </tr>
         </tbody>
       </table>

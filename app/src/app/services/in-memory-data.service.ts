@@ -10,21 +10,21 @@ export class InMemoryDataService implements InMemoryDbService {
 
   createDb() {
     const blocks = [
-      { id: 1, hash: '1234', transaction_count: 5, size: 100, time: 1239,
+      { id: 1, hash: '938d97df1be41edffbc08b40b9c07778a9085b700a50c19b90533a08d4700b68', transaction_count: 5, size: 100, time: 1239,
         producer: 'ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7',
-        prev: '1b20c9a6a01124ba3b09c6d99aa45aa601003c0f74a07e5393e571d7af673df5',
+        prev_block_hash: '',
         merkle: '3ff8dbb1b566494f48f900493b5a8ec2b984e482249d0675c400bd55feac6f6e' },
-      { id: 2, hash: '1234', transaction_count: 5, size: 100, time: 1239,
+      { id: 2, hash: '31f819134f34b91fcef10122cb49931a9912c87c80ada7b5f0e50d81abcc6500', transaction_count: 12, size: 100, time: 1239,
         producer: 'ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7',
-        prev: '1b20c9a6a01124ba3b09c6d99aa45aa601003c0f74a07e5393e571d7af673df5',
+        prev_block_hash: '938d97df1be41edffbc08b40b9c07778a9085b700a50c19b90533a08d4700b68',
         merkle: '3ff8dbb1b566494f48f900493b5a8ec2b984e482249d0675c400bd55feac6f6e' },
-      { id: 3, hash: '1234', transaction_count: 5, size: 100, time: 1239,
+      { id: 3, hash: '7e99125c0c83e23db06027bfc48a91be5a26618fa1e7cd5841419ac53c896730', transaction_count: 19, size: 100, time: 1239,
         producer: 'ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7',
-        prev: '1b20c9a6a01124ba3b09c6d99aa45aa601003c0f74a07e5393e571d7af673df5',
+        prev_block_hash: '31f819134f34b91fcef10122cb49931a9912c87c80ada7b5f0e50d81abcc6500',
         merkle: '3ff8dbb1b566494f48f900493b5a8ec2b984e482249d0675c400bd55feac6f6e' },
-      { id: 4, hash: '1234', transaction_count: 5, size: 100, time: 1239,
+      { id: 4, hash: 'de17f345a8383471c68471edf1f3470adacfd3520a81712215ef934931b9298a', transaction_count: 24, size: 100, time: 1239,
         producer: 'ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7',
-        prev: '1b20c9a6a01124ba3b09c6d99aa45aa601003c0f74a07e5393e571d7af673df5',
+        prev_block_hash: '7e99125c0c83e23db06027bfc48a91be5a26618fa1e7cd5841419ac53c896730',
         merkle: '3ff8dbb1b566494f48f900493b5a8ec2b984e482249d0675c400bd55feac6f6e' }
     ];
 

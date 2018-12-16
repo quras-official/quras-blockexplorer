@@ -7,6 +7,6 @@ export class Block {
     public readonly time: number;
     public readonly transaction_count: number;
     public readonly producer: string;
-    public readonly previous: string;
+    public readonly prev_block_hash: string;
     public readonly merkle: string;
 }
