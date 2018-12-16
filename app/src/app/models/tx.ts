@@ -11,6 +11,6 @@ export class Tx {
     public readonly net_fee: number;
     public readonly scripts: number;
     public readonly none: number;
-    public readonly block_height: number;
+    public readonly block_id: number;
     public readonly block_time: number;
 }

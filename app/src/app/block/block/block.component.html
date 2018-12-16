@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center mb-1">
-          <h2 class="section-heading">Block #{{ block.height }}</h2>
+          <h2 class="section-heading">Block #{{ block.id }}</h2>
       </div>
     </div>
     <div class="row">
@@ -14,7 +14,7 @@
           </tr>
           <tr>
             <th scope="row">Index</th>
-            <td>{{ block.height }}</td>
+            <td>{{ block.id }}</td>
           </tr>
           <tr>
             <th scope="row">Time</th>
@@ -38,15 +38,15 @@
           </tr>
           <tr>
             <th scope="row">Transactions</th>
-            <td>{{ block.txCount }}</td>
+            <td>{{ block.transaction_count }}</td>
           </tr>
           <tr>
             <th scope="row">Previous Block</th>
-            <td><a [routerLink]="['/blocks', block.height-1]" *ngIf="block.height > 1">{{ block.prev }}</a></td>
+            <td><a [routerLink]="['/blocks', block.id-1]" *ngIf="block.id > 1">{{ block.prev }}</a></td>
           </tr>
           <tr>
             <th scope="row">Next Block</th>
-            <td><a [routerLink]="['/blocks', block.height+1]">TODO: 62b08b663cce71f3901cb47abd90006c73bd2aff4d74ca6e0f6e0c57953d3645</a></td>
+            <td><a [routerLink]="['/blocks', block.id+1]">TODO: 62b08b663cce71f3901cb47abd90006c73bd2aff4d74ca6e0f6e0c57953d3645</a></td>
           </tr>
         </tbody>
       </table>
