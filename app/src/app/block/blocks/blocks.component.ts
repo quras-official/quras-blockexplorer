@@ -11,7 +11,9 @@ export class BlocksComponent implements OnInit {
 
   public blocks: Block[];
 
-  constructor(private apiService: ApiService) { }
+  constructor(
+    private apiService: ApiService
+  ) { }
 
   ngOnInit() {
     this.getBlocks();
