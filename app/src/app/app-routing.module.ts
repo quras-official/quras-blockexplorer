@@ -13,14 +13,10 @@ import { TxComponent } from '../components/tx/tx.component';*/
 
 const routes: Routes = [
   { path: 'blocks', loadChildren: './block/block.module#BlockModule' },
-  { path: 'txs', loadChildren: './tx/tx.module#TxModule' }/*,
-  { path: 'tx/:id', component: TxComponent },
-  { path: 'addresses', component: AddressesComponent },
-  { path: 'address/:id', component: AddressComponent },
-  { path: 'nodes', component: NodesComponent },
-  { path: 'node/:id', component: NodeComponent },
-  { path: 'assets', component: AssetsComponent },
-  { path: 'asset/:id', component: AssetComponent }*/
+  { path: 'txs', loadChildren: './tx/tx.module#TxModule' },
+  { path: 'addresses', loadChildren: './address/address.module#AddressModule' },
+  { path: 'nodes', loadChildren: './node/node.module#NodeModule' },
+  { path: 'assets2', loadChildren: './asset/asset.module#AssetModule' }
 ];
 
 @NgModule({

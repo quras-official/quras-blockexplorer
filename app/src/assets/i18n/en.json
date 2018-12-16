@@ -1,0 +1,15 @@
+{
+    "Blocks": "Blocks",
+    "Transactions": "Transactions",
+    "Network Status": "Network Status",
+    "Addresses": "Addresses",
+    "Assets": "Assets",
+    "Consensus Nodes": "Consensus Nodes",
+    "API": "API",
+    "Search": "Search",
+    "Block": "Block",
+    "Transaction": "Transaction",
+    "Address": "Address",
+    "Consensus Node": "Consensus Node",
+    "Time": "Time"
+}

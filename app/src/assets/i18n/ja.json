@@ -1,0 +1,15 @@
+{
+    "Blocks": "ブロック",
+    "Transactions": "トランザクション",
+    "Network Status": "ネットワークステータス",
+    "Addresses": "アドレス",
+    "Assets": "コイン",
+    "Consensus Nodes": "ノード",
+    "API": "API",
+    "Search": "検索",
+    "Block": "ブロック",
+    "Transaction": "ブロック",
+    "Address": "アドレス",
+    "Consensus Node": "ノード",
+    "Time": "日時"
+}
