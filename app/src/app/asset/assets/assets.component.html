@@ -12,16 +12,18 @@
             <th scope="col">Name</th>
             <th scope="col">Symbol</th>
             <th scope="col">Type</th>
-            <th scope="col">Addresses</th>
-            <th scope="col">Transactions</th>
+            <th scope="col">Created</th>
+            <th scope="col" class="text-right">Addresses</th>
+            <th scope="col" class="text-right">Transactions</th>
           </thead>
           <tbody>
             <tr *ngFor="let asset of assets">
               <td><a [routerLink]="['/assets', asset.id]">{{ asset.name }}</a></td>
               <td>{{ asset.symbol }}</td>
               <td>{{ asset.type }}</td>
-              <td>{{ asset.address_count }}</td>
-              <td>{{ asset.transaction_count }}</td>
+              <td>{{ asset.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+              <td class="text-right">{{ asset.address_count | number }}</td>
+              <td class="text-right">{{ asset.transaction_count | number }}</td>
             </tr>
           </tbody>
         </table>

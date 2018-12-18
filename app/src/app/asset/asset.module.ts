@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { ShareModule } from '../share/share.module';
 import { AssetsComponent } from './assets/assets.component';
 import { AssetComponent } from './asset/asset.component';
 import { AssetRoutingModule } from './asset-routing.module';
@@ -11,8 +10,7 @@ import { AssetRoutingModule } from './asset-routing.module';
     AssetComponent
   ],
   imports: [
-    CommonModule,
-    NgbPaginationModule,
+    ShareModule,
     AssetRoutingModule
   ]
 })

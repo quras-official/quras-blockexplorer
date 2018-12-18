@@ -1,6 +1,4 @@
 export class Asset {
-
-    public readonly id: string;
     public readonly hash: string;
     public readonly type: string;
     public readonly symbol: string;
@@ -11,6 +9,9 @@ export class Asset {
     public readonly owner: string;
     public readonly block_time: number;
     public readonly transaction_count: number;
+    public readonly transactions: any[];
     public readonly address_count: number;
+    public readonly addresses: any[];
     public readonly transfer_count: number;
+    public readonly transfers: any[];
 }

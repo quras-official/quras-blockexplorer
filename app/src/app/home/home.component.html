@@ -17,11 +17,11 @@
             </thead>
             <tbody>
               <tr *ngFor="let block of blocks">
-                <td><a [routerLink]="['/blocks', block.id]">{{ block.id }}</a></td>
-                <td>{{ block.time }}</td>
+                <td><a [routerLink]="['/blocks', block.height]">{{ block.height }}</a></td>
+                <td>{{ block.time * 1000 | amFromUtc | amTimeAgo }}</td>
                 <td>{{ block.transaction_count }}</td>
                 <td><a [routerLink]="['/addresses', block.producer]">{{ block.producer }}</a></td>
-                <td>{{ block.size }}</td>
+                <td>{{ block.size | number }} Bytes</td>
               </tr>
             </tbody>
           </table>
@@ -53,8 +53,8 @@
             <tbody>
               <tr *ngFor="let tx of txs">
                 <td>{{ tx.type }}</td>
-                <td><a [routerLink]="['/txs', tx.id]">{{ tx.id }}</a></td>
-                <td>{{ tx.block_time }}</td>
+                <td><a [routerLink]="['/txs', tx.txid]">{{ tx.txid }}</a></td>
+                <td>{{ tx.block_time | amFromUtc | amTimeAgo }}</td>
               </tr>
             </tbody>
           </table>

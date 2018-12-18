@@ -27,15 +27,15 @@
               </tr>
               <tr>
                 <th scope="row">Supply</th>
-                <td>{{ asset.amount }}</td>
+                <td>{{ asset.amount | number }}</td>
               </tr>
               <tr>
                 <th scope="row">Issued</th>
-                <td>{{ asset.issued }}</td>
+                <td>{{ asset.issued | number }}</td>
               </tr>
               <tr>
                 <th scope="row">Precision</th>
-                <td>{{ asset.precision }}</td>
+                <td>{{ asset.precision | number }}</td>
               </tr>
               <tr>
                 <th scope="row">Owner</th>
@@ -43,15 +43,15 @@
               </tr>
               <tr>
                 <th scope="row">Created</th>
-                <td>{{ asset.block_time }}</td>
+                <td>{{ asset.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
               </tr>
               <tr>
                 <th scope="row">Transactions</th>
-                <td>{{ asset.transaction_count }}</td>
+                <td>{{ asset.transaction_count | number }}</td>
               </tr>
               <tr>
                 <th scope="row">Addresses</th>
-                <td>{{ asset.address_count }}</td>
+                <td>{{ asset.address_count | number }}</td>
               </tr>
             </tbody>
           </table>
@@ -70,7 +70,7 @@
     </div>
   </section>-->
   
-  <section class="pt-0">
+  <section class="pt-0" *ngIf="addresses.length > 0">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center mb-1">
@@ -83,81 +83,27 @@
             <thead>
               <th scope="col">Address ID</th>
               <th scope="col">Created</th>
-              <th scope="col">Transactions</th>
+              <th scope="col" class="text-right">Transactions</th>
               <th scope="col">Last Transaction</th>
-              <th scope="col">Coins</th>
+              <th scope="col" class="text-right">Coins</th>
             </thead>
             <tbody>
-              <tr>
-                <td><a href="address.html?Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp">Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp</a></td>
-                <td>Dec 11, 2018, 10:15:47 PM </td>
-                <td>46</td>
-                <td>1 minute ago</td>
-                <td>9 QRS</td>
-              </tr>
-              <tr>
-                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ</a></td>
-                <td>Dec 11, 2018, 10:04:38 PM </td>
-                <td>2,976</td>
-                <td>27 seconds ago</td>
-                <td>0 QRS</td>
-              </tr>
-              <tr>
-                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk</a></td>
-                <td>Dec 11, 2018, 10:01:42 PM </td>
-                <td>5,289</td>
-                <td>27 seconds ago</td>
-                <td>809 QRS</td>
-              </tr>
-              <tr>
-                <td><a href="address.html?Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp">Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp</a></td>
-                <td>Dec 11, 2018, 10:15:47 PM </td>
-                <td>46</td>
-                <td>1 minute ago</td>
-                <td>9 QRS</td>
-              </tr>
-              <tr>
-                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ</a></td>
-                <td>Dec 11, 2018, 10:04:38 PM </td>
-                <td>2,976</td>
-                <td>27 seconds ago</td>
-                <td>0 QRS</td>
-              </tr>
-              <tr>
-                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk</a></td>
-                <td>Dec 11, 2018, 10:01:42 PM </td>
-                <td>5,289</td>
-                <td>27 seconds ago</td>
-                <td>809 QRS</td>
-              </tr>
-              <tr>
-                <td><a href="address.html?Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp">Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp</a></td>
-                <td>Dec 11, 2018, 10:15:47 PM </td>
-                <td>46</td>
-                <td>1 minute ago</td>
-                <td>9 QRS</td>
+              <tr *ngFor="let address of addresses">
+                <td><a [routerLink]="['/addresses', address.address]">{{ address.address }}</a></td>
+                <td>{{ address.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                <td class="text-right">{{ address.transaction_count | number }}</td>
+                <td>{{ address.last_block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                <td class="text-right">{{ address.balance_amount | number:'1.0-4' }} {{ asset.symbol }}</td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <nav class="float-right" aria-label="Page navigation example">
-              <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-          </nav>
+          <ngb-pagination class="d-flex justify-content-end" [collectionSize]="address_total" [pageSize]="pageSize" [maxSize]="maxSize" [(page)]="address_page" (pageChange)="onAddressPaging($event)"></ngb-pagination>
         </div>
       </div>
     </div>
   </section>
   
-  <section class="pt-0">
+  <section class="pt-0" *ngIf="txs.length > 0">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center mb-1">
@@ -174,51 +120,21 @@
               <th scope="col"></th>
             </thead>
             <tbody>
-              <tr>
-                <td>Invocation</td>
-                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506</a></td>
-                <td>Dec 11, 2018, 10:15:47 PM </td>
-                <td>Show/Hide</td>
-              </tr>
-              <tr>
-                <td>Gas Claim</td>
-                <td><a href="tx.html?bb6e0b82b3dc8fc725a91b46c0ef187692e9565ab1dea939142f6461f1551ce2">bb6e0b82b3dc8fc725a91b46c0ef187692e9565ab1dea939142f6461f1551ce2</a></td>
-                <td>Dec 11, 2018, 10:04:38 PM </td>
-                <td>Show/Hide</td>
-              </tr>
-              <tr>
-                <td>Contract</td>
-                <td><a href="tx.html?aa5996f291632cf0dacdc6b5694fbda5be3dac292ff4ead4627ddc6b66151ccc">aa5996f291632cf0dacdc6b5694fbda5be3dac292ff4ead4627ddc6b66151ccc</a></td>
-                <td>Dec 11, 2018, 10:01:42 PM </td>
-                <td>Show/Hide</td>
-              </tr>
-              <tr>
-                <td>Invocation</td>
-                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506</a></td>
-                <td>Dec 11, 2018, 10:15:47 PM </td>
+              <tr *ngFor="let tx of txs">
+                <td>{{ tx.type }}</td>
+                <td><a [routerLink]="['/txs', tx.txid]">{{ tx.txid }}</a></td>
+                <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                 <td>Show/Hide</td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <nav class="float-right" aria-label="Page navigation example">
-              <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-          </nav>
+          <ngb-pagination class="d-flex justify-content-end" [collectionSize]="tx_total" [pageSize]="pageSize" [maxSize]="maxSize" [(page)]="tx_page" (pageChange)="onTxPaging($event)"></ngb-pagination>
         </div>
       </div>
     </div>
   </section>
   
-  <section class="pt-0">
+  <section class="pt-0" *ngIf="transfers.length > 0">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center mb-1">
@@ -232,58 +148,22 @@
               <th scope="col">Transaction ID</th>
               <th scope="col">From</th>
               <th scope="col">To</th>
-              <th scope="col">Value</th>
+              <th scope="col" class="text-right">Amount</th>
               <th scope="col">Asset</th>
               <th scope="col">Time</th>
             </thead>
             <tbody>
-              <tr>
-                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad22...</a></td>
-                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3t...</a></td>
-                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7...</a></td>
-                <td>9</td>
-                <td>QRS</td>
-                <td>Dec 11, 2018, 10:04:38 PM</td>
-              </tr>
-              <tr>
-                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad22...</a></td>
-                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3t...</a></td>
-                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7...</a></td>
-                <td>9</td>
-                <td>QRS</td>
-                <td>Dec 11, 2018, 10:04:38 PM</td>
-              </tr>
-              <tr>
-                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad22...</a></td>
-                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3t...</a></td>
-                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7...</a></td>
-                <td>9</td>
-                <td>QRS</td>
-                <td>Dec 11, 2018, 10:04:38 PM</td>
-              </tr>
-              <tr>
-                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad22...</a></td>
-                <td><a href="address.html?Acmf968Rvi7K2Vu8wVQU3tqZBCRQAX2phZ">Acmf968Rvi7K2Vu8wVQU3t...</a></td>
-                <td><a href="address.html?ASH41gtWftHvhuYhZz1jj7ee7z9vp9D9wk">ASH41gtWftHvhuYhZz1jj7...</a></td>
-                <td>9</td>
-                <td>QRS</td>
-                <td>Dec 11, 2018, 10:04:38 PM</td>
+              <tr *ngFor="let transfer of transfers">
+                <td><a [routerLink]="['/txs', transfer.txid]">{{ transfer.txid | cut:30 }}</a></td>
+                <td><a [routerLink]="['/addresses', transfer.address_from]">{{ transfer.address_from | cut:20 }}</a></td>
+                <td><a [routerLink]="['/addresses', transfer.address_to]">{{ transfer.address_to | cut:20 }}</a></td>
+                <td class="text-right">{{ transfer.amount | number:'1.0-4' }}</td>
+                <td><a [routerLink]="['/assets', transfer.asset_hash]">{{ transfer.asset_symbol }}</a></td>
+                <td>{{ transfer.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <nav class="float-right" aria-label="Page navigation example">
-              <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-          </nav>
+          <ngb-pagination class="d-flex justify-content-end" [collectionSize]="transfer_total" [pageSize]="pageSize" [maxSize]="maxSize" [(page)]="transfer_page" (pageChange)="onTransferPaging($event)"></ngb-pagination>
         </div>
       </div>
     </div>

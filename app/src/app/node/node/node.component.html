@@ -19,7 +19,7 @@
               </tr>
               <tr>
                 <th scope="row">Votes</th>
-                <td>{{ node.votes_percent }}</td>
+                <td>{{ node.votes_percent | number:'1.0-2' }}</td>
               </tr>
               <tr>
                 <th scope="row">Url</th>
@@ -27,11 +27,11 @@
               </tr>
               <tr>
                 <th scope="row">Position</th>
-                <td>{{ node.position }}</td>
+                <td>{{ node.position | number }}</td>
               </tr>
               <tr>
                 <th scope="row">Daily Reward</th>
-                <td>{{ node.daily_reward }}</td>
+                <td>{{ node.daily_reward.amount | number:'1.0-4' }} <a [routerLink]="['/assets', node.daily_reward.asset_hash]">{{ node.daily_reward.asset_symbol }}</a></td>
               </tr>
             </tbody>
           </table>

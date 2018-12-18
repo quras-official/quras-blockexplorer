@@ -15,7 +15,7 @@
               </tr>
               <tr>
                 <th scope="row">Created</th>
-                <td>{{ address.block_time }}</td>
+                <td>{{ address.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
               </tr>
               <tr>
                 <th scope="row">Transactions</th>
@@ -57,45 +57,14 @@
               <th scope="col"></th>
             </thead>
             <tbody>
-              <tr>
-                <td>Invocation</td>
-                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506</a></td>
-                <td>Dec 11, 2018, 10:15:47 PM </td>
-                <td>Show/Hide</td>
-              </tr>
-              <tr>
-                <td>Gas Claim</td>
-                <td><a href="tx.html?bb6e0b82b3dc8fc725a91b46c0ef187692e9565ab1dea939142f6461f1551ce2">bb6e0b82b3dc8fc725a91b46c0ef187692e9565ab1dea939142f6461f1551ce2</a></td>
-                <td>Dec 11, 2018, 10:04:38 PM </td>
-                <td>Show/Hide</td>
-              </tr>
-              <tr>
-                <td>Contract</td>
-                <td><a href="tx.html?aa5996f291632cf0dacdc6b5694fbda5be3dac292ff4ead4627ddc6b66151ccc">aa5996f291632cf0dacdc6b5694fbda5be3dac292ff4ead4627ddc6b66151ccc</a></td>
-                <td>Dec 11, 2018, 10:01:42 PM </td>
-                <td>Show/Hide</td>
-              </tr>
-              <tr>
-                <td>Invocation</td>
-                <td><a href="tx.html?d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506">d61c6de32d3789b59dbd452efc75ad2218630c5645de9916cba486fe84219506</a></td>
-                <td>Dec 11, 2018, 10:15:47 PM </td>
+              <tr *ngFor="let tx of address.transactions">
+                <td>{{ tx.type }}</td>
+                <td><a [routerLink]="['/txs', tx.txid]">{{ tx.txid }}</a></td>
+                <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                 <td>Show/Hide</td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <nav class="float-right" aria-label="Page navigation example">
-              <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-          </nav>
         </div>
       </div>
     </div>
@@ -120,45 +89,16 @@
               <th scope="col">Time</th>
             </thead>
             <tbody>
-              <tr>
-                <td><a href="tx.html?aa5996f291632cf0dacdc6b5694fbda5be3dac292ff4ead4627ddc6b66151ccc">aa5996f291632cf0dacdc6b5694...</a></td>
-                <td><a href="address.html?Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp">Abo5MykQe1DCh1nbVwnBYQzi...</a></td>
-                <td><a href="address.html?ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7">ANuupE2wgsHYi8VTqSUSoMsy...</a></td>
-                <td>1,594.2748</td>
-                <td>PHX</td>
-                <td>45 minutes ago</td>
-              </tr>
-              <tr>
-                <td><a href="tx.html?aa5996f291632cf0dacdc6b5694fbda5be3dac292ff4ead4627ddc6b66151ccc">aa5996f291632cf0dacdc6b5694...</a></td>
-                <td><a href="address.html?Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp">Abo5MykQe1DCh1nbVwnBYQzi...</a></td>
-                <td><a href="address.html?ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7">ANuupE2wgsHYi8VTqSUSoMsy...</a></td>
-                <td>1,594.2748</td>
-                <td>PHX</td>
-                <td>45 minutes ago</td>
-              </tr>
-              <tr>
-                <td><a href="tx.html?aa5996f291632cf0dacdc6b5694fbda5be3dac292ff4ead4627ddc6b66151ccc">aa5996f291632cf0dacdc6b5694...</a></td>
-                <td><a href="address.html?Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp">Abo5MykQe1DCh1nbVwnBYQzi...</a></td>
-                <td><a href="address.html?ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7">ANuupE2wgsHYi8VTqSUSoMsy...</a></td>
-                <td>1,594.2748</td>
-                <td>PHX</td>
-                <td>45 minutes ago</td>
+              <tr *ngFor="let transfer of address.transfers">
+                <td><a [routerLink]="['/txs', transfer.txid]">{{ transfer.txid }}</a></td>
+                <td><a [routerLink]="['/addresses', transfer.address_from]">{{ transfer.address_from }}</a></td>
+                <td><a [routerLink]="['/addresses', transfer.address_to]">{{ transfer.address_to }}</a></td>
+                <td>{{ transfer.amount }}</td>
+                <td><a [routerLink]="['/assets', transfer.asset]">{{ transfer.asset_symbol }}</a></td>
+                <td>{{ transfer.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <nav class="float-right" aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-          </nav>
         </div>
       </div>
     </div>

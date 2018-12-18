@@ -17,8 +17,8 @@
             </thead>
             <tbody>
               <tr *ngFor="let address of addresses">
-                <td><a [routerLink]="['/addresses', address.id]">{{ address.id }}</a></td>
-                <td>{{ address.block_time }}</td>
+                <td><a [routerLink]="['/addresses', address.address]">{{ address.address }}</a></td>
+                <td>{{ address.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                 <td>{{ address.transaction_count }}</td>
                 <td>TODO 1 minute ago</td>
                 <td>{{ address.balance }}</td>

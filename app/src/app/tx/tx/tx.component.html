@@ -15,11 +15,11 @@
               </tr>
               <tr>
                 <th scope="row">Hash</th>
-                <td>{{ tx.id }}</td>
+                <td>{{ tx.txid }}</td>
               </tr>
               <tr>
                 <th scope="row">Time</th>
-                <td>{{ tx.block_time }}</td>
+                <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
               </tr>
               <tr>
                 <th scope="row">Network Fee</th>
@@ -31,11 +31,11 @@
               </tr>
               <tr>
                 <th scope="row">Size</th>
-                <td>{{ tx.size }} Bytes</td>
+                <td>{{ tx.size | number }} Bytes</td>
               </tr>
               <tr>
                 <th scope="row">Block</th>
-                <td><a [routerLink]="['/blocks', tx.block_id]">{{ tx.block_id }}</a></td>
+                <td><a [routerLink]="['/blocks', tx.block_height]">{{ tx.block_hash }}</a></td>
               </tr>
             </tbody>
           </table>
@@ -47,38 +47,38 @@
   <section class="pt-0">
     <div class="container">
       <div class="row mb-4">
-        <div class="col-lg-6">
+        <div class="col-lg-6" *ngIf="tx.script.invocation">
           <div class="card">
             <div class="card-header">
               Invocation Script
             </div>
             <div class="card-body">
-              <p class="card-text">40e0efa71e538e9537ffa0776f5bae0cce313ab156b1fa6d44d33000bc2bbae2e4cf9c8c2ca476c641a75f7508f525df950774fb971a7102ac14736c523439c771</p>
-              <a href="#" class="btn btn-primary float-right">VIEW OPCODE</a>
+              <p class="card-text">{{ script_ops[0] ? tx.script.invocation_op : tx.script.invocation }}</p>
+              <a [routerLink]="" (click)="toggleScript(0)" class="btn btn-primary float-right">VIEW OPCODE</a>
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" *ngIf="tx.script.verification">
           <div class="card">
             <div class="card-header">
               Verification Script
             </div>
             <div class="card-body">
-              <p class="card-text">210202008015935b7c56e7af01559fb4fd5e05bb2713d91f25dd3dcac518fe006c1cac</p>
-              <a href="#" class="btn btn-primary float-right">VIEW OPCODE</a>
+              <p class="card-text">{{ script_ops[1] ? tx.script.verification_op : tx.script.verification }}</p>
+              <a [routerLink]="" (click)="toggleScript(1)" class="btn btn-primary float-right">VIEW OPCODE</a>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6" *ngIf="tx.script.script">
           <div class="card">
             <div class="card-header">
               Script
             </div>
             <div class="card-body">
-              <p class="card-text">0800e1f505000000001419684c2d407152221c4ecf565aacbf1fdd51f57514fd8d0f84b8db897d6eebe3e0177ed5c5b47fc32253c1087472616e7366657267f9e6e770af783d809bd1a65e1bb5b6042953bcac</p>
-              <a href="#" class="btn btn-primary float-right">VIEW OPCODE</a>
+              <p class="card-text">{{ script_ops[2] ? tx.script.script_op : tx.script.script }}</p>
+              <a [routerLink]="" (click)="toggleScript(2)" class="btn btn-primary float-right">VIEW OPCODE</a>
             </div>
           </div>
         </div>

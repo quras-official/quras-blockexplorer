@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { ShareModule } from '../share/share.module';
 import { BlocksComponent } from './blocks/blocks.component';
 import { BlockComponent } from './block/block.component';
 import { BlockRoutingModule } from './block-routing.module';
@@ -11,9 +10,8 @@ import { BlockRoutingModule } from './block-routing.module';
     BlockComponent
   ],
   imports: [
-    CommonModule,
-    NgbPaginationModule,
-    BlockRoutingModule
+    ShareModule,
+    BlockRoutingModule,
   ]
 })
 export class BlockModule { }

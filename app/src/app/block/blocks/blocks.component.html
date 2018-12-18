@@ -11,17 +11,17 @@
           <thead>
             <th scope="col">Height</th>
             <th scope="col">Time</th>
-            <th scope="col">Transactions</th>
+            <th scope="col" class="text-right">Transactions</th>
             <th scope="col">Validator</th>
-            <th scope="col">Size</th>
+            <th scope="col" class="text-right">Size</th>
           </thead>
           <tbody>
             <tr *ngFor="let block of blocks">
-              <td><a [routerLink]="['/blocks', block.id]">{{ block.id }}</a></td>
-              <td>{{ block.time }}</td>
-              <td>{{ block.transaction_count }}</td>
+              <td><a [routerLink]="['/blocks', block.height]">{{ block.height }}</a></td>
+              <td>{{ block.time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+              <td class="text-right">{{ block.transaction_count }}</td>
               <td><a [routerLink]="['/addresses', block.producer]">{{ block.producer }}</a></td>
-              <td>{{ block.size }}</td>
+              <td class="text-right">{{ block.size | number }} Bytes</td>
             </tr>
           </tbody>
         </table>

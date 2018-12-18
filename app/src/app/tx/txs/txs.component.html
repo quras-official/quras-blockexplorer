@@ -17,8 +17,8 @@
             <tbody>
               <tr *ngFor="let tx of txs">
                 <td>{{ tx.type }}</td>
-                <td><a [routerLink]="['/txs', tx.id]">{{ tx.id }}</a></td>
-                <td>{{ tx.block_time }}</td>
+                <td><a [routerLink]="['/txs', tx.id]">{{ tx.txid }}</a></td>
+                <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                 <td>Show/Hide</td>
               </tr>
             </tbody>

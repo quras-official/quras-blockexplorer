@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { environment } from 'src/environments/environment';
+import { ShareModule } from './share/share.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -25,6 +27,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent
   ],
   imports: [
+    ShareModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -37,9 +40,10 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
 
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
-    ),
+    environment.production ? [] :
+      HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
+      ),
 
     NgbModule
   ],

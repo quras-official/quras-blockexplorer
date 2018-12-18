@@ -10,7 +10,8 @@ import { Tx } from 'src/app/models/tx';
 })
 export class TxComponent implements OnInit {
 
-  public tx: Tx;
+  tx: Tx;
+  script_ops: boolean[] = [false, false, false];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +22,10 @@ export class TxComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.apiService.getTx(id)
       .subscribe(tx => this.tx = tx);
+  }
+
+  toggleScript(index) {
+    this.script_ops[index] = !this.script_ops[index];
   }
 
 }
