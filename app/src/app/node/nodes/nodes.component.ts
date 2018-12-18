@@ -9,7 +9,11 @@ import { Node } from 'src/app/models/node';
 })
 export class NodesComponent implements OnInit {
 
-  public nodes: Node[];
+  nodes: Node[];
+  pageSize = 10;
+  maxSize = 5;
+  total = 0;
+  page = 1;
 
   constructor(
     private apiService: ApiService
@@ -21,7 +25,14 @@ export class NodesComponent implements OnInit {
 
   getNodes(): void {
     this.apiService.getNodes()
-    .subscribe(nodes => this.nodes = nodes);
+    .subscribe(nodes => {
+      this.nodes = nodes;
+      this.total = nodes.length * 20;
+    });
+  }
+
+  onPaging(page: number) {
+    this.getNodes();
   }
 
 }

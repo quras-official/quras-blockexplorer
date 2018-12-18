@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { TxRoutingModule } from './tx-routing.module';
 import { TxsComponent } from './txs/txs.component';
 import { TxComponent } from './tx/tx.component';
@@ -11,6 +12,7 @@ import { TxComponent } from './tx/tx.component';
   ],
   imports: [
     CommonModule,
+    NgbPaginationModule,
     TxRoutingModule
   ]
 })

@@ -9,7 +9,11 @@ import { Address } from 'src/app/models/address';
 })
 export class AddressesComponent implements OnInit {
 
-  public addresses: Address[];
+  addresses: Address[];
+  pageSize = 10;
+  maxSize = 5;
+  total = 0;
+  page = 1;
 
   constructor(
     private apiService: ApiService
@@ -21,7 +25,14 @@ export class AddressesComponent implements OnInit {
 
   getAddresses(): void {
     this.apiService.getAddresses()
-    .subscribe(addresses => this.addresses = addresses);
+    .subscribe(addresses => {
+      this.addresses = addresses;
+      this.total = addresses.length * 20;
+    });
+  }
+
+  onPaging(page: number) {
+    this.getAddresses();
   }
 
 }

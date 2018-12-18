@@ -9,7 +9,11 @@ import { Tx } from 'src/app/models/tx';
 })
 export class TxsComponent implements OnInit {
 
-  public txs: Tx[];
+  txs: Tx[];
+  pageSize = 10;
+  maxSize = 5;
+  total = 0;
+  page = 1;
 
   constructor(
     private apiService: ApiService
@@ -21,7 +25,14 @@ export class TxsComponent implements OnInit {
 
   getTxs(): void {
     this.apiService.getTxs()
-    .subscribe(txs => this.txs = txs);
+    .subscribe(txs => {
+      this.txs = txs;
+      this.total = txs.length * 20;
+    });
+  }
+
+  onPaging(page: number) {
+    this.getTxs();
   }
 
 }
