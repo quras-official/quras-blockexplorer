@@ -8,6 +8,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -37,7 +39,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
-    )
+    ),
+
+    NgbModule
   ],
   providers: [
   ],

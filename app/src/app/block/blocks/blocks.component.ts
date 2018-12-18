@@ -9,7 +9,11 @@ import { ApiService } from '../../services/api.service';
 })
 export class BlocksComponent implements OnInit {
 
-  public blocks: Block[];
+  blocks: Block[];
+  pageSize = 10;
+  maxSize = 5;
+  total = 0;
+  page = 1;
 
   constructor(
     private apiService: ApiService
@@ -21,7 +25,17 @@ export class BlocksComponent implements OnInit {
 
   getBlocks(): void {
     this.apiService.getBlocks()
-    .subscribe(blocks => this.blocks = blocks);
+    .subscribe(blocks => {
+      this.blocks = blocks;
+      // TODO: EDIT
+      this.total = blocks.length * 20;
+      this.blocks[0].transaction_count = this.blocks[0].transaction_count + this.page * 5;
+    });
+  }
+
+  onPaging(page: number) {
+    //this.blocks$ = this.appService.getBlocks(pageEvent.length - pageEvent.pageSize * pageEvent.pageIndex);
+    this.getBlocks();
   }
 
   /*private loadBlocks(): void {

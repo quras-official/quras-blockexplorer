@@ -8,21 +8,15 @@
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mr-auto">
-          <!--<li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li ngbDropdown class="nav-item dropdown">
+            <a ngbDropdownToggle class="nav-link dropdown-toggle" [routerLink]="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Blocks
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="/blocks">Blocks</a>
-              <a class="dropdown-item" routerLink="/txs">Transactions</a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="/blocks">{{ 'Blocks' | translate }}</a>
+              <a class="dropdown-item" routerLink="/txs">{{ 'Transactions' | translate }}</a>
               <a class="dropdown-item" routerLink="/status">Network Status</a>
             </div>
-          </li>-->
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" routerLink="/blocks">{{ 'Blocks' | translate }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" routerLink="/txs">{{ 'Transactions' | translate }}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" routerLink="/addresses">{{ 'Addresses' | translate }}</a>
@@ -34,7 +28,7 @@
             <a class="nav-link js-scroll-trigger" routerLink="/nodes">{{ 'Consensus Nodes' | translate }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="http://13.230.62.42:3000/quras-js/docs/en/api-index.html">{{ 'API' | translate }}</a>
+            <a class="nav-link js-scroll-trigger" href="/api_v1.html">{{ 'API' | translate }}</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
