@@ -11,17 +11,17 @@
             <thead>
               <th scope="col">Address ID</th>
               <th scope="col">Created</th>
-              <th scope="col">Transactions</th>
+              <th scope="col" class="text-right">Transactions</th>
               <th scope="col">Last Transaction</th>
-              <th scope="col">Coins</th>
+              <th scope="col" class="text-right">Coins</th>
             </thead>
             <tbody>
               <tr *ngFor="let address of addresses">
-                <td><a [routerLink]="['/addresses', address.address]">{{ address.address }}</a></td>
+                <td><a [routerLink]="['/addresses', address.id]">{{ address.address }}</a></td>
                 <td>{{ address.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
-                <td>{{ address.transaction_count }}</td>
-                <td>TODO 1 minute ago</td>
-                <td>{{ address.balance }}</td>
+                <td class="text-right">{{ address.transaction_count | number }}</td>
+                <td>{{ address.last_block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                <td class="text-right"><span *ngFor="let balance of address.balances">{{ balance.amount | number:'1.0-4' }} <a [routerLink]="['/assets', balance.asset_hash]">{{ balance.asset_symbol }}</a><br></span></td>
               </tr>
             </tbody>
           </table>

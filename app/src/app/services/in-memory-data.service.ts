@@ -496,9 +496,33 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const addresses = [
-      { id: 301,
-        transaction_hash: 'ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7',
-        block_time: 15923142125,
+      {
+        id: 1,
+        address: 'Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp',
+        block_time: 1542683358,
+        last_block_time: 1542683358,
+        balances: [
+          {
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_symbol: 'QRG',
+            amount: 5
+          },
+          {
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_symbol: 'QRG',
+            amount: 5
+          },
+          {
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_symbol: 'QRG',
+            amount: 5
+          }
+        ],
+        unclaimed: {
+          asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+          asset_symbol: 'QRG',
+          amount: 5
+        },
         transaction_count: 10,
         transactions: [
           {
@@ -520,7 +544,7 @@ export class InMemoryDataService implements InMemoryDbService {
           {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
-            asset: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
             asset_symbol: 'QRG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
@@ -528,7 +552,7 @@ export class InMemoryDataService implements InMemoryDbService {
           }, {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
-            asset: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
             asset_symbol: 'QRG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
@@ -536,24 +560,85 @@ export class InMemoryDataService implements InMemoryDbService {
           }, {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
-            asset: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
             asset_symbol: 'QRG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
             address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
           }
+        ]
+      },
+      {
+        id: 2,
+        address: 'Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp',
+        block_time: 1542683358,
+        last_block_time: 1542683358,
+        balances: [
+          {
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_symbol: 'QRG',
+            amount: 5
+          },
+          {
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_symbol: 'QRG',
+            amount: 5
+          },
+          {
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_symbol: 'QRG',
+            amount: 5
+          }
         ],
-        balance: '10 QRS, 0 QRG',
-        claim: '0 QRG'
-      }, { id: 302, transaction_hash: 'ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7',
-        block_time: 15923142125, transaction_count: 10, transfer_count: 300,
-        balance: '10 QRS, 0 QRG', claim: '0 QRG'
-      }, { id: 303, transaction_hash: 'ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7',
-        block_time: 15923142125, transaction_count: 10, transfer_count: 300,
-        balance: '10 QRS, 0 QRG', claim: '0 QRG'
-      }, { id: 304, transaction_hash: 'ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7',
-        block_time: 15923142125, transaction_count: 10, transfer_count: 300,
-        balance: '10 QRS, 0 QRG', claim: '0 QRG'
+        unclaimed: {
+          asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+          asset_symbol: 'QRG',
+          amount: 5
+        },
+        transaction_count: 10,
+        transactions: [
+          {
+            type: 'Miner',
+            txid: 'b1f724dbe809e9952a79ac62012a061a926f6971719bbf7633f043503dbd1939',
+            block_time: 1542683357
+          }, {
+            type: 'Invocation',
+            txid: 'bb6e0b82b3dc8fc725a91b46c0ef187692e9565ab1dea939142f6461f1551ce2',
+            block_time: 1542683357
+          }, {
+            type: 'Contract',
+            txid: 'aa5996f291632cf0dacdc6b5694fbda5be3dac292ff4ead4627ddc6b66151ccc',
+            block_time: 1542683357
+          }
+        ],
+        transfer_count: 300,
+        transfers: [
+          {
+            txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
+            block_time: 1542683357,
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_symbol: 'QRG',
+            amount: 5,
+            address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
+            address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
+          }, {
+            txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
+            block_time: 1542683357,
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_symbol: 'QRG',
+            amount: 5,
+            address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
+            address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
+          }, {
+            txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
+            block_time: 1542683357,
+            asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
+            asset_symbol: 'QRG',
+            amount: 5,
+            address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
+            address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
+          }
+        ]
       }
     ];
 

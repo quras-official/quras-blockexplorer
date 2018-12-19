@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { ShareModule } from '../share/share.module';
 import { NodesComponent } from './nodes/nodes.component';
 import { NodeComponent } from './node/node.component';
 import { NodeRoutingModule } from './node-routing.module';
@@ -11,8 +10,7 @@ import { NodeRoutingModule } from './node-routing.module';
     NodeComponent
   ],
   imports: [
-    CommonModule,
-    NgbPaginationModule,
+    ShareModule,
     NodeRoutingModule
   ]
 })

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { ShareModule } from '../share/share.module';
 import { AddressesComponent } from './addresses/addresses.component';
 import { AddressComponent } from './address/address.component';
 import { AddressRoutingModule } from './address-routing.module';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +11,8 @@ import { AddressRoutingModule } from './address-routing.module';
     AddressComponent
   ],
   imports: [
-    CommonModule,
-    NgbPaginationModule,
+    ShareModule,
+    ComponentsModule,
     AddressRoutingModule
   ]
 })

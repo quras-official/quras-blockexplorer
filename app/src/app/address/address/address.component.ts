@@ -10,7 +10,7 @@ import { Address } from 'src/app/models/address';
 })
 export class AddressComponent implements OnInit {
 
-  public address: Address;
+  address: Address;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,7 +20,9 @@ export class AddressComponent implements OnInit {
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.apiService.getAddress(id)
-      .subscribe(address => this.address = address);
+      .subscribe(address => {
+        this.address = address;
+      });
   }
 
 }
