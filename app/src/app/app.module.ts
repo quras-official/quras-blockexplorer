@@ -40,10 +40,11 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
 
-    environment.production ? [] :
-      HttpClientInMemoryWebApiModule.forRoot(
-        InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
-      ),
+    environment.env === 'sandbox'
+      ? HttpClientInMemoryWebApiModule.forRoot(
+          InMemoryDataService, { dataEncapsulation: false, passThruUnknownUrl: true }
+        )
+      : [],
 
     NgbModule
   ],

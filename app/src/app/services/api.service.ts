@@ -10,16 +10,21 @@ import { Asset } from '../models/asset';
 import { Address } from '../models/address';
 import { Node } from '../models/node';
 import { NetworkStatus } from '../models/network-status';
+import { environment } from 'src/environments/environment.dev';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  private apiServer: string;
+
+  constructor(private http: HttpClient) {
+    this.apiServer = environment.apiServer;
+  }
 
   public getBlocks(): Observable<Block[]> {
-    return this.http.get<Block[]>('api/blocks')
+    return this.http.get<Block[]>(this.apiServer + '/blocks')
       .pipe(
         tap(_ => this.log('fetched blockes')),
         catchError(this.handleError('getBlocks', []))
@@ -27,7 +32,7 @@ export class ApiService {
   }
 
   public getBlock(id: number): Observable<Block> {
-    return this.http.get<Block>(`api/blocks/${id}`)
+    return this.http.get<Block>(this.apiServer + `/blocks/${id}`)
       .pipe(
         tap(_ => this.log(`fetched block id=${id}`)),
         catchError(this.handleError<Block>(`getBlock id=${id}`))
@@ -35,7 +40,7 @@ export class ApiService {
   }
 
   public getTxs(): Observable<Tx[]> {
-    return this.http.get<Tx[]>('api/txs')
+    return this.http.get<Tx[]>(this.apiServer + '/txs')
       .pipe(
         tap(_ => this.log('fetched txs')),
         catchError(this.handleError('getTxs', []))
@@ -43,7 +48,7 @@ export class ApiService {
   }
 
   public getTx(id: number): Observable<Tx> {
-    return this.http.get<Tx>(`api/txs/${id}`)
+    return this.http.get<Tx>(this.apiServer + `/txs/${id}`)
       .pipe(
         tap(_ => this.log(`fetched tx id=${id}`)),
         catchError(this.handleError<Tx>(`getTx id=${id}`))
@@ -51,7 +56,7 @@ export class ApiService {
   }
 
   public getAssets(): Observable<Asset[]> {
-    return this.http.get<Asset[]>('api/assets')
+    return this.http.get<Asset[]>(this.apiServer + '/assets')
       .pipe(
         tap(_ => this.log('fetched assets')),
         catchError(this.handleError('getAssets', []))
@@ -59,7 +64,7 @@ export class ApiService {
   }
 
   public getAsset(id: number): Observable<Asset> {
-    return this.http.get<Asset>(`api/assets/${id}`)
+    return this.http.get<Asset>(this.apiServer + `/assets/${id}`)
       .pipe(
         tap(_ => this.log(`fetched asset id=${id}`)),
         catchError(this.handleError<Asset>(`getAsset id=${id}`))
@@ -67,7 +72,7 @@ export class ApiService {
   }
 
   public getAddresses(): Observable<Address[]> {
-    return this.http.get<Address[]>('api/addresses')
+    return this.http.get<Address[]>(this.apiServer + '/addresses')
       .pipe(
         tap(_ => this.log('fetched addresses')),
         catchError(this.handleError('getAddresses', []))
@@ -75,7 +80,7 @@ export class ApiService {
   }
 
   public getAddress(id: number): Observable<Address> {
-    return this.http.get<Address>(`api/addresses/${id}`)
+    return this.http.get<Address>(this.apiServer + `/addresses/${id}`)
       .pipe(
         tap(_ => this.log(`fetched address id=${id}`)),
         catchError(this.handleError<Address>(`getAddress id=${id}`))
@@ -83,7 +88,7 @@ export class ApiService {
   }
 
   public getNodes(): Observable<Node[]> {
-    return this.http.get<Node[]>('api/nodes')
+    return this.http.get<Node[]>(this.apiServer + '/nodes')
       .pipe(
         tap(_ => this.log('fetched nodes')),
         catchError(this.handleError('getNodes', []))
@@ -91,7 +96,7 @@ export class ApiService {
   }
 
   public getNode(id: number): Observable<Node> {
-    return this.http.get<Node>(`api/nodes/${id}`)
+    return this.http.get<Node>(this.apiServer + `/nodes/${id}`)
       .pipe(
         tap(_ => this.log(`fetched node id=${id}`)),
         catchError(this.handleError<Node>(`getNode id=${id}`))
@@ -99,7 +104,7 @@ export class ApiService {
   }
 
   public getStatus(): Observable<NetworkStatus> {
-    return this.http.get<NetworkStatus>('api/status')
+    return this.http.get<NetworkStatus>(this.apiServer + '/status')
       .pipe(
         tap(_ => this.log('fetched status')),
         catchError(this.handleError<NetworkStatus>('getStatus'))

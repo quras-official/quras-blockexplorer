@@ -22,6 +22,7 @@
     $ ng new app
     $ cd app
     $ ng serve --open
+</pre>
 
 3. Generate Components.
 
@@ -31,6 +32,15 @@
     $ ng generate component block/blocks
     $ ng generate component block/block
 
+</pre>
+
+4. Environment
+
+production, development, staging
+
+    <pre>
+    $ ng serve --configuration=sandbox
+    $ ng build --configuration=sandbox
 </pre>
 
 # See Also
