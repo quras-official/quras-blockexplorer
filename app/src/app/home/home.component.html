@@ -54,7 +54,7 @@
               <tr *ngFor="let tx of txs">
                 <td>{{ tx.type }}</td>
                 <td><a [routerLink]="['/txs', tx.txid]">{{ tx.txid }}</a></td>
-                <td>{{ tx.block_time | amFromUtc | amTimeAgo }}</td>
+                <td>{{ tx.block_time * 1000 | amFromUtc | amTimeAgo }}</td>
               </tr>
             </tbody>
           </table>

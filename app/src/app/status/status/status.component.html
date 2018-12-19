@@ -1,0 +1,37 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center mb-1">
+          <h2 class="section-heading">Network Info</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <table class="table" *ngIf="status">
+          <tbody>
+            <tr>
+              <th scope="row">Network</th>
+              <td>{{ status.network }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Version</th>
+              <td>{{ status.version | number }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Chain ID</th>
+              <td>{{ status.chain_id }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Blocks</th>
+              <td>{{ status.last_block_height | number }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Recent Block Time</th>
+              <td>{{ status.last_block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

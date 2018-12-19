@@ -9,6 +9,7 @@ import { Tx } from '../models/tx';
 import { Asset } from '../models/asset';
 import { Address } from '../models/address';
 import { Node } from '../models/node';
+import { NetworkStatus } from '../models/network-status';
 
 @Injectable({
   providedIn: 'root'
@@ -94,6 +95,14 @@ export class ApiService {
       .pipe(
         tap(_ => this.log(`fetched node id=${id}`)),
         catchError(this.handleError<Node>(`getNode id=${id}`))
+      );
+  }
+
+  public getStatus(): Observable<NetworkStatus> {
+    return this.http.get<NetworkStatus>('api/status')
+      .pipe(
+        tap(_ => this.log('fetched status')),
+        catchError(this.handleError<NetworkStatus>('getStatus'))
       );
   }
 

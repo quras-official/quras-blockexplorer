@@ -1,5 +1,4 @@
 export class Node {
-
     public readonly id: string;
     public readonly account: string;
     public readonly public_key: string;

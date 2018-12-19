@@ -10,7 +10,7 @@ import { Node } from 'src/app/models/node';
 })
 export class NodeComponent implements OnInit {
 
-  public node: Node;
+  node: Node;
 
   constructor(
     private route: ActivatedRoute,

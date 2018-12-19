@@ -1,5 +1,4 @@
 export class Address {
-
     public readonly address: string;
     public readonly block_time: number;
     public readonly last_block_time: number;
