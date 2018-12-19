@@ -5,7 +5,8 @@
 export const environment = {
   env: 'sandbox',
   production: false,
-  apiServer: '/api'
+  apiServer: '/api',
+  network: 'testnet'
 };
 
 /*
