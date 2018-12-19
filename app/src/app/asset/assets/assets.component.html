@@ -18,7 +18,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let asset of assets">
-              <td><a [routerLink]="['/assets', asset.id]">{{ asset.name }}</a></td>
+              <td><a [routerLink]="['/assets', asset.hash]">{{ asset.name }}</a></td>
               <td>{{ asset.symbol }}</td>
               <td>{{ asset.type }}</td>
               <td>{{ asset.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>

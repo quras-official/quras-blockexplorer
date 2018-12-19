@@ -17,7 +17,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let node of nodes">
-                <td><a [routerLink]="['/nodes', node.id]">{{ node.account }}</a></td>
+                <td><a [routerLink]="['/nodes', node.account]">{{ node.account }}</a></td>
                 <td><a href="{{ node.url }}">{{ node.url }}</a></td>
                 <td class="text-right">{{ node.votes | number }}</td>
                 <td class="text-right">{{ node.votes_percent | number:'1.0-2' }}</td>
