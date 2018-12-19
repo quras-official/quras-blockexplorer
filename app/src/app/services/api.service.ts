@@ -23,11 +23,11 @@ export class ApiService {
     this.apiServer = environment.apiServer;
   }
 
-  public getBlocks(): Observable<any> {
-    return this.http.get<any>(this.apiServer + '/blocks')
+  public getBlocks(offset: number, limit: number): Observable<any> {
+    return this.http.get<any>(this.apiServer + `/blocks/${offset}/${limit}`)
       .pipe(
         tap(_ => this.log('fetched blockes')),
-        catchError(this.handleError('getBlocks', []))
+        catchError(this.handleError(`getBlocks offset=${offset},limit=${limit}`, []))
       );
   }
 
@@ -55,11 +55,11 @@ export class ApiService {
       );
   }
 
-  public getAssets(): Observable<any> {
-    return this.http.get<any>(this.apiServer + '/assets')
+  public getAssets(offset: number, limit: number): Observable<any> {
+    return this.http.get<any>(this.apiServer + `/assets/${offset}/${limit}`)
       .pipe(
         tap(_ => this.log('fetched assets')),
-        catchError(this.handleError('getAssets', []))
+        catchError(this.handleError(`getAssets offset=${offset},limit=${limit}`, []))
       );
   }
 
@@ -71,11 +71,11 @@ export class ApiService {
       );
   }
 
-  public getAddresses(): Observable<any> {
-    return this.http.get<any>(this.apiServer + '/addresses')
+  public getAddresses(offset: number, limit: number): Observable<any> {
+    return this.http.get<any>(this.apiServer + `/addresses/${offset}/${limit}`)
       .pipe(
         tap(_ => this.log('fetched addresses')),
-        catchError(this.handleError('getAddresses', []))
+        catchError(this.handleError(`getAddresses offset=${offset},limit=${limit}`, []))
       );
   }
 
@@ -87,11 +87,11 @@ export class ApiService {
       );
   }
 
-  public getNodes(): Observable<any> {
-    return this.http.get<any>(this.apiServer + '/nodes')
+  public getNodes(offset: number, limit: number): Observable<any> {
+    return this.http.get<any>(this.apiServer + `/nodes/${offset}/${limit}`)
       .pipe(
         tap(_ => this.log('fetched nodes')),
-        catchError(this.handleError('getNodes', []))
+        catchError(this.handleError(`getNodes offset=${offset},limit=${limit}`, []))
       );
   }
 

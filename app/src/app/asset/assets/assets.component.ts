@@ -24,7 +24,7 @@ export class AssetsComponent implements OnInit {
   }
 
   getAssets(): void {
-    this.apiService.getAssets()
+    this.apiService.getAssets((this.page - 1) * this.pageSize, this.pageSize)
     .subscribe(res => {
       this.assets = res.assets;
       this.total = res.total;

@@ -24,7 +24,7 @@ export class NodesComponent implements OnInit {
   }
 
   getNodes(): void {
-    this.apiService.getNodes()
+    this.apiService.getNodes((this.page - 1) * this.pageSize, this.pageSize)
     .subscribe(res => {
       this.nodes = res.nodes;
       this.total = res.total;

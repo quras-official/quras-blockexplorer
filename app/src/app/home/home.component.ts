@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   getBlocks(): void {
-    this.apiService.getBlocks()
+    this.apiService.getBlocks(0, 10)
     .subscribe(res => {
       this.blocks = res.blocks;
     });

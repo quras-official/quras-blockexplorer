@@ -24,7 +24,7 @@ export class AddressesComponent implements OnInit {
   }
 
   getAddresses(): void {
-    this.apiService.getAddresses()
+    this.apiService.getAddresses((this.page - 1) * this.pageSize, this.pageSize)
     .subscribe(res => {
       this.addresses = res.addresses;
       this.total = res.total;

@@ -24,7 +24,7 @@ export class BlocksComponent implements OnInit {
   }
 
   getBlocks(): void {
-    this.apiService.getBlocks()
+    this.apiService.getBlocks((this.page - 1) * this.pageSize, this.pageSize)
     .subscribe(res => {
       this.blocks = res.blocks;
       this.total = res.total;
