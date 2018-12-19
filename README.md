@@ -36,12 +36,20 @@
 
 4. Environment
 
-production, development, staging
+    production, development, staging
 
     <pre>
     $ ng serve --configuration=sandbox
     $ ng build --configuration=sandbox
 </pre>
+
+# Features
+
+1. show page loading
+
+2. fix block detail page's previous block
+
+3. translation in all pages
 
 # See Also
 https://angular.io/guide/quickstart

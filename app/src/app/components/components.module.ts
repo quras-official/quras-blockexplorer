@@ -4,12 +4,14 @@ import { ShareModule } from '../share/share.module';
 import { TransfersComponent } from './transfers/transfers.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { AddressesComponent } from './addresses/addresses.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
     declarations: [
         TransfersComponent,
         TransactionsComponent,
-        AddressesComponent
+        AddressesComponent,
+        SearchComponent
     ],
     imports: [
         ShareModule,
@@ -18,7 +20,8 @@ import { AddressesComponent } from './addresses/addresses.component';
     exports: [
         TransfersComponent,
         TransactionsComponent,
-        AddressesComponent
+        AddressesComponent,
+        SearchComponent
     ]
 })
 export class ComponentsModule { }

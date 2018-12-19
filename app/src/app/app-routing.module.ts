@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { StatusComponent } from './status/status/status.component';
 import { StatusModule } from './status/status.module';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'addresses', loadChildren: './address/address.module#AddressModule' },
   { path: 'nodes', loadChildren: './node/node.module#NodeModule' },
   { path: 'assets', loadChildren: './asset/asset.module#AssetModule' },
-  { path: 'status', component: StatusComponent }
+  { path: 'status', component: StatusComponent },
+  { path: 'search', component: SearchComponent }
 ];
 
 @NgModule({

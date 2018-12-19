@@ -10,12 +10,12 @@
         <ul class="navbar-nav mr-auto">
           <li ngbDropdown class="nav-item dropdown">
             <a ngbDropdownToggle class="nav-link dropdown-toggle" [routerLink]="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Blocks
+              {{ 'Blocks' | translate }}
             </a>
             <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" routerLink="/blocks">{{ 'Blocks' | translate }}</a>
               <a class="dropdown-item" routerLink="/txs">{{ 'Transactions' | translate }}</a>
-              <a class="dropdown-item" routerLink="/status">Network Status</a>
+              <a class="dropdown-item" routerLink="/status">{{ 'Network Status' | translate }}</a>
             </div>
           </li>
           <li class="nav-item">
@@ -31,8 +31,8 @@
             <a class="nav-link js-scroll-trigger" href="/api_v1.html">{{ 'API' | translate }}</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2 search-btn" type="search" placeholder="Search for block, transaction or address" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" (ngSubmit)="search()">
+          <input class="form-control mr-sm-2 search-btn" type="search" placeholder="Search for block height, hash, txid or address" aria-label="Search" [(ngModel)]="q" name="search">
           <button class="btn btn-success my-2 my-sm-0" type="submit">{{ 'Search' | translate }}</button>
         </form>
       </div>

@@ -16,6 +16,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { environment } from 'src/environments/environment';
 import { ShareModule } from './share/share.module';
+import { ComponentsModule } from './components/components.module';
+import { FormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -31,6 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ComponentsModule,
 
     TranslateModule.forRoot({
       loader: {
