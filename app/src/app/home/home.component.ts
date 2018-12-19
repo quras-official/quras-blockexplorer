@@ -24,12 +24,16 @@ export class HomeComponent implements OnInit {
 
   getBlocks(): void {
     this.apiService.getBlocks()
-    .subscribe(blocks => this.blocks = blocks);
+    .subscribe(res => {
+      this.blocks = res.blocks;
+    });
   }
 
   getTxs(): void {
     this.apiService.getTxs()
-    .subscribe(txs => this.txs = txs);
+    .subscribe(res => {
+      this.txs = res.txs;
+    });
   }
 
 }

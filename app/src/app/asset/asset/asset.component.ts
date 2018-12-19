@@ -18,7 +18,7 @@ export class AssetComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.apiService.getAsset(id)
       .subscribe(asset => {
         this.asset = asset;

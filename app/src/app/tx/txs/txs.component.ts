@@ -25,9 +25,9 @@ export class TxsComponent implements OnInit {
 
   getTxs(): void {
     this.apiService.getTxs()
-    .subscribe(txs => {
-      this.txs = txs;
-      this.total = txs.length * 20;
+    .subscribe(res => {
+      this.txs = res.txs;
+      this.total = res.total;
     });
   }
 

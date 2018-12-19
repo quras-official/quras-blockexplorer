@@ -18,7 +18,7 @@ export class NodeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.apiService.getNode(id)
       .subscribe(node => this.node = node);
   }

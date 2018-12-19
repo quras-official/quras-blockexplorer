@@ -18,7 +18,7 @@ export class AddressComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.apiService.getAddress(id)
       .subscribe(address => {
         this.address = address;

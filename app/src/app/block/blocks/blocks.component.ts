@@ -25,9 +25,9 @@ export class BlocksComponent implements OnInit {
 
   getBlocks(): void {
     this.apiService.getBlocks()
-    .subscribe(blocks => {
-      this.blocks = blocks;
-      this.total = blocks.length * 20;
+    .subscribe(res => {
+      this.blocks = res.blocks;
+      this.total = res.total;
     });
   }
 

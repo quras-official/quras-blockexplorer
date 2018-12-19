@@ -25,9 +25,9 @@ export class AssetsComponent implements OnInit {
 
   getAssets(): void {
     this.apiService.getAssets()
-    .subscribe(assets => {
-      this.assets = assets;
-      this.total = assets.length * 20;
+    .subscribe(res => {
+      this.assets = res.assets;
+      this.total = res.total;
     });
   }
 

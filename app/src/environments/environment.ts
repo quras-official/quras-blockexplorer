@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  env: 'sandbox',
+  env: 'development',
   production: false,
-  apiServer: '/api'
+  apiServer: 'http://192.168.1.90:3000/v1'
 };
 
 /*

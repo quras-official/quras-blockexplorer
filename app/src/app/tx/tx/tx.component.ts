@@ -19,7 +19,7 @@ export class TxComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.apiService.getTx(id)
       .subscribe(tx => this.tx = tx);
   }

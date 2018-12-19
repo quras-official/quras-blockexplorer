@@ -25,9 +25,9 @@ export class NodesComponent implements OnInit {
 
   getNodes(): void {
     this.apiService.getNodes()
-    .subscribe(nodes => {
-      this.nodes = nodes;
-      this.total = nodes.length * 20;
+    .subscribe(res => {
+      this.nodes = res.nodes;
+      this.total = res.total;
     });
   }
 
