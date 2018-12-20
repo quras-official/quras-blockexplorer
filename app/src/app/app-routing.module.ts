@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { StatusComponent } from './status/status/status.component';
-import { StatusModule } from './status/status.module';
-import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,15 +9,16 @@ const routes: Routes = [
   { path: 'addresses', loadChildren: './address/address.module#AddressModule' },
   { path: 'nodes', loadChildren: './node/node.module#NodeModule' },
   { path: 'assets', loadChildren: './asset/asset.module#AssetModule' },
-  { path: 'status', component: StatusComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'status', loadChildren: './status/status.module#StatusModule' },
+  { path: 'search', loadChildren: './search/search.module#SearchModule' }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
-    StatusModule
+    RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }

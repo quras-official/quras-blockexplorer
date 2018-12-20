@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('called');
     this.query$ = this.route.queryParams.pipe(
       map(queryParams => queryParams.q)
     );
@@ -37,7 +36,6 @@ export class SearchComponent implements OnInit {
   private tryBlockHeight(query: string): Observable<string> {
     const blockHeight = Number(query);
     if (!isNaN(blockHeight)) {
-      console.log('tryBlockHeight');
       return this.apiService.getBlock(blockHeight).pipe(
         catchError(() => of(null)),
         switchMap(data => {
