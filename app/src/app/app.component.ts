@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -10,11 +9,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
 
   title = 'QURAS BLOCKEXPLORER';
-  q: string;
 
   constructor(
-    private translate: TranslateService,
-    private router: Router
+    private translate: TranslateService
   ) {
     translate.addLangs(['en', 'ja']);
     translate.setDefaultLang('en');
@@ -25,12 +22,5 @@ export class AppComponent {
 
   setLang(lang: string): void {
     this.translate.use(lang);
-  }
-
-  search(): void {
-    this.router.navigate(['/search'], {
-      queryParams: { q: this.q }
-    });
-    this.q = '';
   }
 }

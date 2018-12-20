@@ -31,10 +31,7 @@
             <a class="nav-link js-scroll-trigger" href="/api_v1.html">{{ 'API' | translate }}</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" (ngSubmit)="search()">
-          <input class="form-control mr-sm-2 search-btn" type="search" placeholder="Search for block height, hash, txid or address" aria-label="Search" [(ngModel)]="q" name="search">
-          <button class="btn btn-success my-2 my-sm-0" type="submit">{{ 'Search' | translate }}</button>
-        </form>
+        <app-search-nav></app-search-nav>
       </div>
     </div>
   </nav>
