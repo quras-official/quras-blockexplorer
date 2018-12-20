@@ -43,13 +43,11 @@
     $ ng build --configuration=sandbox
 </pre>
 
-# Features
+# Todo
 
 1. show page loading
 
 2. fix block detail page's previous block
-
-3. translation in all pages
 
 # See Also
 https://angular.io/guide/quickstart
@@ -57,3 +55,13 @@ https://angular.io/guide/quickstart
 https://angular.io/tutorial/
 
 https://angular.io/api
+
+https://www.npmjs.com/package/ngx-moment
+
+https://www.npmjs.com/package/ngx-webstorage
+
+Angular BlockExplorer Source
+
+- https://github.com/EOSEssentials/EOSTracker
+
+- https://github.com/bitpay/insight
