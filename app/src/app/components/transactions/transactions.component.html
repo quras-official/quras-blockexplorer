@@ -2,16 +2,16 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center mb-1">
-          <h2 class="section-heading">Transactions</h2>
+          <h2 class="section-heading">{{ 'Transactions' | translate }}</h2>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12">
         <table class="table">
           <thead>
-            <th scope="col">Type</th>
-            <th scope="col">Transaction ID</th>
-            <th scope="col">Completed on</th>
+            <th scope="col">{{ 'Type' | translate }}</th>
+            <th scope="col">{{ 'Transaction ID' | translate }}</th>
+            <th scope="col">{{ 'Completed on' | translate }}</th>
             <th scope="col"></th>
           </thead>
           <tbody>
@@ -19,7 +19,7 @@
               <td>{{ tx.type }}</td>
               <td><a [routerLink]="['/txs', tx.txid]">{{ tx.txid }}</a></td>
               <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
-              <td>Show/Hide</td>
+              <td>{{ 'Show/Hide' | translate }}</td>
             </tr>
           </tbody>
         </table>

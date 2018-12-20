@@ -2,18 +2,18 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center mb-1">
-            <h2 class="section-heading">Nodes</h2>
+            <h2 class="section-heading">{{ 'Nodes' | translate }}</h2>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <table class="table">
             <thead>
-              <th scope="col">Name</th>
-              <th scope="col">Url</th>
-              <th scope="col" class="text-right">Votes</th>
+              <th scope="col">{{ 'Name' | translate }}</th>
+              <th scope="col">{{ 'Url' | translate }}</th>
+              <th scope="col" class="text-right">{{ 'Votes' | translate }}</th>
               <th scope="col" class="text-right">%</th>
-              <th scope="col" class="text-right">Daily Reward</th>
+              <th scope="col" class="text-right">{{ 'Daily Reward' | translate }}</th>
             </thead>
             <tbody>
               <tr *ngFor="let node of nodes">

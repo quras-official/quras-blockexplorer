@@ -2,18 +2,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center mb-1">
-          <h2 class="section-heading">Blocks</h2>
+          <h2 class="section-heading">{{ 'Blocks' | translate }}</h2>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12">
         <table class="table">
           <thead>
-            <th scope="col">Height</th>
-            <th scope="col">Time</th>
-            <th scope="col" class="text-right">Transactions</th>
-            <th scope="col">Validator</th>
-            <th scope="col" class="text-right">Size</th>
+            <th scope="col">{{ 'Height' | translate }}</th>
+            <th scope="col">{{ 'Time' | translate }}</th>
+            <th scope="col" class="text-right">{{ 'Transactions' | translate }}</th>
+            <th scope="col">{{ 'Producer' | translate }}</th>
+            <th scope="col" class="text-right">{{ 'Size' | translate }}</th>
           </thead>
           <tbody>
             <tr *ngFor="let block of blocks">

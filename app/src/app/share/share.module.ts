@@ -5,11 +5,13 @@ import { MomentModule } from 'ngx-moment';
 
 import { ToKbPipes } from './pipes/tokb.pipes';
 import { CutStringPipe } from './pipes/cut.pipes';
+import { TranslateModule } from '@ngx-translate/core';
 
 const sharedModules = [
   CommonModule,
   NgbPaginationModule,
-  MomentModule
+  MomentModule,
+  TranslateModule
 ];
 
 const sharedComponents = [
