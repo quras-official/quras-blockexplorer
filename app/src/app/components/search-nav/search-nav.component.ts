@@ -15,7 +15,6 @@ export class SearchNavComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('search-nav called');
     this.q = '';
   }
 
