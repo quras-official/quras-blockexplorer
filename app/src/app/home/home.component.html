@@ -2,18 +2,18 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center mb-1">
-            <h2 class="section-heading">Recent Blocks</h2>
+            <h2 class="section-heading">{{ 'Recent Blocks' | translate }}</h2>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <table class="table">
             <thead>
-              <th scope="col">Height</th>
-              <th scope="col">Time</th>
-              <th scope="col">Transactions</th>
-              <th scope="col">Validator</th>
-              <th scope="col">Size</th>
+              <th scope="col">{{ 'Height' | translate }}</th>
+              <th scope="col">{{ 'Time' | translate }}</th>
+              <th scope="col">{{ 'Transactions' | translate }}</th>
+              <th scope="col">{{ 'Producer' | translate }}</th>
+              <th scope="col">{{ 'Size' | translate }}</th>
             </thead>
             <tbody>
               <tr *ngFor="let block of blocks">
@@ -29,7 +29,7 @@
       </div>
       <div class="row">
         <div class="col-lg-12 text-center">
-          <a routerLink="/blocks" class="btn btn-primary"><span>See All</span></a>
+          <a routerLink="/blocks" class="btn btn-primary"><span>{{ 'See All' | translate }}</span></a>
         </div>
       </div>
     </div>
@@ -39,16 +39,16 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center mb-1">
-            <h2 class="section-heading">Recent Transactions</h2>
+            <h2 class="section-heading">{{ 'Recent Transactions' | translate }}</h2>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <table class="table">
             <thead>
-              <th scope="col">Type</th>
-              <th scope="col">Transaction ID</th>
-              <th scope="col">Completed on</th>
+              <th scope="col">{{ 'Type' | translate }}</th>
+              <th scope="col">{{ 'Transaction ID' | translate }}</th>
+              <th scope="col">{{ 'Completed on' | translate }}</th>
             </thead>
             <tbody>
               <tr *ngFor="let tx of txs">
@@ -62,7 +62,7 @@
       </div>
       <div class="row">
         <div class="col-lg-12 text-center">
-          <a routerLink="/txs" class="btn btn-primary"><span>See All</span></a>
+          <a routerLink="/txs" class="btn btn-primary"><span>{{ 'See All' | translate }}</span></a>
         </div>
       </div>
     </div>

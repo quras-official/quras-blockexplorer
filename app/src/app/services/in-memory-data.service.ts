@@ -702,9 +702,7 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const status = {
-      network: 'mainnet',
       version: 2,
-      chain_id: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
       last_block_height: 31723617,
       last_block_time: 1542683357
     };

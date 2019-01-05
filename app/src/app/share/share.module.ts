@@ -1,18 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { MomentModule } from 'ngx-moment';
 
 import { ToKbPipes } from './pipes/tokb.pipes';
 import { CutStringPipe } from './pipes/cut.pipes';
+import { TranslateModule } from '@ngx-translate/core';
+import { SearchComponent } from '../search/search/search.component';
+import { SpinnerComponent } from '../components/spinner/spinner.component';
 
 const sharedModules = [
   CommonModule,
+  FormsModule,
+  ReactiveFormsModule,
   NgbPaginationModule,
-  MomentModule
+  MomentModule,
+  TranslateModule
 ];
 
 const sharedComponents = [
+  SearchComponent,
+  SpinnerComponent
 ];
 
 const sharedPipes = [
@@ -22,13 +31,15 @@ const sharedPipes = [
 
 @NgModule({
   declarations: [
-    sharedPipes
+    sharedPipes,
+    sharedComponents
   ],
   imports: [
     sharedModules
   ],
   exports: [
     sharedModules,
+    sharedComponents,
     sharedPipes
   ]
 })

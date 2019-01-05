@@ -31,7 +31,7 @@ export class ApiService {
       );
   }
 
-  public getBlock(id: number): Observable<Block> {
+  public getBlock(id: number | string): Observable<Block> {
     return this.http.get<Block>(this.apiServer + `/blocks/${id}`)
       .pipe(
         tap(_ => this.log(`fetched block id=${id}`)),
@@ -47,7 +47,7 @@ export class ApiService {
       );
   }
 
-  public getTx(id: string): Observable<Tx> {
+  public getTx(id: number | string): Observable<Tx> {
     return this.http.get<Tx>(this.apiServer + `/txs/${id}`)
       .pipe(
         tap(_ => this.log(`fetched tx id=${id}`)),
@@ -63,7 +63,7 @@ export class ApiService {
       );
   }
 
-  public getAsset(id: string): Observable<Asset> {
+  public getAsset(id: number | string): Observable<Asset> {
     return this.http.get<Asset>(this.apiServer + `/assets/${id}`)
       .pipe(
         tap(_ => this.log(`fetched asset id=${id}`)),
@@ -79,7 +79,7 @@ export class ApiService {
       );
   }
 
-  public getAddress(id: string): Observable<Address> {
+  public getAddress(id: number | string): Observable<Address> {
     return this.http.get<Address>(this.apiServer + `/addresses/${id}`)
       .pipe(
         tap(_ => this.log(`fetched address id=${id}`)),
@@ -95,7 +95,7 @@ export class ApiService {
       );
   }
 
-  public getNode(id: string): Observable<Node> {
+  public getNode(id: number | string): Observable<Node> {
     return this.http.get<Node>(this.apiServer + `/nodes/${id}`)
       .pipe(
         tap(_ => this.log(`fetched node id=${id}`)),
