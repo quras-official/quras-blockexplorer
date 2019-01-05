@@ -10,7 +10,7 @@ import { Asset } from '../models/asset';
 import { Address } from '../models/address';
 import { Node } from '../models/node';
 import { NetworkStatus } from '../models/network-status';
-import { environment } from 'src/environments/environment.dev';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'

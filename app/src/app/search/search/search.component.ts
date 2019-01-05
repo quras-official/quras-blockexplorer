@@ -3,6 +3,7 @@ import { Observable, empty, of } from 'rxjs';
 import { catchError, switchMap, tap, map } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -14,12 +15,15 @@ export class SearchComponent implements OnInit {
 
   query$: Observable<string>;
   result$: Observable<string>;
+  private apiServer: string;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private http: HttpClient
-  ) { }
+  ) {
+    this.apiServer = environment.apiServer;
+  }
 
   ngOnInit() {
     this.query$ = this.route.queryParams.pipe(
@@ -37,7 +41,7 @@ export class SearchComponent implements OnInit {
   private tryBlockHeight(query: string): Observable<string> {
     const blockHeight = Number(query);
     if (!isNaN(blockHeight)) {
-      return this.http.get(`api/blocks/${blockHeight}`).pipe(
+      return this.http.get(this.apiServer + `/blocks/${blockHeight}`).pipe(
         catchError(() => of(null)),
         switchMap(data => {
           if (data) {
@@ -53,7 +57,7 @@ export class SearchComponent implements OnInit {
 
   private tryTransaction(query: string): Observable<string> {
     if (query.length === 64) {
-      return this.http.get(`api/txs/${query}`).pipe(
+      return this.http.get(this.apiServer + `/txs/${query}`).pipe(
         catchError(() => of(null)),
         switchMap(transaction => {
           if (transaction) {
@@ -69,7 +73,7 @@ export class SearchComponent implements OnInit {
 
   private tryBlockHash(query: string): Observable<string> {
     if (query.length === 64) {
-      return this.http.get(`api/blocks/${query}`).pipe(
+      return this.http.get(this.apiServer + `/blocks/${query}`).pipe(
         catchError(() => of(null)),
         switchMap(block => {
           if (block) {
@@ -85,7 +89,7 @@ export class SearchComponent implements OnInit {
 
   private tryAddress(query: string): Observable<string> {
     if (query.length <= 12) {
-      return this.http.get(`api/addresses/${query}`).pipe(
+      return this.http.get(this.apiServer + `/addresses/${query}`).pipe(
         catchError(() => of(null)),
         switchMap(address => {
           if (address) {
