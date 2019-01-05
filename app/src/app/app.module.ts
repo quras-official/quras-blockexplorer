@@ -20,7 +20,6 @@ import { environment } from 'src/environments/environment';
 import { ShareModule } from './share/share.module';
 import { ComponentsModule } from './components/components.module';
 import { StatusModule } from './status/status.module';
-import { SearchModule } from './search/search.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -38,7 +37,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     ComponentsModule,
     StatusModule,
-    SearchModule,
 
     NgxWebstorageModule.forRoot(),
 

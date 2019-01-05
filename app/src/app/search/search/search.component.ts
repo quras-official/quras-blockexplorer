@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, empty, of } from 'rxjs';
 import { catchError, switchMap, tap, map } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from 'src/app/services/api.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-search',
@@ -17,7 +18,7 @@ export class SearchComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private apiService: ApiService
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
@@ -36,7 +37,7 @@ export class SearchComponent implements OnInit {
   private tryBlockHeight(query: string): Observable<string> {
     const blockHeight = Number(query);
     if (!isNaN(blockHeight)) {
-      return this.apiService.getBlock(blockHeight).pipe(
+      return this.http.get(`api/blocks/${blockHeight}`).pipe(
         catchError(() => of(null)),
         switchMap(data => {
           if (data) {
@@ -52,7 +53,7 @@ export class SearchComponent implements OnInit {
 
   private tryTransaction(query: string): Observable<string> {
     if (query.length === 64) {
-      return this.apiService.getTx(query).pipe(
+      return this.http.get(`api/txs/${query}`).pipe(
         catchError(() => of(null)),
         switchMap(transaction => {
           if (transaction) {
@@ -68,7 +69,7 @@ export class SearchComponent implements OnInit {
 
   private tryBlockHash(query: string): Observable<string> {
     if (query.length === 64) {
-      return this.apiService.getBlock(query).pipe(
+      return this.http.get(`api/blocks/${query}`).pipe(
         catchError(() => of(null)),
         switchMap(block => {
           if (block) {
@@ -84,7 +85,7 @@ export class SearchComponent implements OnInit {
 
   private tryAddress(query: string): Observable<string> {
     if (query.length <= 12) {
-      return this.apiService.getAddress(query).pipe(
+      return this.http.get(`api/addresses/${query}`).pipe(
         catchError(() => of(null)),
         switchMap(address => {
           if (address) {

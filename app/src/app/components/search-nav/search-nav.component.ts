@@ -20,10 +20,12 @@ export class SearchNavComponent implements OnInit {
   }
 
   search(): void {
-    this.router.navigate(['/search'], {
-      queryParams: { q: this.q }
-    });
-    this.q = '';
+    if (this.q) {
+      this.router.navigate(['/search'], {
+        queryParams: { q: this.q }
+      });
+      this.q = '';
+    }
   }
 
 }

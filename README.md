@@ -1,5 +1,8 @@
 # Introduction
 
+# Dependencies
+angular 7.x
+
 # Installation
 
 # Make Project History
@@ -49,12 +52,16 @@
 
 2. fix block detail page's previous block
 
+3. responsive to mobile
+
 # See Also
 https://angular.io/guide/quickstart
 
 https://angular.io/tutorial/
 
 https://angular.io/api
+
+https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap
 
 https://www.npmjs.com/package/ngx-moment
 
