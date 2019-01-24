@@ -23,11 +23,18 @@ export class ApiService {
     this.apiServer = environment.apiServer;
   }
 
-  public getBlocks(offset: number, limit: number): Observable<any> {
-    return this.http.get<any>(this.apiServer + `/blocks/${offset}/${limit}`)
+  public getBlocks(offset: Number, limit: Number): Observable<Block[]> {
+    if (!offset && !limit){
+      return this.http.get<Block[]>(this.apiServer + '/blocks')
       .pipe(
         tap(_ => this.log('fetched blockes')),
-        catchError(this.handleError(`getBlocks offset=${offset},limit=${limit}`, []))
+        catchError(this.handleError('getBlocks', []))
+      );
+    }
+    return this.http.get<Block[]>(this.apiServer + '/blocks/' + offset + '/' + limit)
+      .pipe(
+        tap(_ => this.log('fetched blockes')),
+        catchError(this.handleError('getBlocks', []))
       );
   }
 
@@ -39,8 +46,8 @@ export class ApiService {
       );
   }
 
-  public getTxs(): Observable<any> {
-    return this.http.get<any>(this.apiServer + '/txs')
+  public getTxs(): Observable<Tx[]> {
+    return this.http.get<Tx[]>(this.apiServer + '/txs')
       .pipe(
         tap(_ => this.log('fetched txs')),
         catchError(this.handleError('getTxs', []))
@@ -55,11 +62,18 @@ export class ApiService {
       );
   }
 
-  public getAssets(offset: number, limit: number): Observable<any> {
-    return this.http.get<any>(this.apiServer + `/assets/${offset}/${limit}`)
+  public getAssets(offset: Number, limit: Number): Observable<Asset[]> {
+    if (!offset && !limit){
+      return this.http.get<Asset[]>(this.apiServer + '/assets')
       .pipe(
         tap(_ => this.log('fetched assets')),
-        catchError(this.handleError(`getAssets offset=${offset},limit=${limit}`, []))
+        catchError(this.handleError('getAssets', []))
+      );
+    }
+    return this.http.get<Asset[]>(this.apiServer + '/assets/' + offset + '/' + limit)
+      .pipe(
+        tap(_ => this.log('fetched assets')),
+        catchError(this.handleError('getAssets', []))
       );
   }
 
@@ -71,11 +85,11 @@ export class ApiService {
       );
   }
 
-  public getAddresses(offset: number, limit: number): Observable<any> {
-    return this.http.get<any>(this.apiServer + `/addresses/${offset}/${limit}`)
+  public getAddresses(): Observable<Address[]> {
+    return this.http.get<Address[]>(this.apiServer + '/addresses')
       .pipe(
         tap(_ => this.log('fetched addresses')),
-        catchError(this.handleError(`getAddresses offset=${offset},limit=${limit}`, []))
+        catchError(this.handleError('getAddresses', []))
       );
   }
 
@@ -87,11 +101,18 @@ export class ApiService {
       );
   }
 
-  public getNodes(offset: number, limit: number): Observable<any> {
-    return this.http.get<any>(this.apiServer + `/nodes/${offset}/${limit}`)
+  public getNodes(offset: Number, limit: Number): Observable<Node[]> {
+    if (!offset && !limit){
+      return this.http.get<Node[]>(this.apiServer + '/nodes')
       .pipe(
         tap(_ => this.log('fetched nodes')),
-        catchError(this.handleError(`getNodes offset=${offset},limit=${limit}`, []))
+        catchError(this.handleError('getNodes', []))
+      );
+    }
+    return this.http.get<Node[]>(this.apiServer + '/nodes/' + offset + '/' + limit)
+      .pipe(
+        tap(_ => this.log('fetched nodes')),
+        catchError(this.handleError('getNodes', []))
       );
   }
 

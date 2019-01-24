@@ -13,7 +13,7 @@ export class AppComponent {
   @LocalStorage() lang;
 
   constructor(
-    private translate: TranslateService
+    private translate: TranslateService,
   ) {
 
     translate.addLangs(['en', 'ja']);

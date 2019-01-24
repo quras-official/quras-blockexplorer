@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Node } from 'src/app/models/node';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-nodes',
@@ -10,13 +11,14 @@ import { Node } from 'src/app/models/node';
 export class NodesComponent implements OnInit {
 
   nodes: Node[];
-  pageSize = 10;
+  pageSize = 20;
   maxSize = 5;
   total = 0;
   page = 1;
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
@@ -24,15 +26,23 @@ export class NodesComponent implements OnInit {
   }
 
   getNodes(): void {
-    this.apiService.getNodes((this.page - 1) * this.pageSize, this.pageSize)
-    .subscribe(res => {
-      this.nodes = res.nodes;
-      this.total = res.total;
+    this.ngxService.start();
+    this.apiService.getNodes(0, 0)
+    .subscribe((data: any) => {
+      this.nodes = data.nodes
+      this.total = data.total//nodes.length * 20;
+      this.ngxService.stop();
     });
   }
 
   onPaging(page: number) {
-    this.getNodes();
+    this.ngxService.start();
+    this.apiService.getNodes((page - 1) * this.pageSize + 1, this.pageSize)
+    .subscribe((data: any) => {
+      this.nodes = data.nodes
+      this.total = data.total//nodes.length * 20;
+      this.ngxService.stop();
+    });
   }
 
 }

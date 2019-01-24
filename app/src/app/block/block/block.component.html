@@ -5,7 +5,7 @@
           <h2 class="section-heading">{{ 'Block' | translate }} #{{ block.height }}</h2>
       </div>
     </div>
-    <div class="row" *ngIf="block; else loading">
+    <div class="row" *ngIf="block;">
       <table class="table">
         <tbody>
           <tr>
@@ -84,7 +84,7 @@
   </div>
 </section>
 
-<section class="pt-0">
+<section class="pt-0" *ngIf="block.script">
   <div class="container">
     <div class="row">
       <div class="col-lg-6" *ngIf="block.script.invocation">
@@ -112,6 +112,3 @@
     </div>
   </div>
 </section>
-<ng-template #loading>
-  <app-spinner></app-spinner>
-</ng-template>

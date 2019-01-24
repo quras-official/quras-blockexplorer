@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { Block } from '../models/block';
 import { Tx } from '../models/tx';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ export class HomeComponent implements OnInit {
   public txs: Tx[];
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
@@ -23,16 +25,20 @@ export class HomeComponent implements OnInit {
   }
 
   getBlocks(): void {
-    this.apiService.getBlocks(0, 10)
-    .subscribe(res => {
-      this.blocks = res.blocks;
+    this.ngxService.start();
+    this.apiService.getBlocks(0, 0)
+    .subscribe((data: any) => {
+      this.ngxService.stop();
+      this.blocks = data.blocks
     });
   }
 
   getTxs(): void {
+    // this.ngxService.startLoader('txs-loader');
     this.apiService.getTxs()
-    .subscribe(res => {
-      this.txs = res.txs;
+    .subscribe((data: any) => {
+      // this.ngxService.stopLoader('txs-loader');
+      this.txs = data.txs
     });
   }
 

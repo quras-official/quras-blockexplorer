@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Tx } from 'src/app/models/tx';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-txs',
@@ -16,7 +17,8 @@ export class TxsComponent implements OnInit {
   page = 1;
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
@@ -24,10 +26,12 @@ export class TxsComponent implements OnInit {
   }
 
   getTxs(): void {
+    this.ngxService.start();
     this.apiService.getTxs()
-    .subscribe(res => {
-      this.txs = res.txs;
-      this.total = res.total;
+    .subscribe((data: any) => {
+      this.txs = data.txs;
+      this.total = data.total;
+      this.ngxService.stop();
     });
   }
 

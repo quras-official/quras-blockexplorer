@@ -24,10 +24,10 @@ export class AddressesComponent implements OnInit {
   }
 
   getAddresses(): void {
-    this.apiService.getAddresses((this.page - 1) * this.pageSize, this.pageSize)
-    .subscribe(res => {
-      this.addresses = res.addresses;
-      this.total = res.total;
+    this.apiService.getAddresses()
+    .subscribe((data: any) => {
+      this.addresses = data.data.addresses;
+      this.total = data.total;
     });
   }
 

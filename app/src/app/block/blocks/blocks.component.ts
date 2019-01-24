@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Block } from '../../models/block';
 import { ApiService } from '../../services/api.service';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-blocks',
@@ -10,30 +11,38 @@ import { ApiService } from '../../services/api.service';
 export class BlocksComponent implements OnInit {
 
   blocks: Block[];
-  pageSize = 10;
+  pageSize = 20;
   maxSize = 5;
   total = 0;
   page = 1;
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
-    this.getBlocks();
+    this.getBlocks(0, 0);
   }
 
-  getBlocks(): void {
-    this.apiService.getBlocks((this.page - 1) * this.pageSize, this.pageSize)
-    .subscribe(res => {
-      this.blocks = res.blocks;
-      this.total = res.total;
+  getBlocks(offset: Number, limit: Number): void {
+    this.ngxService.start();
+    this.apiService.getBlocks(offset, limit)
+    .subscribe((data: any) => {
+      this.blocks = data.blocks;
+      this.total = data.total;
+      this.ngxService.stop();
     });
   }
 
   onPaging(page: number) {
-    //this.blocks$ = this.appService.getBlocks(pageEvent.length - pageEvent.pageSize * pageEvent.pageIndex);
-    this.getBlocks();
+    this.ngxService.start();
+    this.apiService.getBlocks((page - 1) * this.pageSize + 1, this.pageSize)
+    .subscribe((data: any) => {
+      this.blocks = data.blocks;
+      this.total = data.total;
+      this.ngxService.stop();
+    });
   }
 
   /*private loadBlocks(): void {

@@ -1,6 +1,6 @@
 export const environment = {
   env: 'production',
   production: true,
-  apiServer: '',
+  apiServer: 'http://13.230.62.42:3001/v1',
   network: 'testnet'
 };

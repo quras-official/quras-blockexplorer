@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import {NgxWebstorageModule} from 'ngx-webstorage';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -22,7 +23,7 @@ import { ComponentsModule } from './components/components.module';
 import { StatusModule } from './status/status.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
 @NgModule({
@@ -39,7 +40,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     StatusModule,
 
     NgxWebstorageModule.forRoot(),
-
+    NgxUiLoaderModule,
+    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
