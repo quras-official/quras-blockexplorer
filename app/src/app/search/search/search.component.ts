@@ -42,14 +42,14 @@ export class SearchComponent implements OnInit {
   private tryBlockHeight(query: string): Observable<string> {
     const blockHeight = Number(query);
     if (!isNaN(blockHeight)) {
-      this.ngxService.startLoader('search-loader');
+      this.ngxService.start();
       return this.http.get(this.apiServer + `/blocks/${blockHeight}`).pipe(
         catchError(() => {
-          this.ngxService.stopLoader('search-loader');
+          this.ngxService.stop();
           return of(null)
         }),
         switchMap(data => {
-          this.ngxService.stopLoader('search-loader');
+          this.ngxService.stop();
           if (data) {
             this.router.navigate(['/blocks', blockHeight], { replaceUrl: true });
             return empty();

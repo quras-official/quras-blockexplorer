@@ -11,7 +11,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 export class TxsComponent implements OnInit {
 
   txs: Tx[];
-  pageSize = 10;
+  pageSize = 20;
   maxSize = 5;
   total = 0;
   page = 1;

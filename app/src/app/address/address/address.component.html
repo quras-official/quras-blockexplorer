@@ -2,39 +2,43 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center mb-1">
-          <h2 class="section-heading">{{ 'Address' | translate }}</h2>
+          <h2 class="section-heading mb-5">{{ 'Address' | translate }}</h2>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12">
-        <table class="table" *ngIf="address">
-          <tbody>
-            <tr>
-              <th scope="row">{{ 'Address' | translate }}</th>
-              <td>{{ address.address }}</td>
-            </tr>
-            <tr>
-              <th scope="row">{{ 'Created' | translate }}</th>
-              <td>{{ address.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
-            </tr>
-            <tr>
-              <th scope="row">{{ 'Transactions' | translate }}</th>
-              <td>{{ address.transactions.length | number }}</td>
-            </tr>
-            <tr>
-              <th scope="row">{{ 'Last Transaction' | translate }}</th>
-              <td>{{ address.last_block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
-            </tr>
-            <tr>
-              <th scope="row">{{ 'Balance' | translate }}</th>
-              <td><span *ngFor="let balance of address.balances">{{ balance.amount | number:'1.0-4' }} <a [routerLink]="['/assets', balance.asset_hash]">{{ balance.asset_symbol }}</a><br></span></td>
-            </tr>
-            <tr>
-              <th scope="row">{{ 'Unclaimed' | translate }}</th>
-              <td>{{ address.unclaimed.amount | number:'1.0-4' }} <a [routerLink]="['/assets', address.unclaimed.asset_hash]">{{ address.unclaimed.asset_symbol }}</a></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="bg-white p-4 border-radius box-shadow">
+          <div class="table table-responsive">
+            <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle" *ngIf="address">
+              <tbody>
+                <tr>
+                  <th scope="row">{{ 'Address' | translate }}</th>
+                  <td>{{ address.address }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ 'Created' | translate }}</th>
+                  <td>{{ address.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ 'Transactions' | translate }}</th>
+                  <td>{{ address.transactions.length | number }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ 'Last Transaction' | translate }}</th>
+                  <td>{{ address.last_block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ 'Balance' | translate }}</th>
+                  <td><span *ngFor="let balance of address.balances">{{ balance.amount | number:'1.0-4' }} <a [routerLink]="['/assets', balance.asset_hash]">{{ balance.asset_symbol }}</a><br></span></td>
+                </tr>
+                <tr>
+                  <th scope="row">{{ 'Unclaimed' | translate }}</th>
+                  <td>{{ address.unclaimed.amount | number:'1.0-4' }} <a [routerLink]="['/assets', address.unclaimed.asset_hash]">{{ address.unclaimed.asset_symbol }}</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -125,6 +125,8 @@ ul > li.nav-item {
 .search_icon{
     color: #FFFFFF;
     float: right;
+    background: transparent;
+    border: none;
 }
 /*search_icon*/
 @media only screen and (min-width: 992px) {
@@ -161,6 +163,7 @@ ul > li.nav-item {
 .hero-section form .input-group-append .input-group-text {
     background-color: #72c0e6;
     font-weight: bold;
+    border:none;
 }
 .hero-section .form-control {
     border: 0;

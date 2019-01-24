@@ -1,54 +1,58 @@
-<section>
+<section class="theme-bg-color pb-0">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center mb-1">
-            <h2 class="section-heading">{{ 'Transaction' | translate }}</h2>
+            <h2 class="section-heading mb-5">{{ 'Transaction' | translate }}</h2>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <table class="table" *ngIf="tx">
-            <tbody>
-              <tr>
-                <th scope="row">{{ 'Type' | translate }}</th>
-                <td>{{ tx.type }}</td>
-              </tr>
-              <tr>
-                <th scope="row">{{ 'Hash' | translate }}</th>
-                <td>{{ tx.txid }}</td>
-              </tr>
-              <tr>
-                <th scope="row">{{ 'Time' | translate }}</th>
-                <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
-              </tr>
-              <tr>
-                <th scope="row">{{ 'Network Fee' | translate }}</th>
-                <td>{{ tx.net_fee }} QRG</td>
-              </tr>
-              <tr>
-                <th scope="row">{{ 'System Fee' | translate }}</th>
-                <td>{{ tx.sys_fee }} QRG</td>
-              </tr>
-              <tr>
-                <th scope="row">{{ 'Size' | translate }}</th>
-                <td>{{ tx.size | number }} Bytes</td>
-              </tr>
-              <tr>
-                <th scope="row">{{ 'Block' | translate }}</th>
-                <td><a [routerLink]="['/blocks', tx.block_height]">{{ tx.block_hash }}</a></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="bg-white p-4 border-radius mb-3">
+            <div class="table table-responsive">
+              <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle" *ngIf="tx">
+                <tbody>
+                  <tr>
+                    <th scope="row">{{ 'Type' | translate }}</th>
+                    <td>{{ tx.type }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">{{ 'Hash' | translate }}</th>
+                    <td>{{ tx.txid }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">{{ 'Time' | translate }}</th>
+                    <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">{{ 'Network Fee' | translate }}</th>
+                    <td>{{ tx.net_fee }} QRG</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">{{ 'System Fee' | translate }}</th>
+                    <td>{{ tx.sys_fee }} QRG</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">{{ 'Size' | translate }}</th>
+                    <td>{{ tx.size | number }} Bytes</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">{{ 'Block' | translate }}</th>
+                    <td><a [routerLink]="['/blocks', tx.block_height]">{{ tx.block_hash }}</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
   
-  <section class="pt-0">
+  <section class="theme-bg-color">
     <div class="container">
       <div class="row mb-4" *ngIf="tx.script.length > 0">
         <div class="col-lg-6" *ngIf="tx.script.invocation">
-          <div class="card">
+          <div class="card mb-3">
             <div class="card-header">
               {{ 'Invocation Script' | translate }}
             </div>
@@ -59,7 +63,7 @@
           </div>
         </div>
         <div class="col-lg-6" *ngIf="tx.script.verification">
-          <div class="card">
+          <div class="card mb-3">
             <div class="card-header">
               {{ 'Verification Script' | translate }}
             </div>
@@ -72,13 +76,13 @@
       </div>
       <div class="row">
         <div class="col-lg-6" *ngIf="tx.script.script">
-          <div class="card">
+          <div class="card mb-3">
             <div class="card-header">
               {{ 'Script' | translate }}
             </div>
             <div class="card-body">
               <p class="card-text">{{ script_ops[2] ? tx.script.script_op : tx.script.script }}</p>
-              <a [routerLink]="" (click)="toggleScript(2)" class="btn btn-primary float-right">{{ 'View Opcode' | translate }}</a>
+              <!-- <a [routerLink]="" (click)="toggleScript(2)" class="btn btn-primary float-right">{{ 'View Opcode' | translate }}</a> -->
             </div>
           </div>
         </div>

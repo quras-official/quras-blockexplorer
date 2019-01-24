@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalStorage } from 'ngx-webstorage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,13 @@ import { LocalStorage } from 'ngx-webstorage';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  q: string;
   title = 'QURAS BLOCKEXPLORER';
   @LocalStorage() lang;
 
   constructor(
     private translate: TranslateService,
+    private router: Router
   ) {
 
     translate.addLangs(['en', 'ja']);
@@ -30,5 +32,14 @@ export class AppComponent {
   setLang(lang: string): void {
     this.lang = lang;
     this.translate.use(this.lang);
+  }
+  
+  search(): void {
+    if (this.q) {
+      this.router.navigate(['/search'], {
+        queryParams: { q: this.q }
+      });
+      this.q = '';
+    }
   }
 }

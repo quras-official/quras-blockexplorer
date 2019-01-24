@@ -62,5 +62,7 @@
     "Public Key": "公開キー",
     "Position": "ランキング",
     "Network": "ネットワーク",
-    "Recent Block Time": "最近ブロックの生成時間"
+    "Recent Block Time": "最近ブロックの生成時間",
+    "Network Types": "ネットタイプ",
+    "Languages": "言語"
 }

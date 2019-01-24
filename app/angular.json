@@ -31,7 +31,14 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/vendor/jquery/jquery.min.js",
+              "src/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/vendor/fontawesome-free/js/all.min.js",
+              "src/vendor/jquery-easing/jquery.easing.min.js",
+              "src/vendor/scrollreveal/scrollreveal.min.js",
+              "src/vendor/quras-html/js/app.min.js"
+            ]
           },
           "configurations": {
             "production": {
