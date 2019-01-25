@@ -33,7 +33,7 @@ export class SearchComponent implements OnInit {
     this.result$ = this.query$.pipe(
       switchMap(query => this.tryBlockHeight(query)),
       switchMap(query => this.tryTransaction(query)),
-      switchMap(query => this.tryBlockHash(query)),
+      // switchMap(query => this.tryBlockHash(query)),
       switchMap(query => this.tryAddress(query)),
       tap(query => console.log('no result', query))
     );
@@ -41,7 +41,7 @@ export class SearchComponent implements OnInit {
 
   private tryBlockHeight(query: string): Observable<string> {
     const blockHeight = Number(query);
-    if (!isNaN(blockHeight)) {
+    if (!isNaN(blockHeight) && query.length < 64) {
       this.ngxService.start();
       return this.http.get(this.apiServer + `/blocks/${blockHeight}`).pipe(
         catchError(() => {
@@ -62,15 +62,15 @@ export class SearchComponent implements OnInit {
   }
 
   private tryTransaction(query: string): Observable<string> {
-    if (query.length === 64) {
-      this.ngxService.startLoader('search-loader');
+    if (query.length >= 66) {
+      this.ngxService.start();
       return this.http.get(this.apiServer + `/txs/${query}`).pipe(
         catchError(() => {
-          this.ngxService.stopLoader('search-loader');
+          this.ngxService.stop();
           return of(null)
         }),
         switchMap(transaction => {
-          this.ngxService.stopLoader('search-loader');
+          this.ngxService.stop();
           if (transaction) {
             this.router.navigate(['/txs', transaction.txid], { replaceUrl: true });
             return empty();
@@ -83,15 +83,15 @@ export class SearchComponent implements OnInit {
   }
 
   private tryBlockHash(query: string): Observable<string> {
-    if (query.length === 64) {
-      this.ngxService.startLoader('search-loader');
+    if (query.length >= 64) {
+      this.ngxService.start();
       return this.http.get(this.apiServer + `/blocks/${query}`).pipe(
         catchError(() => {
-          this.ngxService.stopLoader('search-loader');
+          this.ngxService.stop();
           return of(null)
         }),
         switchMap(block => {
-          this.ngxService.stopLoader('search-loader');
+          this.ngxService.stop();
           if (block) {
             this.router.navigate(['/blocks', block.block_height], { replaceUrl: true });
             return empty();
@@ -104,15 +104,15 @@ export class SearchComponent implements OnInit {
   }
 
   private tryAddress(query: string): Observable<string> {
-    if (query.length <= 12) {
-      this.ngxService.startLoader('search-loader');
+    if (query.length <= 40) {
+      this.ngxService.start();
       return this.http.get(this.apiServer + `/addresses/${query}`).pipe(
         catchError(() => {
-          this.ngxService.stopLoader('search-loader');
+          this.ngxService.stop();
           return of(null)
         }),
         switchMap(address => {
-          this.ngxService.stopLoader('search-loader');
+          this.ngxService.stop();
           if (address) {
             this.router.navigate(['/addresses', address.address], { replaceUrl: true });
             return empty();
