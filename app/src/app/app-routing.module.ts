@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search/search.component';
+import {HashLocationStrategy, Location, LocationStrategy} from '@angular/common';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +17,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { enableTracing: true, useHash:true })
   ],
   exports: [
     RouterModule

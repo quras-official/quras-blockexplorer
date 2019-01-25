@@ -28,13 +28,13 @@
               {{ 'Network Types' | translate }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="/">{{ 'Mainnet' | translate }}</a>
-              <a class="dropdown-item" href="https://testnet.chain.quras.com">{{ 'Testnet' | translate }}</a>
+              <a class="dropdown-item">{{ 'Mainnet' | translate }}</a>
+              <a class="dropdown-item" routerLink="/" >{{ 'Testnet' | translate }}</a>
               <a class="dropdown-item" routerLink="/status">{{ 'Network Status' | translate }}</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="http://13.230.62.42/quras-block/api_v1.html">{{ 'API' | translate }}</a>
+            <a class="nav-link js-scroll-trigger" href="/quras-block/api_v1.html">{{ 'API' | translate }}</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" (ngSubmit)="search()">
@@ -90,7 +90,7 @@
               <div class="digital-currencie-icon"><i class="fas fa-wallet"></i></div>
               <h5 class="card-title">Wallet</h5>
               <p class="card-text">Use your Blockchain wallet to buy, sell, exchange, and transact bitcoin, ether, and QURAS cash.</p>
-              <h5 class="card-title"><a href="#">Get a Wallet</a></h5>
+              <h5 class="card-title"><a href="https://quraswallet.org/index.html">Get a Wallet</a></h5>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@
               <div class="digital-currencie-icon"><i class="fas fa-laptop-code"></i></div>
               <h5 class="card-title">API</h5>
               <p class="card-text">Build apps to accept QURAS payments, search for QURAS transactions, access live QURAS data, and more.</p>
-              <h5 class="card-title"><a href="#">Visit API</a></h5>
+              <h5 class="card-title"><a href="http://13.230.62.42/quras-block/api_v1.html">Visit API</a></h5>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@
                 <li><a routerLink="/status">Network Status</a></li>
                 <li><a routerLink="/assets">Assets</a></li>
                 <li><a routerLink="/nodes">Consensus Nodes</a></li>
-                <li><a href="http://13.230.62.42/quras-block/api_v1.html">API</a></li>
+                <li><a href="/quras-block/api_v1.html">API</a></li>
               </ul>
             </div>
             <div class="quras">

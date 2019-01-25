@@ -22,7 +22,6 @@ export class BlocksComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    debugger;
     this.getBlocks(0, 0);
   }
 
