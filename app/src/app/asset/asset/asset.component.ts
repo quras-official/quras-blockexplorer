@@ -26,7 +26,9 @@ export class AssetComponent implements OnInit {
     this.apiService.getAsset(id)
       .subscribe(asset => {
         this.asset = asset;
-        this.ngxService.stop();
+        setTimeout(() => {
+          this.ngxService.stop();
+        }, 2000);
       });
   }
 }

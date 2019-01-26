@@ -31,7 +31,9 @@ export class TxsComponent implements OnInit {
     .subscribe((data: any) => {
       this.txs = data.txs;
       this.total = data.total;
-      this.ngxService.stop();
+      setTimeout(() => {
+        this.ngxService.stop();
+      }, 2000);
     });
   }
 

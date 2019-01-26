@@ -25,7 +25,9 @@ export class AddressComponent implements OnInit {
     this.apiService.getAddress(id)
       .subscribe(address => {
         this.address = address;
-        this.ngxService.stop();
+        setTimeout(() => {
+          this.ngxService.stop();
+        }, 2000);
       });
   }
 

@@ -31,7 +31,9 @@ export class NodesComponent implements OnInit {
     .subscribe((data: any) => {
       this.nodes = data.nodes
       this.total = data.total//nodes.length * 20;
-      this.ngxService.stop();
+      setTimeout(() => {
+        this.ngxService.stop();
+      }, 2000);
     });
   }
 
@@ -41,7 +43,9 @@ export class NodesComponent implements OnInit {
     .subscribe((data: any) => {
       this.nodes = data.nodes
       this.total = data.total//nodes.length * 20;
-      this.ngxService.stop();
+      setTimeout(() => {
+        this.ngxService.stop();
+      }, 2000);
     });
   }
 

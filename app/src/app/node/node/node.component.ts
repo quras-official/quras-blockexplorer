@@ -26,7 +26,9 @@ export class NodeComponent implements OnInit {
     this.apiService.getNode(id)
       .subscribe(node => {
         this.node = node
-        this.ngxService.stop();
+        setTimeout(() => {
+          this.ngxService.stop();
+        }, 2000);
       });
   }
 

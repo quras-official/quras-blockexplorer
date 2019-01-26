@@ -45,11 +45,15 @@ export class SearchComponent implements OnInit {
       this.ngxService.start();
       return this.http.get(this.apiServer + `/blocks/${blockHeight}`).pipe(
         catchError(() => {
-          this.ngxService.stop();
+          setTimeout(() => {
+            this.ngxService.stop();
+          }, 2000);
           return of(null)
         }),
         switchMap(data => {
-          this.ngxService.stop();
+          setTimeout(() => {
+            this.ngxService.stop();
+          }, 2000);
           if (data) {
             this.router.navigate(['/blocks', blockHeight], { replaceUrl: true });
             return empty();
@@ -66,11 +70,15 @@ export class SearchComponent implements OnInit {
       this.ngxService.start();
       return this.http.get(this.apiServer + `/txs/${query}`).pipe(
         catchError(() => {
-          this.ngxService.stop();
+          setTimeout(() => {
+            this.ngxService.stop();
+          }, 2000);
           return of(null)
         }),
         switchMap(transaction => {
-          this.ngxService.stop();
+          setTimeout(() => {
+            this.ngxService.stop();
+          }, 2000);
           if (transaction) {
             this.router.navigate(['/txs', transaction.txid], { replaceUrl: true });
             return empty();
@@ -87,11 +95,15 @@ export class SearchComponent implements OnInit {
       this.ngxService.start();
       return this.http.get(this.apiServer + `/blocks/${query}`).pipe(
         catchError(() => {
-          this.ngxService.stop();
+          setTimeout(() => {
+            this.ngxService.stop();
+          }, 2000);
           return of(null)
         }),
         switchMap(block => {
-          this.ngxService.stop();
+          setTimeout(() => {
+            this.ngxService.stop();
+          }, 2000);
           if (block) {
             this.router.navigate(['/blocks', block.block_height], { replaceUrl: true });
             return empty();
@@ -108,11 +120,15 @@ export class SearchComponent implements OnInit {
       this.ngxService.start();
       return this.http.get(this.apiServer + `/addresses/${query}`).pipe(
         catchError(() => {
-          this.ngxService.stop();
+          setTimeout(() => {
+            this.ngxService.stop();
+          }, 2000);
           return of(null)
         }),
         switchMap(address => {
-          this.ngxService.stop();
+          setTimeout(() => {
+            this.ngxService.stop();
+          }, 2000);
           if (address) {
             this.router.navigate(['/addresses', address.address], { replaceUrl: true });
             return empty();

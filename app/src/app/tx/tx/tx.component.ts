@@ -27,7 +27,9 @@ export class TxComponent implements OnInit {
     this.apiService.getTx(id)
       .subscribe(tx => {
         this.tx = tx
-        this.ngxService.stop();
+        setTimeout(() => {
+          this.ngxService.stop();
+        }, 2000);
       });
   }
 

@@ -27,7 +27,9 @@ export class BlockComponent implements OnInit {
       this.apiService.getBlock(id)
         .subscribe(block => {
           this.block = block
-          this.ngxService.stop();
+          setTimeout(() => {
+            this.ngxService.stop();
+          }, 2000);
         });
     })
   }

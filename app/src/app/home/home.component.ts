@@ -28,7 +28,9 @@ export class HomeComponent implements OnInit {
     this.ngxService.start();
     this.apiService.getBlocks(0, 0)
     .subscribe((data: any) => {
-      this.ngxService.stop();
+      setTimeout(() => {
+        this.ngxService.stop();
+      }, 2000);
       this.blocks = data.blocks
     });
   }

@@ -31,7 +31,9 @@ export class AssetsComponent implements OnInit {
     .subscribe((data: any) => {
       this.assets = data.assets;
       this.total = data.total;
-      this.ngxService.stop();
+      setTimeout(() => {
+        this.ngxService.stop();
+      }, 2000);
     });
   }
 
@@ -41,7 +43,9 @@ export class AssetsComponent implements OnInit {
     .subscribe((data: any) => {
       this.assets = data.assets;
       this.total = data.total;
-      this.ngxService.stop();
+      setTimeout(() => {
+        this.ngxService.stop();
+      }, 2000);
     });
   }
 

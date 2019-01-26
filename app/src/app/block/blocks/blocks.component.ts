@@ -31,7 +31,9 @@ export class BlocksComponent implements OnInit {
     .subscribe((data: any) => {
       this.blocks = data.blocks;
       this.total = data.total;
-      this.ngxService.stop();
+      setTimeout(() => {
+        this.ngxService.stop();
+      }, 2000);
     });
   }
 
@@ -41,7 +43,9 @@ export class BlocksComponent implements OnInit {
     .subscribe((data: any) => {
       this.blocks = data.blocks;
       this.total = data.total;
-      this.ngxService.stop();
+      setTimeout(() => {
+        this.ngxService.stop();
+      }, 2000);
     });
   }
 
