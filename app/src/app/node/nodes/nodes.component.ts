@@ -39,7 +39,7 @@ export class NodesComponent implements OnInit {
 
   onPaging(page: number) {
     this.ngxService.start();
-    this.apiService.getNodes((page - 1) * this.pageSize + 1, this.pageSize)
+    this.apiService.getNodes((page - 1) * this.pageSize, this.pageSize)
     .subscribe((data: any) => {
       this.nodes = data.nodes
       this.total = data.total//nodes.length * 20;

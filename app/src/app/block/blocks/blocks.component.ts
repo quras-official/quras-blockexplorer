@@ -39,7 +39,7 @@ export class BlocksComponent implements OnInit {
 
   onPaging(page: number) {
     this.ngxService.start();
-    this.apiService.getBlocks((page - 1) * this.pageSize + 1, this.pageSize)
+    this.apiService.getBlocks((page - 1) * this.pageSize, this.pageSize)
     .subscribe((data: any) => {
       this.blocks = data.blocks;
       this.total = data.total;

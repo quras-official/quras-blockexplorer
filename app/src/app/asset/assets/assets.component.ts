@@ -39,7 +39,7 @@ export class AssetsComponent implements OnInit {
 
   onPaging(page: number) {
     this.ngxService.start();
-    this.apiService.getAssets((page - 1) * this.pageSize + 1, this.pageSize)
+    this.apiService.getAssets((page - 1) * this.pageSize, this.pageSize)
     .subscribe((data: any) => {
       this.assets = data.assets;
       this.total = data.total;
