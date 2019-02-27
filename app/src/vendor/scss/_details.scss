@@ -1,0 +1,66 @@
+.blockchain-header-img-wrapper {
+    padding: 62px 0;
+    .register-content{
+        &:first-child {
+            margin-bottom: 38px;
+        }
+    }
+    svg {
+        margin-bottom: 30px;
+    }
+}
+.parent-sidebar-menu-section {
+    .sidebar-menu.sidebar-submenu {
+        box-shadow: none;
+        ul li {
+            padding: 0 0 0 32px;
+            margin: 0 0 12px;
+            a {
+                color: $black-dark-light;
+                font-family: $font-regular;
+                font-size: 12px;
+                line-height: 17px;
+            }
+            &.parent-menu {
+                padding-left: 16px;
+                margin: 4px 0 12px;
+                &:first-child {
+                    margin: 0 0 12px;
+                }
+            }
+        }
+    }
+}
+.content-ul {
+    padding-left: 0;
+    li {
+        background-image: url(../images/bullet.svg);
+        background-repeat: no-repeat;
+        background-position: left top 10px;
+        margin-bottom: 35px;
+        padding-left: 38px;
+        list-style: none;
+    }
+    &.no-margin {
+        li{
+            margin-bottom: 0;
+        }
+    }
+}
+.details-page {
+    div.table.table-responsive {
+        margin: 35px 0 20px;
+    }
+    .content-title.card-title-color {
+        margin-top: 35px;
+    }
+    .table-name {
+        margin-bottom: 35px;
+    }
+    .svg-fig {
+        margin-top: 35px;
+    }
+    .content {
+        word-break: break-all;
+    }
+}

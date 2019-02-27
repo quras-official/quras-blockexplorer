@@ -1,0 +1,45 @@
+.hero-section{
+    background-image: url(../../vendor/images/header-bg.svg), linear-gradient($blue 50%, $white 50%);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 100px 0 300px;
+    @media only screen and (max-width: 991px) {
+        padding: 22px 0 300px;
+    }
+    @media only screen and (max-width: 575px) {
+        padding: 10px 9px 260px;
+    }
+    .banner-title {
+        font-size: 40px;
+        font-family: $font-biryani-extra-bold;
+        line-height: 49px;
+        @media only screen and (max-width: 1024px) {
+            font-size: 32px;
+        }
+        @media only screen and (max-width: 991px) {
+            font-size: 24px;
+            line-height: 30px;
+        }
+        @media only screen and (max-width: 575px) {
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+    .register-content{
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 50px;
+        @media only screen and (max-width: 575px) {
+            margin-bottom: 30px;  
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        svg {
+            margin-bottom: 30px;
+        }
+    }
+}

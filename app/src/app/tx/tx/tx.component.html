@@ -1,5 +1,6 @@
-<section class="theme-bg-color pb-0">
-    <div class="container">
+<section class="market-section bg-theme">
+  <div class="container">
+    <div class="hero-over">
       <div class="row">
         <div class="col-lg-12 text-center mb-1">
             <h2 class="section-heading mb-5">{{ 'Transaction' | translate }}</h2>
@@ -46,10 +47,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
   
-  <section class="theme-bg-color">
-    <div class="container">
+<section class=""recent-transactions-section">
+  <div class="container">
+    <div class="table-content">
       <div class="row mb-4" *ngIf="tx.script.length > 0">
         <div class="col-lg-6" *ngIf="tx.script.invocation">
           <div class="card mb-3">
@@ -88,4 +91,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

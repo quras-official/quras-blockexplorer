@@ -1,0 +1,24 @@
+@media only screen and (max-width: 575px) {
+    .market-section.status-page {
+        padding-left: 0;
+        padding-right: 0;
+        .hero-over {
+            padding: 35px 0;
+        }
+    }
+}
+.table-height-fixed {
+    height: 900px;
+}
+.nodes-page {
+    table{
+        tr{
+            th:nth-child(5), td:nth-child(5) {
+                min-width: 75px;
+            }
+        }
+    }
+}
+@import "_api.scss";
+@import "_details.scss";
+@import "_sdk.scss";

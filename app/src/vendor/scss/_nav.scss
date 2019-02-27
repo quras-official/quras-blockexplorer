@@ -1,0 +1,74 @@
+nav#mainNav {
+    padding: 26px 0;
+    ul {
+        li {
+            margin-right: 15px;
+            a {
+                color: $white;
+                display: inline;
+                opacity: 0.7;
+                &:hover{
+                    color: $white;
+                    opacity: 1;
+                    text-decoration: none;
+                }
+                @media only screen and (max-width: 991px) {
+                    font-size: 20px;
+                }
+            }
+            @media only screen and (max-width: 991px) {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            ul.dropdown-menu {
+                box-shadow: none;
+                border: 0;
+                @media only screen and (max-width: 991px) {
+                    background: $blue;
+                }
+                li {
+                    a {
+                        color: $black-dark-light;
+                        @media only screen and (max-width: 991px) {
+                            padding-left: 15px;
+                            color: $white;
+                            opacity: 0.7;
+                            &:hover {
+                                color: $white;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 991px) {
+        max-height: 100vh;
+        overflow-y: scroll;
+        padding: 20px 0;
+    }
+    @media only screen and (max-width: 576px) {
+        padding: 15px 1.5rem;
+    }
+}
+.navbar-light{
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    .navbar-toggler {
+        border: 0;
+    }
+}
+/* For api page*/
+@media only screen and (max-width: 991px) {
+    .api-page {
+        ul.dropdown-menu {
+            background: $white;
+            box-shadow: 0px 40px 250px rgba(0, 0, 0, 0.04);
+            border-radius: 4px;
+            margin: 0 auto;
+            width: 215px;
+        }
+    }
+}

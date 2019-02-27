@@ -1,0 +1,31 @@
+.color-blue-catalina {
+    color: $blue-catalina
+}
+.content-body {
+    margin-bottom: 35px;
+}
+.content {
+    margin-bottom: 20px;
+}
+.api-section {
+    .card .card-body{padding: 20px;}
+}
+.api-header-section {
+    @media only screen and (max-width: 991px) {
+        padding: 2rem 0;
+    }
+    @media only screen and (max-width: 575px) {
+        padding: 1rem 9px 45px;
+        section {
+            padding-left: 9px;
+            padding-right: 9px;
+        }
+    }
+}
+.api-header-section {
+    .parent-sidebar-menu-section {
+        .sidebar-menu {
+            position: absolute;
+        }
+    }
+}

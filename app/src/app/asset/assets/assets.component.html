@@ -1,44 +1,46 @@
-<section class="theme-bg-color">
+<section class="market-section bg-theme">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center mb-1">
-          <h2 class="section-heading mb-5">{{ 'Assets' | translate }}</h2>
+    <div class="hero-over">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-1">
+            <h2 class="section-heading mb-5">{{ 'Assets' | translate }}</h2>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="bg-white p-4 border-radius mb-3">
-          <div class="table table-responsive">
-            <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle">
-              <thead>
-                <th scope="col">{{ 'Name' | translate }}</th>
-                <th scope="col">{{ 'Symbol' | translate }}</th>
-                <th scope="col">{{ 'Type' | translate }}</th>
-                <th scope="col">{{ 'Created' | translate }}</th>
-                <th scope="col" class="text-right">{{ 'Addresses' | translate }}</th>
-                <th scope="col" class="text-right">{{ 'Transactions' | translate }}</th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let asset of assets">
-                  <td><a [routerLink]="['/assets', asset.hash]">{{ asset.name }}</a></td>
-                  <td>{{ asset.symbol }}</td>
-                  <td>{{ asset.type }}</td>
-                  <td>{{ asset.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
-                  <td class="text-right">{{ asset.address_count | number }}</td>
-                  <td class="text-right">{{ asset.transaction_count | number }}</td>
-                </tr>
-              </tbody>
-            </table>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="bg-white p-4 border-radius mb-3">
+            <div class="table table-responsive">
+              <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle">
+                <thead>
+                  <th scope="col">{{ 'Name' | translate }}</th>
+                  <th scope="col">{{ 'Symbol' | translate }}</th>
+                  <th scope="col">{{ 'Type' | translate }}</th>
+                  <th scope="col">{{ 'Created' | translate }}</th>
+                  <th scope="col" class="text-right">{{ 'Addresses' | translate }}</th>
+                  <th scope="col" class="text-right">{{ 'Transactions' | translate }}</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let asset of assets">
+                    <td><a [routerLink]="['/assets', asset.hash]">{{ asset.name }}</a></td>
+                    <td>{{ asset.symbol }}</td>
+                    <td>{{ asset.type }}</td>
+                    <td>{{ asset.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td class="text-right">{{ asset.address_count | number }}</td>
+                    <td class="text-right">{{ asset.transaction_count | number }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-lg-12">
-        <nav class="float-right" aria-label="Page navigation example">
-          <ngb-pagination class="d-flex justify-content-end" [collectionSize]="total" [pageSize]="pageSize" [maxSize]="maxSize" [(page)]="page" (pageChange)="onPaging($event)"></ngb-pagination>
-        </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="float-right" aria-label="Page navigation example">
+            <ngb-pagination class="d-flex justify-content-end" [collectionSize]="total" [pageSize]="pageSize" [maxSize]="maxSize" [(page)]="page" (pageChange)="onPaging($event)"></ngb-pagination>
+          </nav>
+        </div>
       </div>
     </div>
   </div>

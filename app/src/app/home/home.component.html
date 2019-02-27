@@ -1,75 +1,79 @@
-<section class="theme-bg-color pb-0">
+<section class="market-section bg-theme">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center mb-1">
-        <h2 class="section-heading mb-5">{{ 'Recent Blocks' | translate }}</h2>
-      </div>
-    </div>
-    <div class="bg-white p-4 border-radius">
+    <div class="hero-over">
       <div class="row">
-        <div class="col-lg-12">
-          <div class="table table-responsive">
-            <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle">
-              <thead>
-                <th scope="col">{{ 'Height' | translate }}</th>
-                <th scope="col">{{ 'Time' | translate }}</th>
-                <th scope="col">{{ 'Transactions' | translate }}</th>
-                <th scope="col">{{ 'Producer' | translate }}</th>
-                <th scope="col">{{ 'Size' | translate }}</th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let block of blocks">
-                  <td><a [routerLink]="['/blocks', block.height]">{{ block.height }}</a></td>
-                  <td>{{ block.time * 1000 | amFromUtc | amTimeAgo }}</td>
-                  <td>{{ block.transaction_count }}</td>
-                  <td><a [routerLink]="['/addresses', block.producer]">{{ block.producer }}</a></td>
-                  <td>{{ block.size | number }} Bytes</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="col-lg-12 text-center mb-1">
+          <h2 class="section-heading mb-5">{{ 'Recent Blocks' | translate }}</h2>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <a routerLink="/blocks" class="btn btn-primary"><span>{{ 'See All' | translate }}</span></a>
+      <div class="bg-white p-4 border-radius">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table table-responsive">
+              <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle">
+                <thead>
+                  <th scope="col">{{ 'Height' | translate }}</th>
+                  <th scope="col">{{ 'Time' | translate }}</th>
+                  <th scope="col">{{ 'Transactions' | translate }}</th>
+                  <th scope="col">{{ 'Producer' | translate }}</th>
+                  <th scope="col">{{ 'Size' | translate }}</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let block of blocks">
+                    <td><a [routerLink]="['/blocks', block.height]">{{ block.height }}</a></td>
+                    <td>{{ block.time * 1000 | amFromUtc | amTimeAgo }}</td>
+                    <td>{{ block.transaction_count }}</td>
+                    <td><a [routerLink]="['/addresses', block.producer]">{{ block.producer }}</a></td>
+                    <td>{{ block.size | number }} Bytes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <a routerLink="/blocks" class="btn btn-primary"><span>{{ 'See All' | translate }}</span></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
   
-<section class="theme-bg-color">
+<section class="recent-transactions-section">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center mb-1">
-        <h2 class="section-heading mb-5">{{ 'Recent Transactions' | translate }}</h2>
-      </div>
-    </div>
-    <div class="bg-white p-4 border-radius">
+    <div class="table-content">
       <div class="row">
-        <div class="col-lg-12">
-          <div class="table table-responsive">
-            <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle">
-              <thead>
-                <th scope="col">{{ 'Type' | translate }}</th>
-                <th scope="col">{{ 'Transaction ID' | translate }}</th>
-                <th scope="col">{{ 'Completed on' | translate }}</th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let tx of txs">
-                  <td>{{ tx.type }}</td>
-                  <td><a [routerLink]="['/txs', tx.txid]">{{ tx.txid }}</a></td>
-                  <td>{{ tx.block_time * 1000 | amFromUtc | amTimeAgo }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="col-lg-12 text-center mb-1">
+          <h2 class="section-heading mb-5">{{ 'Recent Transactions' | translate }}</h2>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <a routerLink="/txs" class="btn btn-primary"><span>{{ 'See All' | translate }}</span></a>
+      <div class="bg-white p-4 border-radius">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table table-responsive">
+              <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle">
+                <thead>
+                  <th scope="col">{{ 'Type' | translate }}</th>
+                  <th scope="col">{{ 'Transaction ID' | translate }}</th>
+                  <th scope="col">{{ 'Completed on' | translate }}</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let tx of txs">
+                    <td>{{ tx.type }}</td>
+                    <td><a [routerLink]="['/txs', tx.txid]">{{ tx.txid }}</a></td>
+                    <td>{{ tx.block_time * 1000 | amFromUtc | amTimeAgo }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <a routerLink="/txs" class="btn btn-primary"><span>{{ 'See All' | translate }}</span></a>
+          </div>
         </div>
       </div>
     </div>

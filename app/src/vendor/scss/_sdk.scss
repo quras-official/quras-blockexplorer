@@ -1,0 +1,63 @@
+section.hero-section.sdk {
+    background-image: none;
+    padding: 100px 0;
+    @media only screen and (max-width: 991px) {
+        padding: 2rem 0;
+    }
+    @media only screen and (max-width: 575px) {
+        padding: 1rem 0;
+    }
+    .register-content {
+        margin-bottom: 20px;
+        line-height: 18px;
+    }
+    .btn-theme {
+        margin-right: 4%;
+        padding: 16px 0;
+        width: 30%;
+        &:last-child{
+            margin-right: 0;
+        }
+        @media only screen and (max-width: 575px) {
+            margin-right: 2%;
+            width: 31%;
+        }
+    }
+    .img, svg {
+        margin: 20px 0;
+    }
+
+}
+.sdk-items-section {
+    .img, svg {
+        margin-bottom: 20px;
+    }
+    .card { 
+        margin: 0 auto;
+        max-width: 305px;
+        .card-body {
+            padding: 35px 36px;
+            .card-title {
+                font-family: $font-biryani-bold;
+                font-size: 16px;
+                line-height: 20px;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+        }
+    }
+}
+.sdk-content-section{
+    padding: 105px 0 300px;
+    @media only screen and (max-width: 991px) {
+        padding: 50px 0 300px;
+        .img, svg {
+            margin-top: 35px;
+        }
+    }
+}
+.sdk-js-section {
+    .logo-quras-js {
+        margin: 70px 0;
+    }
+}

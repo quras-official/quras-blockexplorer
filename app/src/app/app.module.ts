@@ -21,6 +21,8 @@ import { environment } from 'src/environments/environment';
 import { ShareModule } from './share/share.module';
 import { ComponentsModule } from './components/components.module';
 import { StatusModule } from './status/status.module';
+import { AppHeaderComponent } from './app-header/app-header.component';
+import { ApiHeaderComponent } from './api-header/api-header.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -29,7 +31,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AppHeaderComponent,
+    ApiHeaderComponent,
   ],
   imports: [
     ShareModule,

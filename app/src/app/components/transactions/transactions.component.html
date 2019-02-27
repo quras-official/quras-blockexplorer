@@ -1,29 +1,31 @@
-<section class="pt-0" *ngIf="txs.length > 0">
+<section class="recent-transactions-section" *ngIf="txs.length > 0">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center mb-1">
-          <h2 class="section-heading mb-5">{{ 'Transactions' | translate }}</h2>
+    <div class="table-content">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-1">
+            <h2 class="section-heading mb-5">{{ 'Transactions' | translate }}</h2>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <table class="table">
-          <thead>
-            <th scope="col">{{ 'Type' | translate }}</th>
-            <th scope="col">{{ 'Transaction ID' | translate }}</th>
-            <th scope="col">{{ 'Completed on' | translate }}</th>
-            <th scope="col"></th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let tx of txs">
-              <td>{{ tx.type }}</td>
-              <td><a [routerLink]="['/txs', tx.txid]">{{ tx.txid }}</a></td>
-              <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
-              <td>{{ 'Show/Hide' | translate }}</td>
-            </tr>
-          </tbody>
-        </table>
-        <ngb-pagination class="d-flex justify-content-end" [collectionSize]="total" [pageSize]="pageSize" [maxSize]="maxSize" [(page)]="page" (pageChange)="onPaging($event)"></ngb-pagination>
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table">
+            <thead>
+              <th scope="col">{{ 'Type' | translate }}</th>
+              <th scope="col">{{ 'Transaction ID' | translate }}</th>
+              <th scope="col">{{ 'Completed on' | translate }}</th>
+              <th scope="col"></th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let tx of txs">
+                <td>{{ tx.type }}</td>
+                <td><a [routerLink]="['/txs', tx.txid]">{{ tx.txid }}</a></td>
+                <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                <td>{{ 'Show/Hide' | translate }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <ngb-pagination class="d-flex justify-content-end" [collectionSize]="total" [pageSize]="pageSize" [maxSize]="maxSize" [(page)]="page" (pageChange)="onPaging($event)"></ngb-pagination>
+        </div>
       </div>
     </div>
   </div>

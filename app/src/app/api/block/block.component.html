@@ -1,0 +1,221 @@
+<section class="api-section bg-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 offset-lg-3">
+        <div class="content-body" id="default">
+          <div class="content-title">Block list</div>
+          <div class="content">
+            http://localhost:3000/(version)
+            <li><b>version</b>: required (v1)</li>
+          </div>
+        </div>
+        <div class="content-body" id="all">
+          <div class="content-title">/blocks</div>
+          <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></p>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card box-shadow mb-4">
+                <div class="card-body">
+                  <div class="card-text">
+<pre><code>{{'{'}}          
+  "total": 7820,
+  {{'"blocks": [{'}}
+    "height": 872,
+    "hash": "938d97df1be41edffbc08b40b9c07778a9085b700a50c19b90533a08d4700b68",
+    "transaction_count": 5,
+    "size": 1526,
+    "time": 1542683358,
+    "producer": "ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7",
+    "prev_block_hash": "7e99125c0c83e23db06027bfc48a91be5a26618fa1e7cd5841419ac53c896730",
+    "merkle": "3ff8dbb1b566494f48f900493b5a8ec2b984e482249d0675c400bd55feac6f6e"
+  {{'}]'}}
+{{'}'}}
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></p>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card box-shadow mb-4">
+                <div class="card-body">
+                  <div class="card-text">
+<pre><code>{{'{'}}          
+  "unexpected request"
+{{'}'}}
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body" id="page">
+          <div class="content-title">/blocks/(offset)/(limit)</div>
+          <li><b>offset</b> <i>required (integer)</i></li>
+          <li><b>limit</b> <i>required (integer)</i></li><br/>
+          <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></p>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card box-shadow mb-4">
+                <div class="card-body">
+                  <div class="card-text">
+<pre><code>{{'{'}}          
+  "total": 7820,
+  {{'"blocks": [{'}}
+    "height": 872,
+    "hash": "938d97df1be41edffbc08b40b9c07778a9085b700a50c19b90533a08d4700b68",
+    "transaction_count": 5,
+    "size": 1526,
+    "time": 1542683358,
+    "producer": "ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7",
+    "prev_block_hash": "7e99125c0c83e23db06027bfc48a91be5a26618fa1e7cd5841419ac53c896730",
+    "merkle": "3ff8dbb1b566494f48f900493b5a8ec2b984e482249d0675c400bd55feac6f6e"
+  {{'}]'}}
+{{'}'}}
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></p>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card box-shadow mb-4">
+                <div class="card-body">
+                  <div class="card-text">
+<pre><code>{{'{'}}          
+  "unexpected request"
+{{'}'}}
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body" id="height">
+          <div class="content-title">/blocks/(height)</div>
+          <li><b>height</b> <i>required (integer)</i></li>
+          <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></p>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card box-shadow mb-4">
+                <div class="card-body">
+                  <div class="card-text">
+<pre><code>{{'{'}}          
+    "version": 2,
+    "height": 872,
+    "hash": "938d97df1be41edffbc08b40b9c07778a9085b700a50c19b90533a08d4700b68",
+    "transactions": {{'[{'}}
+      "type": "Invocation",
+      "txid": "b1f724dbe809e9952a79ac62012a061a926f6971719bbf7633f043503dbd1939",
+      "block_time": 1542683358
+    {{'}],'}}
+    "size": 1526,
+    {{'"script": {'}}
+      "verification": "210202008015935b7c56e7af01559fb4fd5e05bb2713d91f25dd3dcac518fe006c1cac",
+      "verification_op": "0000: PUSHBYTES33 0x0202008015935b7c56e7af01559fb4fd5e05bb2713d91f25dd3dcac518fe006c1c 0034: CHECKSIG",
+      "invocation": "8759D52937D82659E3E8768C877EFC1ABD4393BF34D5FD4DB2B2E50B2167B245",
+      "invocation_op": "0000: PUSHBYTES64 0x98d7e7f62700df6c2730275e6caa36c7f982ad146662db31af4e7d4280a1a5e6e0b2a0f11822bbcbc14a6d8a1ff8a1230fb928b94e942c078252bd2934bcf59c",
+      "script": "0800e1f5050000000014c8e770ab770ea75017f606a21c4488de3613b13914fd8d0f84b8db897d6eebe3e0177ed5c5b47fc32253c1087472616e7366657267f9e6e770af783d809bd1a65e1bb5b6042953bcac",
+      "script_op": "PUSHBYTES8 0x00e1f50500000000 PUSHBYTES20 0xc8e770ab770ea75017f606a21c4488de3613b139 PUSHBYTES20 0xfd8d0f84b8db897d6eebe3e0177ed5c5b47fc322 PUSH3 PACK PUSHBYTES8 0x7472616e73666572 APPCALL 0xacbc532904b6b51b5ea6d19b803d78af70e7e6f9"
+    {{'},'}}
+    "time": 1542683358,
+    "producer": "ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7",
+    "prev_block_hash": "7e99125c0c83e23db06027bfc48a91be5a26618fa1e7cd5841419ac53c896730",
+    "merkle": "3ff8dbb1b566494f48f900493b5a8ec2b984e482249d0675c400bd55feac6f6e"
+{{'}'}}
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></p>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card box-shadow mb-4">
+                <div class="card-body">
+                  <div class="card-text">
+<pre><code>{{'{'}}          
+  "unexpected request"
+{{'}'}}
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body" id="hash">
+          <div class="content-title">/blocks/(hash)</div>
+          <li><b>height</b> <i>required (integer)</i></li>
+          <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></p>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card box-shadow mb-4">
+                <div class="card-body">
+                  <div class="card-text">
+<pre><code>{{'{'}}          
+  "version": 2,
+  "height": 872,
+  "hash": "938d97df1be41edffbc08b40b9c07778a9085b700a50c19b90533a08d4700b68",
+  "transactions": {{'[{'}}
+    "type": "Invocation",
+    "txid": "b1f724dbe809e9952a79ac62012a061a926f6971719bbf7633f043503dbd1939",
+    "block_time": 1542683358
+  {{'}],'}}
+  "size": 1526,
+  {{'"script": {'}}
+    "verification": "210202008015935b7c56e7af01559fb4fd5e05bb2713d91f25dd3dcac518fe006c1cac",
+    "verification_op": "0000: PUSHBYTES33 0x0202008015935b7c56e7af01559fb4fd5e05bb2713d91f25dd3dcac518fe006c1c 0034: CHECKSIG",
+    "invocation": "8759D52937D82659E3E8768C877EFC1ABD4393BF34D5FD4DB2B2E50B2167B245",
+    "invocation_op": "0000: PUSHBYTES64 0x98d7e7f62700df6c2730275e6caa36c7f982ad146662db31af4e7d4280a1a5e6e0b2a0f11822bbcbc14a6d8a1ff8a1230fb928b94e942c078252bd2934bcf59c",
+    "script": "0800e1f5050000000014c8e770ab770ea75017f606a21c4488de3613b13914fd8d0f84b8db897d6eebe3e0177ed5c5b47fc32253c1087472616e7366657267f9e6e770af783d809bd1a65e1bb5b6042953bcac",
+    "script_op": "PUSHBYTES8 0x00e1f50500000000 PUSHBYTES20 0xc8e770ab770ea75017f606a21c4488de3613b139 PUSHBYTES20 0xfd8d0f84b8db897d6eebe3e0177ed5c5b47fc322 PUSH3 PACK PUSHBYTES8 0x7472616e73666572 APPCALL 0xacbc532904b6b51b5ea6d19b803d78af70e7e6f9"
+  {{'},'}}
+  "time": 1542683358,
+  "producer": "ANuupE2wgsHYi8VTqSUSoMsyxbJ8P3szu7",
+  "prev_block_hash": "7e99125c0c83e23db06027bfc48a91be5a26618fa1e7cd5841419ac53c896730",
+  "merkle": "3ff8dbb1b566494f48f900493b5a8ec2b984e482249d0675c400bd55feac6f6e"
+{{'}'}}
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></p>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card box-shadow mb-4">
+                <div class="card-body">
+                  <div class="card-text">
+<pre><code>{{'{'}}          
+  "unexpected request"
+{{'}'}}
+</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 parent-sidebar-menu-section d-lg-block d-none">
+        <div class="sidebar-menu">
+          <ul>
+            <li><a href="#all" class="smooth-scroll">/blocks</a></li>
+            <li><a href="#page" class="smooth-scroll">/blocks/(offset)/(limit)</a></li>
+            <li><a href="#height" class="smooth-scroll">/blocks/(height)</a></li>
+            <li><a href="#hash" class="smooth-scroll">/blocks/(hash)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

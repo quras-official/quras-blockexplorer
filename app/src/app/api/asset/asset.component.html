@@ -1,0 +1,197 @@
+<section class="api-section bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 offset-lg-3">
+          <div class="content-body" id="default">
+            <div class="content-title">Asset list</div>
+            <div class="content">
+              http://localhost:3000/(version)
+              <li><b>version</b>: required (v1)</li>
+            </div>
+          </div>
+          <div class="content-body" id="all">
+            <div class="content-title">/assets</div>
+            <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></p>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card box-shadow mb-4">
+                  <div class="card-body">
+                    <div class="card-text">
+  <pre><code>{{'{'}}          
+    "total": 24,
+    {{'"assets": [{'}}
+      "hash": "602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7",
+      "type": "GoverningToken",
+      "symbol": "QRS",
+      "name": "QRS",
+      "amount": 10000000,
+      "issued": 90000000,
+      "precision": 5,
+      "owner": "Abf2qMs1pzQb8kYk9RuxtUb9jtRKJVuBJt",
+      "block_time": 15923142125,
+      "address_count": 200,
+      "transaction_count": 10
+    {{'}]'}}
+  {{'}'}}
+  </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></p>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card box-shadow mb-4">
+                  <div class="card-body">
+                    <div class="card-text">
+  <pre><code>{{'{'}}          
+    "unexpected request"
+  {{'}'}}
+  </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-body" id="page">
+            <div class="content-title">/assets/(offset)/(limit)</div>
+            <li><b>offset</b> <i>required (integer)</i></li>
+            <li><b>limit</b> <i>required (integer)</i></li><br/>
+            <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></p>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card box-shadow mb-4">
+                  <div class="card-body">
+                    <div class="card-text">
+  <pre><code>{{'{'}}          
+    "hash": "602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7",
+    "type": "GoverningToken",
+    "symbol": "QRS",
+    "name": "QRS",
+    "amount": 10000000,
+    "issued": 90000000,
+    "precision": 5,
+    "owner": "Abf2qMs1pzQb8kYk9RuxtUb9jtRKJVuBJt",
+    "block_time": 15923142125,
+    {{'"addresses": [{'}}
+      "address": "Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp",
+      "block_time": 1542683358,
+      "last_block_time": 1542683358,
+      "transaction_count": 324,
+      "balance_amount": 7
+    {{'}],'}}
+    {{'"transactions": [{'}}
+      "type": "Invocation",
+      "txid": "b1f724dbe809e9952a79ac62012a061a926f6971719bbf7633f043503dbd1939",
+      "block_time": 1542683358
+    {{'}],'}}
+    {{'"transfers": [{'}}
+      "txid": "65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729",
+      "block_time": 1542683357,
+      "asset_hash": "948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818",
+      "asset_symbol": "QRG",
+      "amount": 5,
+      "address_from": "Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM",
+      "address_to": "AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf"
+    {{'}]'}}
+  {{'}'}}
+  </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></p>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card box-shadow mb-4">
+                  <div class="card-body">
+                    <div class="card-text">
+  <pre><code>{{'{'}}          
+    "unexpected request"
+  {{'}'}}
+  </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-body" id="hash">
+            <div class="content-title">/assets/(hash)</div>
+            <li><b>height</b> <i>required (integer)</i></li>
+            <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></p>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card box-shadow mb-4">
+                  <div class="card-body">
+                    <div class="card-text">
+  <pre><code>{{'{'}}          
+    "hash": "602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7",
+    "type": "GoverningToken",
+    "symbol": "QRS",
+    "name": "QRS",
+    "amount": 10000000,
+    "issued": 90000000,
+    "precision": 5,
+    "owner": "Abf2qMs1pzQb8kYk9RuxtUb9jtRKJVuBJt",
+    "block_time": 15923142125,
+    {{'"addresses": [{'}}
+      "address": "Abo5MykQe1DCh1nbVwnBYQzi86ZoApBWcp",
+      "block_time": 1542683358,
+      "last_block_time": 1542683358,
+      "transaction_count": 324,
+      "balance_amount": 7
+    {{'}],'}}
+    {{'"transactions": [{'}}
+      "type": "Invocation",
+      "txid": "b1f724dbe809e9952a79ac62012a061a926f6971719bbf7633f043503dbd1939",
+      "block_time": 1542683358
+    {{'}],'}}
+    {{'"transfers": [{'}}
+      "txid": "65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729",
+      "block_time": 1542683357,
+      "asset_hash": "948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818",
+      "asset_symbol": "QRG",
+      "amount": 5,
+      "address_from": "Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM",
+      "address_to": "AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf"
+    {{'}]'}}
+  {{'}'}}
+  </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></p>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card box-shadow mb-4">
+                  <div class="card-body">
+                    <div class="card-text">
+  <pre><code>{{'{'}}          
+    "unexpected request"
+  {{'}'}}
+  </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 parent-sidebar-menu-section d-lg-block d-none">
+          <div class="sidebar-menu">
+            <ul>
+              <li><a href="#all" class="smooth-scroll">/assets</a></li>
+              <li><a href="#page" class="smooth-scroll">/assets/(offset)/(limit)</a></li>
+              <li><a href="#hash" class="smooth-scroll">/assets/(hash)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,106 @@
+.hero-over {
+    background-color: $white;
+    box-shadow: 0px 40px 250px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    margin-top: -300px;
+    padding: 60px 45px;
+    @media only screen and (max-width: 575px) {
+        padding: 35px 40px;
+    }
+}
+.card {
+    background: $features-item-hover;
+    border: 1px solid $blue;
+    box-sizing: border-box;
+    box-shadow: 0px 20px 20px rgba(184, 184, 184, 0.05);
+    border-radius: 6px;
+    .card-body {
+        padding: 28px;
+        .card-title {
+            color: $card-title-color;
+            margin-bottom: 30px;
+            @media only screen and (max-width: 575px) {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 575px) {
+    .market-section {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+}
+.recent-blocks-section {
+    padding-top: 1.5rem;
+    @media only screen and (max-width: 575px) {
+        padding-top: 0;
+    }
+    .table-content {
+        margin-bottom: -300px;
+    }
+}
+.recent-transactions-section {
+    // padding-top: 300px;
+    padding-bottom: 4rem;
+}
+.section-content {
+    background: $blue;
+    color: $white;
+    padding-top: 1rem;
+    .section-heading {color: $white;}
+    .row-eq-height {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .about-item {
+        background-color: $blue-o05;
+        border-radius: 4px;
+        border-top: 3px solid transparent;
+        padding: 25px 25px 75px 25px;
+        position: relative;
+        -moz-transition: all 0.2s ease-in-out 0s;
+        -ms-transition: all 0.2s ease-in-out 0s;
+        -o-transition: all 0.2s ease-in-out 0s;
+        -webkit-transition: all 0.2s ease-in-out 0s;
+        transition: all 0.2s ease-in-out 0s;
+        @media only screen and (max-width: 991px) {margin-bottom: 30px;}
+        &:hover{
+            background-color: $blue-o1;
+            border-top: 3px solid $white;
+            -moz-transition: all 0.2s ease-in-out 0s;
+            -ms-transition: all 0.2s ease-in-out 0s;
+            -o-transition: all 0.2s ease-in-out 0s;
+            -webkit-transition: all 0.2s ease-in-out 0s;
+            transition: all 0.2s ease-in-out 0s;
+        }
+        .content-title {
+            font-family: $font-biryani-bold;
+            font-size: 20px;
+            color: $white;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+        svg, img {
+            margin-bottom: 40px;
+            @media only screen and (max-width: 575px) {
+                margin-bottom: 20px;
+            }
+        }
+        .content-link{
+            position: absolute;
+            bottom: 15px;
+            width: calc(100% - 55px);
+            a {
+                color: $white;
+                text-transform: uppercase;
+                svg, .fas, .img, .fa {
+                    float: right;
+                }
+            }
+        }
+    }
+}

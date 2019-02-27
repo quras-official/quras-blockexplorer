@@ -1,0 +1,57 @@
+<section class="api-section bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 offset-lg-3">
+          <div class="content-body" id="default">
+            <div class="content-title">Network status</div>
+            <div class="content">
+              http://localhost:3000/(version)
+              <li><b>version</b>: required (v1)</li>
+            </div>
+          </div>
+          <div class="content-body" id="hash">
+            <div class="content-title">/status</div>
+            <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></p>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card box-shadow mb-4">
+                  <div class="card-body">
+                    <div class="card-text">
+  <pre><code>{{'{'}}          
+    "version": 2,
+    "last_block_height": 31723617,
+    "last_block_time": 1542683357
+  {{'}'}}
+  </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p style="border-bottom: 1px solid #ddd;">HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></p>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card box-shadow mb-4">
+                  <div class="card-body">
+                    <div class="card-text">
+  <pre><code>{{'{'}}          
+    "unexpected request"
+  {{'}'}}
+  </code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 parent-sidebar-menu-section d-lg-block d-none">
+          <div class="sidebar-menu">
+            <ul>
+              <li><a href="#hash" class="smooth-scroll">/status</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,126 +1,111 @@
-<header>
-  <nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container">
-      <a class="navbar-brand" routerLink="/"><img class="site-logo" src="vendor/white-logo.png" /></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{ 'Blocks' | translate }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="/blocks">{{ 'Blocks' | translate }}</a>
-              <a class="dropdown-item" routerLink="/txs">{{ 'Transactions' | translate }}</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" routerLink="/assets">{{ 'Assets' | translate }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" routerLink="/nodes">{{ 'Consensus Nodes' | translate }}</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{ 'Network Types' | translate }}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" style="color: lightgrey;">{{ 'Mainnet' | translate }}</a>
-              <a class="dropdown-item" routerLink="/" >{{ 'Testnet' | translate }}</a>
-              <a class="dropdown-item" routerLink="/status">{{ 'Network Status' | translate }}</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/quras-block/api_v1.html">{{ 'API' | translate }}</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0" (ngSubmit)="search()">
-          <div class="searchbar">
-            <input class="search_input" type="text" name="search" placeholder="Search..." [(ngModel)]="q" >
-            <button type="submit" class="search_icon"><i class="fas fa-search"></i></button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<section class="hero-section text-center my-auto">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 mx-auto">
-          <div class="title mb-3">
-            <span class="">Block Explorer</span>
-          </div>
-          <form class="mb-3" (ngSubmit)="search()">
-            <div class="input-group input-group-lg">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa fa-search"></i></span>
-              </div>
-              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="" [(ngModel)]="q" name="search">
-              <div class="input-group-append">
-                <button class="input-group-text" type="submit">GO</button>
-              </div>
-            </div>
-          </form>
-          <div class="content mb-2">Search for block, transaction or address</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <router-outlet>
   <ngx-ui-loader></ngx-ui-loader>
 </router-outlet>
-<section class="market-section">
+<section class="section-content">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 text-center mb-1">
-        <h2 class="section-heading mb-5">Explore more with digital currencies</h2>
+      <!--<div class="col-12 text-center"><div class="section-heading">Explore more with digital currencies</div></div>-->
+      <div class="col-lg-3 col-md-6 text-center row-eq-height">
+        <div class="about-item">
+          <div class="">
+            <svg class="img img-fluid" width="161" height="161" viewBox="0 0 161 161" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="157" height="157" rx="78.5" stroke="white" stroke-width="4"/>
+            <rect x="16" y="16" width="129" height="129" rx="64.5" stroke="white" stroke-opacity="0.5" stroke-width="4"/>
+            <path d="M104.477 77.5048H103.192V69.8436C103.192 66.711 100.623 64.1719 97.4774 64.1719H96.2924L96.3035 61.3251C96.3035 59.2147 94.5759 57.5 92.4496 57.5H58.1846C55.6263 57.5 53.5332 59.5444 53.5 62.0835C53.5 62.1055 53.5 62.1275 53.5 62.1495V99.6749C53.5 101.785 55.2276 103.5 57.354 103.5H97.4885C100.645 103.5 103.203 100.95 103.203 97.8283V90.1562H104.488C106.149 90.1562 107.5 88.8152 107.5 87.1664V80.4945C107.489 78.8458 106.138 77.5048 104.477 77.5048ZM58.1846 60.138H92.4496C93.103 60.138 93.6456 60.6656 93.6456 61.3141L93.6345 64.1719H58.1846C57.066 64.1719 56.1579 63.2706 56.1579 62.1605C56.1579 61.0503 57.066 60.138 58.1846 60.138ZM100.534 97.8173C100.534 99.4881 99.1608 100.851 97.4774 100.851H57.3429C56.6895 100.851 56.1468 100.323 56.1468 99.6639V66.3483C56.767 66.645 57.4537 66.8099 58.1846 66.8099H97.4774C99.1608 66.8099 100.534 68.1729 100.534 69.8436V77.5048H91.4639C89.8027 77.5048 88.4516 78.8458 88.4516 80.4945V87.1664C88.4516 88.8152 89.8027 90.1562 91.4639 90.1562H100.534V97.8173ZM104.831 87.1664C104.831 87.3643 104.676 87.5182 104.477 87.5182H91.475C91.2756 87.5182 91.1206 87.3643 91.1206 87.1664V80.4945C91.1206 80.3076 91.2756 80.1428 91.475 80.1428H104.477C104.665 80.1428 104.831 80.2967 104.831 80.4945V87.1664Z" fill="white" stroke="white"/>
+            </svg>
+            <!--<div class="text-md-left text-sm-center">-->
+            <div class="text-left">
+              <div class="content-title">Wallet</div>
+              <div class="">
+                Use your Blockchain wallet to buy, sell, exchange, and transact bitcoin, ether, and QURAS cash.
+              </div>
+              <div class="content-link"><a href="http://quraswallet.org">Get a Wallet <i class="fa fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="market-amount-content">
-      <div class="row mb-4">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <div class="card box-shadow1 mb-4">
-            <div class="card-body">
-              <div class="digital-currencie-icon"><i class="fas fa-wallet"></i></div>
-              <h5 class="card-title">Wallet</h5>
-              <p class="card-text">Use your Blockchain wallet to buy, sell, exchange, and transact bitcoin, ether, and QURAS cash.</p>
-              <h5 class="card-title"><a href="https://quraswallet.org/index.html">Get a Wallet</a></h5>
+      <div class="col-lg-3 col-md-6 text-center row-eq-height">
+        <div class="about-item">
+          <div class="">
+            <svg class="img img-fluid" width="161" height="161" viewBox="0 0 161 161" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0)">
+            <path d="M105.12 55.5H55.8797C54.0203 55.5 52.5 57.0238 52.5 58.8874V92.9589C52.5 94.8225 54.0203 96.3463 55.8797 96.3463H72.7563V98.8129C72.7563 101.071 70.9188 102.913 68.6656 102.913H64.9469C64.2359 102.913 63.6562 103.494 63.6562 104.206C63.6562 104.919 64.2359 105.5 64.9469 105.5H96.0531C96.7641 105.5 97.3438 104.919 97.3438 104.206C97.3438 103.494 96.7641 102.913 96.0531 102.913H92.3344C90.0813 102.913 88.2437 101.071 88.2437 98.8129V96.3463H105.12C106.98 96.3463 108.5 94.8225 108.5 92.9589V58.8874C108.5 57.0238 106.98 55.5 105.12 55.5ZM73.9266 102.913C74.8016 101.784 75.3375 100.359 75.3375 98.8129V96.3463H85.6625V98.8129C85.6625 100.359 86.1875 101.784 87.0734 102.913H73.9266ZM105.919 92.9589C105.919 93.3974 105.558 93.7592 105.12 93.7592H55.8797C55.4422 93.7592 55.0812 93.3974 55.0812 92.9589V86.1621H105.919V92.9589ZM105.919 83.575H55.0812V58.8874C55.0812 58.4489 55.4422 58.0872 55.8797 58.0872H105.12C105.558 58.0872 105.919 58.4489 105.919 58.8874V83.575Z" fill="white" stroke="white"/>
+            <g opacity="0.5">
+            <path d="M80.4999 91.3584C81.267 91.3584 81.889 90.7351 81.889 89.9662C81.889 89.1973 81.267 88.574 80.4999 88.574C79.7327 88.574 79.1108 89.1973 79.1108 89.9662C79.1108 90.7351 79.7327 91.3584 80.4999 91.3584Z" fill="white" stroke="white"/>
+            </g>
+            <g opacity="0.5">
+            <path d="M82.7096 64.4125C82.2065 63.9082 81.3861 63.9082 80.883 64.4125L71.7611 73.5552C71.258 74.0595 71.258 74.8817 71.7611 75.386C72.0127 75.6381 72.3408 75.7697 72.6689 75.7697C72.9971 75.7697 73.3252 75.6381 73.5768 75.386L82.7096 66.2432C83.2127 65.739 83.2127 64.9168 82.7096 64.4125Z" fill="white" stroke="white"/>
+            </g>
+            <g opacity="0.5">
+            <path d="M88.1232 69.7184C87.6201 69.2141 86.7998 69.2141 86.2967 69.7184L82.6654 73.358C82.1623 73.8622 82.1623 74.6844 82.6654 75.1887C82.917 75.4408 83.2451 75.5724 83.5732 75.5724C83.9014 75.5724 84.2295 75.4408 84.4811 75.1887L88.1123 71.5492C88.6264 71.0339 88.6264 70.2227 88.1232 69.7184Z" fill="white" stroke="white"/>
+            </g>
+            </g>
+            <rect x="2" y="2" width="157" height="157" rx="78.5" stroke="white" stroke-width="4"/>
+            <rect x="16" y="16" width="129" height="129" rx="64.5" stroke="white" stroke-opacity="0.5" stroke-width="4"/>
+            <defs>
+            <clipPath id="clip0">
+              <rect width="56" height="50" fill="white" transform="translate(52.5 55.5)"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <!--<div class="text-md-left text-sm-center">-->
+            <div class="text-left">
+              <div class="content-title">API</div>
+              <div class="">
+                Build apps to accept QURAS payments, search for QURAS transactions, access live QURAS data, and more.
+              </div>
+              <div class="content-link"><a href="http://13.230.62.42/quras-js/docs/en/api-index.html">Visit API <i class="fa fa-arrow-right"></i></a></div>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <div class="card box-shadow1 mb-4">
-            <div class="card-body">
-              <div class="digital-currencie-icon"><i class="fas fa-laptop-code"></i></div>
-              <h5 class="card-title">API</h5>
-              <p class="card-text">Build apps to accept QURAS payments, search for QURAS transactions, access live QURAS data, and more.</p>
-              <h5 class="card-title"><a href="http://13.230.62.42/quras-block/api_v1.html">Visit API</a></h5>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center row-eq-height">
+        <div class="about-item">
+          <div class="">
+            <svg class="img img-fluid" width="161" height="161" viewBox="0 0 161 161" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="157" height="157" rx="78.5" stroke="white" stroke-width="4"/>
+            <rect x="16" y="16" width="129" height="129" rx="64.5" stroke="white" stroke-opacity="0.5" stroke-width="4"/>
+            <path d="M89.5654 98.3091C87.084 98.3091 85.1553 100.381 85.1553 102.905C85.1553 105.428 87.1924 107.5 89.5654 107.5C91.9384 107.5 93.9754 105.428 93.9754 102.905C93.9754 100.381 91.9384 98.3091 89.5654 98.3091ZM89.5654 105.197C88.3193 105.197 87.4199 104.161 87.4199 102.894C87.4199 101.626 88.4385 100.59 89.5654 100.59C90.6923 100.59 91.7108 101.626 91.7108 102.894C91.7108 104.161 90.6923 105.197 89.5654 105.197Z" fill="white" stroke="white"/>
+            <path d="M65.499 98.3091C63.0176 98.3091 61.0889 100.381 61.0889 102.905C61.0889 105.428 63.126 107.5 65.499 107.5C67.9803 107.5 69.909 105.428 69.909 102.905C69.909 100.381 67.8719 98.3091 65.499 98.3091ZM65.499 105.197C64.2529 105.197 63.3535 104.161 63.3535 102.894C63.3535 101.626 64.3721 100.59 65.499 100.59C66.745 100.59 67.6444 101.626 67.6444 102.894C67.6444 104.172 66.6367 105.197 65.499 105.197Z" fill="white" stroke="white"/>
+            <path d="M98.4281 60.509H55.5625C54.8365 60.509 54.3272 61.2363 54.5548 61.9306L62.2589 85.1616C59.5175 85.5694 57.4696 87.9278 57.4696 90.9584C57.4696 94.2865 59.9509 96.9314 63.1149 96.9314H92.7719C93.3679 96.9314 93.8446 96.4465 93.8446 95.8404C93.8446 95.2343 93.3679 94.7494 92.7719 94.7494H63.1257C61.2078 94.7494 59.7342 93.1404 59.7342 91.0686C59.7342 88.9967 61.3162 87.3878 63.1257 87.3878H92.8911C93.4546 87.3878 93.953 87.002 94.1047 86.44L101.982 55.7922H105.341C105.981 55.7922 106.501 55.2633 106.501 54.6131C106.501 53.9959 106.013 53.5 105.406 53.5H101.169C100.584 53.5 100.075 53.9078 99.9342 54.4808L98.4281 60.509ZM92.2735 85.0955H64.5994L57.2529 62.8012H97.8105L92.2735 85.0955Z" fill="white" stroke="white"/>
+            <path opacity="0.5" d="M69.5625 68.2012C70.191 68.2012 70.7003 68.7191 70.7003 69.3473V80.0261C70.7003 80.6653 70.191 81.1722 69.5734 81.1722C68.9449 81.1722 68.4465 80.6542 68.4465 80.0261V69.3473C68.4356 68.7191 68.9341 68.2012 69.5625 68.2012Z" fill="white" stroke="white"/>
+            <path opacity="0.5" d="M77.5918 68.2012C78.2203 68.2012 78.7296 68.7191 78.7296 69.3473V80.0261C78.7296 80.6653 78.2203 81.1722 77.6027 81.1722C76.9742 81.1722 76.4758 80.6542 76.4758 80.0261V69.3473C76.4649 68.7191 76.9634 68.2012 77.5918 68.2012Z" fill="white" stroke="white"/>
+            <path opacity="0.5" d="M85.6104 68.2012C86.2389 68.2012 86.7373 68.7191 86.7373 69.3473V80.0261C86.7373 80.6653 86.228 81.1722 85.6104 81.1722C84.9819 81.1722 84.4727 80.6542 84.4727 80.0261V69.3473C84.4835 68.7191 84.9819 68.2012 85.6104 68.2012Z" fill="white" stroke="white"/>
+            </svg>
+            <!--<div class="text-md-left text-sm-center">-->
+            <div class="text-left">
+              <div class="content-title">Markets</div>
+              <div class="">
+                Find the top cryptocurrencies' market data including price charts and price lookup, market cap, and return on investments.
+              </div>
+              <div class="content-link"><a href="#">VISIT MARKETS <i class="fa fa-arrow-right"></i></a></div>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <div class="card box-shadow1 mb-3">
-            <div class="card-body">
-              <div class="digital-currencie-icon"><i class="fas fa-home"></i></div>
-              <h5 class="card-title">Markets</h5>
-              <p class="card-text">Find the top cryptocurrencies' market data including price charts and price lookup, market cap, and return on investments.</p>
-              <h5 class="card-title"><a href="#">Visit Markets</a></h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <div class="card box-shadow1 mb-4">
-            <div class="card-body">
-              <div class="digital-currencie-icon"><i class="fas fa-chart-bar"></i></div>
-              <h5 class="card-title">Charts</h5>
-              <p class="card-text">View QURAS charts for historical data on unconfirmed transactions, market price, and more.</p>
-              <h5 class="card-title"><a href="#">Visit Charts</a></h5>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center row-eq-height">
+        <div class="about-item">
+          <div class="">
+            <svg class="img img-fluid" width="161" height="161" viewBox="0 0 161 161" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="157" height="157" rx="78.5" stroke="white" stroke-width="4"/>
+            <rect x="16" y="16" width="129" height="129" rx="64.5" stroke="white" stroke-opacity="0.5" stroke-width="4"/>
+            <g clip-path="url(#clip0)">
+            <path opacity="0.5" d="M61.5711 78.4652C62.8436 78.4652 64.0003 77.9559 64.8522 77.1283L69.4898 79.4732C69.4688 79.6642 69.4477 79.8658 69.4477 80.0674C69.4477 82.6988 71.572 84.8421 74.18 84.8421C76.788 84.8421 78.9123 82.6988 78.9123 80.0674C78.9123 79.3353 78.744 78.635 78.4496 78.0089L84.7593 71.6426C85.3797 71.9397 86.0738 72.1095 86.7994 72.1095C89.4074 72.1095 91.5317 69.9662 91.5317 67.3348C91.5317 66.8361 91.4581 66.3586 91.3108 65.9024L96.7898 61.7537C97.5364 62.263 98.4408 62.5601 99.4083 62.5601C102.016 62.5601 104.141 60.4167 104.141 57.7853C104.141 55.1539 102.037 53 99.4293 53C96.8213 53 94.697 55.1433 94.697 57.7747C94.697 58.2734 94.7707 58.7509 94.9179 59.2071L89.439 63.3558C88.6923 62.8465 87.7879 62.5494 86.8204 62.5494C84.2124 62.5494 82.0882 64.6928 82.0882 67.3242C82.0882 68.0563 82.2564 68.7566 82.5509 69.3826L76.2412 75.7489C75.6207 75.4518 74.9266 75.282 74.201 75.282C72.9286 75.282 71.7718 75.7914 70.92 76.619L66.2824 74.274C66.3034 74.0831 66.3244 73.8815 66.3244 73.6799C66.3244 71.0485 64.2001 68.9051 61.5921 68.9051C58.9841 68.9051 56.8599 71.0485 56.8599 73.6799C56.8599 76.3113 58.9631 78.4652 61.5711 78.4652ZM99.4293 56.1831C100.302 56.1831 101.007 56.8941 101.007 57.7747C101.007 58.6554 100.302 59.3663 99.4293 59.3663C98.5565 59.3663 97.8519 58.6554 97.8519 57.7747C97.8519 56.8941 98.5565 56.1831 99.4293 56.1831ZM86.8099 65.7326C87.6828 65.7326 88.3873 66.4435 88.3873 67.3242C88.3873 68.2048 87.6828 68.9157 86.8099 68.9157C85.9371 68.9157 85.2325 68.2048 85.2325 67.3242C85.2325 66.4435 85.9371 65.7326 86.8099 65.7326ZM74.1905 78.4652C75.0634 78.4652 75.7679 79.1761 75.7679 80.0568C75.7679 80.9374 75.0634 81.6483 74.1905 81.6483C73.3177 81.6483 72.6131 80.9374 72.6131 80.0568C72.6131 79.1761 73.3177 78.4652 74.1905 78.4652ZM61.5711 72.0989C62.4439 72.0989 63.1485 72.8098 63.1485 73.6905C63.1485 74.5711 62.4439 75.282 61.5711 75.282C60.6983 75.282 59.9937 74.5711 59.9937 73.6905C59.9937 72.8098 60.6983 72.0989 61.5711 72.0989Z" fill="white"/>
+            <path d="M106.389 104.801H104.67V71.0029C104.67 70.1179 103.95 69.4036 103.059 69.4036H96.6133C95.7217 69.4036 95.002 70.1179 95.002 71.0029V104.801H91.7793V80.5987C91.7793 79.7137 91.0596 78.9994 90.168 78.9994H83.7227C82.8311 78.9994 82.1113 79.7137 82.1113 80.5987V104.801H78.8887V93.3931C78.8887 92.5082 78.1689 91.7938 77.2773 91.7938H70.832C69.9404 91.7938 69.2207 92.5082 69.2207 93.3931V104.801H65.998V86.9959C65.998 86.1109 65.2783 85.3966 64.3867 85.3966H57.9414C57.0498 85.3966 56.3301 86.1109 56.3301 86.9959V104.801H54.6113C53.7197 104.801 53 105.516 53 106.401C53 107.286 53.7197 108 54.6113 108H106.389C107.28 108 108 107.286 108 106.401C108 105.516 107.28 104.801 106.389 104.801ZM98.2246 72.6022H101.447V104.801H98.2246V72.6022ZM85.334 82.198H88.5566V104.801H85.334V82.198ZM72.4434 94.9924H75.666V104.801H72.4434V94.9924ZM59.5527 88.5952H62.7754V104.801H59.5527V88.5952Z" fill="white"/>
+            </g>
+            <defs>
+            <clipPath id="clip0">
+              <rect width="55" height="55" fill="white" transform="translate(53 53)"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <!--<div class="text-md-left text-sm-center">-->
+            <div class="text-left">
+              <div class="content-title">Charts</div>
+              <div class="">
+                View QURAS charts for historical data on unconfirmed transactions, market price, and more.
+              </div>
+              <div class="content-link"><a href="#">VISIT CHARTS <i class="fa fa-arrow-right"></i></a></div>
             </div>
           </div>
         </div>
@@ -130,92 +115,87 @@
 </section>
 <section class="section-footer" id="footer">
   <div class="container">
-      <div class="row">
-        <div class="top-pad col-lg-4">
-          <div>
-            <p class="title">ABOUT QURAS</p>
-            <p class="about-description text-justify">
-              QURAS is a platform for secret contract and crypto-tokens for privacy 2.0. QURAS is the first blockchain that enables private token transactions and implements secret contract to aim for protecting sensitive information.
-              QURAS will also provide file storage function and will support big data in the future to support our own right to build society where projects coexist together.
-            </p>
+    <div class="row">
+      <div class="col-md-6 col-sm-12 order-md-2 inner-left-xs">
+        <div class="tweet-title">Tweets by <span>@qurasofficial</span></div>
+        <div id="twitter-timeline-feed-wrapper">
+          <a class="twitter-timeline" data-height="600" data-link-color="#2B7BB9" href="https://twitter.com/qurasofficial?ref_src=twsrc%5Etfw">Tweets by qurasofficial</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 order-md-1 inner-top-xs inner-right-xs">
+        <div class="footer-nav">
+          <ul>
+            <li><a class="js-scroll-trigger" href="https://quras.io/#about">About</a></li>
+            <li><a class="js-scroll-trigger" href="https://quras.io/#features">Features</a></li>
+            <li><a class="js-scroll-trigger" href="https://quras.io/#media">Media</a></li>
+            <li><a class="js-scroll-trigger" href="https://quras.io/#team">Team</a></li>
+            <li><a download href="https://quras.io/whitepaper.pdf ">Whitepaper</a></li>
+          </ul>
+        </div>
+        <div class="contact-section">
+          <div class="footer-logo mb-4">
+            <a href="/">
+              <svg class="img img-fluid" width="106" height="32" viewBox="0 0 106 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M26.9281 17.1672C27.2278 16.0541 27.399 14.8982 27.399 13.6995C27.399 6.12197 21.2771 0 13.6995 0C6.12197 0 0 6.12197 0 13.6995C0 21.2771 6.12197 27.399 13.6995 27.399C14.6842 27.399 15.6688 27.2706 16.6107 27.0994C17.7666 29.9249 20.5065 31.8942 23.7601 31.8942C27.9984 31.8942 31.4661 28.4265 31.4661 24.1882C31.4661 21.063 29.6252 18.3659 26.9281 17.1672ZM16.0541 24.1026C15.2835 24.2738 14.5129 24.3595 13.6995 24.3595C7.7916 24.3595 2.99677 19.5646 2.99677 13.6567C2.99677 7.74879 7.7916 2.95396 13.6995 2.95396C19.6074 2.95396 24.4023 7.74879 24.4023 13.6567C24.4023 14.6414 24.2738 15.5404 24.017 16.4394C23.9313 16.4394 23.8457 16.4394 23.7601 16.4394C19.5218 16.4822 16.0969 19.8643 16.0541 24.1026ZM23.7601 28.8974C21.1486 28.8974 19.0509 26.7997 19.0509 24.1882C19.0509 21.5767 21.1486 19.479 23.7601 19.479C26.3716 19.479 28.4693 21.5767 28.4693 24.1882C28.4693 26.7997 26.3716 28.8974 23.7601 28.8974Z" fill="#74BCE4"/>
+              <path d="M37.1171 16.782V7.87733C37.1171 7.79171 37.16 7.66327 37.2456 7.57765C37.3312 7.49203 37.4168 7.44922 37.5453 7.44922H38.3158C39.2149 7.44922 40.0283 8.30544 40.0283 9.58977V16.6108C40.0283 17.5526 40.328 18.3232 40.8845 18.9226C41.441 19.5219 42.2116 19.8644 43.1107 19.8644C44.0097 19.8644 44.7803 19.5647 45.3369 18.9226C45.9362 18.2804 46.2359 17.5526 46.2359 16.6108V9.63258C46.2359 8.34825 46.9209 7.49203 47.9055 7.49203H48.6761C48.7617 7.49203 48.8902 7.53484 48.9758 7.62046C49.0614 7.70608 49.1042 7.79171 49.1042 7.92014V16.8248C49.1042 18.4516 48.5477 19.8644 47.3918 21.0203C46.2359 22.1762 44.8231 22.7327 43.1535 22.7327C41.4839 22.7327 40.0711 22.1762 38.9152 21.0203C37.7165 19.8216 37.1171 18.4088 37.1171 16.782Z" fill="#74BCE4"/>
+              <path d="M58.0944 22.0478V7.87733C58.0944 7.7489 58.1372 7.66327 58.2229 7.57765C58.3085 7.49203 58.3941 7.44922 58.5225 7.44922H64.6017C65.886 7.44922 66.9991 7.87733 67.8982 8.81917C68.7972 9.7182 69.2681 10.7885 69.2681 12.0728C69.2681 13.0575 68.9684 13.9137 68.4119 14.6843C67.8553 15.4549 67.0847 16.0114 66.1001 16.3967L69.054 21.8337C69.1397 21.9621 69.1397 22.1334 69.054 22.2618C68.9684 22.3903 68.84 22.4759 68.6687 22.4759H66.4426C66.2713 22.4759 66.1857 22.3903 66.1001 22.2618L63.2318 16.568H60.8772V22.0478C60.8772 22.1334 60.8343 22.2618 60.7487 22.3474C60.6631 22.4331 60.5775 22.4759 60.449 22.4759H58.4797C58.3513 22.4759 58.2657 22.4331 58.1801 22.3474C58.1372 22.2618 58.0944 22.1762 58.0944 22.0478ZM60.8772 14.299H64.3877C64.9442 14.299 65.4579 14.0849 65.886 13.6568C66.3141 13.2287 66.5282 12.715 66.5282 12.1156C66.5282 11.5591 66.3141 11.0453 65.886 10.66C65.4579 10.2747 64.987 10.0607 64.3877 10.0607H60.8772V14.299Z" fill="#74BCE4"/>
+              <path d="M76.118 22.4752C75.9467 22.4752 75.8611 22.4324 75.7755 22.304C75.6899 22.1756 75.6899 22.0471 75.7755 21.9187L82.4112 7.4914C82.4968 7.32015 82.6252 7.27734 82.7965 7.27734H83.0105C83.1818 7.27734 83.3102 7.36297 83.353 7.4914L89.9459 21.9187C90.0315 22.0471 90.0315 22.1756 89.9459 22.304C89.8603 22.4324 89.7319 22.4752 89.6034 22.4752H87.7197C87.4629 22.4752 87.2488 22.3468 87.0776 22.0471L86.0073 19.7353H79.5856L78.5582 22.0471C78.4298 22.3468 78.2157 22.4752 77.916 22.4752H76.118ZM80.6987 17.3379H84.9798L82.8393 12.6287H82.7965L80.6987 17.3379Z" fill="#74BCE4"/>
+              <path d="M96.4531 20.9775C96.239 20.7635 96.239 20.5494 96.3675 20.3354L97.1381 19.0082C97.2237 18.8798 97.3521 18.7942 97.5234 18.7513C97.6946 18.7513 97.7802 18.7513 97.8659 18.837L97.9515 18.8798C98.0371 18.9226 98.1227 19.0082 98.2083 19.051C98.294 19.0938 98.4224 19.1795 98.5508 19.2651C98.6793 19.3507 98.8505 19.4363 98.9789 19.5219C99.1074 19.6076 99.2786 19.6932 99.4499 19.736C99.6211 19.8216 99.8352 19.8644 99.9636 19.9501C100.135 19.9929 100.306 20.0357 100.477 20.0785C100.649 20.1213 100.863 20.1213 100.991 20.1213C101.548 20.1213 102.019 19.9501 102.361 19.6504C102.746 19.3079 102.918 18.9226 102.918 18.4945C102.918 17.9808 102.703 17.5098 102.275 17.0817C101.847 16.6536 101.162 16.2683 100.22 15.9258C99.0218 15.4549 98.0371 14.8127 97.3093 14.1278C96.5815 13.4 96.1962 12.4581 96.1962 11.3022C96.1962 10.232 96.6243 9.24731 97.4377 8.4339C98.2512 7.62049 99.4499 7.19238 101.034 7.19238C102.618 7.19238 104.031 7.6633 105.315 8.60515C105.401 8.64796 105.486 8.77639 105.529 8.94763C105.572 9.11888 105.529 9.24731 105.486 9.33293L104.673 10.5316C104.459 10.8741 104.202 10.9597 103.902 10.7885C102.661 10.0179 101.676 9.5898 100.905 9.5898C100.349 9.5898 99.878 9.76104 99.5355 10.0607C99.193 10.3604 99.0217 10.7029 99.0217 11.0882C99.0217 11.6019 99.2358 12.03 99.6211 12.3725C100.006 12.7578 100.649 13.1003 101.548 13.4428C102.147 13.6997 102.703 13.9137 103.132 14.1706C103.56 14.4274 104.031 14.7271 104.502 15.1124C104.972 15.4977 105.358 15.9686 105.615 16.4824C105.872 16.9961 106 17.5955 106 18.2804C106 19.4363 105.529 20.421 104.63 21.2772C103.731 22.1334 102.532 22.5187 101.077 22.5187C100.263 22.5187 99.4927 22.3903 98.7649 22.1762C98.0371 21.9194 97.5234 21.7053 97.1809 21.4913C96.9668 21.4056 96.6671 21.1916 96.4531 20.9775Z" fill="#74BCE4"/>
+              </svg>
+            </a>
           </div>
-            <div>
-              <form>
-                  <p class="title">Email Newsletters</p>
-                  <div class="input-group mb-2">
-                    <input type="email" class="newsletter-input form-control" name="email" placeholder="E-mail">
-                    <div class="input-group-append" title="subscribe now">
-                      <span class="input-group-text btn btn-primary newsletter-submit">
-                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                      </span>
-                    </div>
-                  </div>
-                  <p class="success-msg"></p>
-              </form>
+          <div class="foot-links mb-5">
+            <div class="list-title">We are here!</div>
+            <div class="links">
+              <a href="https://t.me/QurasOfficialGroup" target="_blank" title="Telegram"><i class="fa fa-telegram"></i><span></span></a>
+              <a href="https://twitter.com/qurasofficial" target="_blank" title="Twitter"><i class="fa fa-twitter"></i><span></span></a>
+              <a href="https://www.facebook.com/qurasofficial" target="_blank" title="Facebook"><i class="fa fa-facebook"></i><span></span></a>
+              <a href="https://medium.com/@qurasofficial" target="_blank" title="Medium"><i class="fa fa-medium" aria-hidden="true"></i><span></span></a>
+              <a href="https://www.linkedin.com/company/quras/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i><span></span></a>
+              <a href="https://vimeo.com/user84125561" target="_blank" title="Vimeo"><i class="fa fa-vimeo"></i><span></span></a>
+              <a href="https://bitbucket.org/qurasblockchain" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i><span></span></a>
             </div>
-            <div>
-              <p class="follow-us-title">Follow us on:</p>
-              <div>
-                <div class="links">
-                  <a href="https://t.me/QurasOfficialGroup"><i class="fab fa-telegram"></i><span></span></a>
-                  <a href="https://twitter.com/qurasofficial" target="_blank"><i class="fab fa-twitter"></i><span></span></a>
-                  <a href="https://www.facebook.com/qurasofficial"><i class="fab fa-facebook-f"></i><span></span></a>
-                  <a href="https://medium.com/@qurasofficial"><i class="fab fa-medium-m" aria-hidden="true"></i><span></span></a>
-                  <a href="https://www.linkedin.com/company/quras/" target="_blank"><i class="fab fa-linkedin-in"></i><span></span></a>
-                  <a href="https://vimeo.com/user84125561"><i class="fab fa-vimeo-v"></i><span></span></a>
-                  <a href="https://bitbucket.org/qurasblockchain" target="_blank"><i class="fab fa-github" aria-hidden="true"></i><span></span></a>
+          </div>
+          <div class="community mb-5">
+            <div class="list-title">Community</div>
+            <ul>
+              <li><a href="https://t.me/QurasOfficialGroup" target="_blank">Quras Telegram Group</a></li>
+              <li><a href="https://www.facebook.com/QurasOfficial/" target="_blank">Facebook</a></li>
+              <li><a href="https://twitter.com/qurasofficial" target="_blank">Twitter</a></li>
+            </ul>
+          </div>
+          <form class="subscribe" method="GET" action="/register">
+            <div class="list-title">Follow the our updates</div>
+            <div class="row">
+              <div class="col-md-10">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control form-control-lg newsletter-input" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+
+                  <div class="input-group-append">
+                    <button class="btn btn-secondary newsletter-submit" type="button">Subscribe</button>
+                  </div>
                 </div>
+                <div class="success-msg"></div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4 middle top-pad">
-            <p class="title">LATEST NEWS</p>
-            <div id="twitter-timeline-feed-wrapper">
-              <a class="twitter-timeline" data-height="600" data-theme="dark" href="https://twitter.com/qurasofficial?ref_src=twsrc%5Etfw">Tweets by qurasofficial</a>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-          </div>
-          <div class="col-lg-4 top-pad">
-            <div class="quras">
-              <p class="title">LINKS</p>
-              <ul>
-                <li><a routerLink="/">Home</a></li>
-                <li><a routerLink="/blocks">Blocks</a></li>
-                <li><a routerLink="/txs">Transactions</a></li>
-                <li><a routerLink="/status">Network Status</a></li>
-                <li><a routerLink="/assets">Assets</a></li>
-                <li><a routerLink="/nodes">Consensus Nodes</a></li>
-                <li><a href="/quras-block/api_v1.html">API</a></li>
-              </ul>
-            </div>
-            <div class="quras">
-              <p class="title">COMMMUNITY</p>
-              <ul>
-                <li><a href="https://t.me/QurasOfficialGroup" target="_blank">Quras Telegram Group</a></li>
-                <li><a href="https://www.facebook.com/qurasofficial" target="_blank">Facebook</a></li>
-                <li><a href="https://twitter.com/qurasofficial" target="_blank">Twitter</a></li>
-              </ul>
-            </div>
-            <div class="quras">
-              <p class="title">{{ 'Languages' | translate }}</p>
-              <ul>
-                <li><a routerLink="" (click)="setLang('en')"><span class="flag-icon flag-icon-us"></span>&nbsp;English</a></li>
-                <li><a routerLink="" (click)="setLang('ja')"><span class="flag-icon flag-icon-jp"></span>&nbsp;日本語</a></li>
-              </ul>
-            </div>
-          </div>
-      </div>
-  </div>
-</section>
-<footer id="footer" class="text-white py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 text-center mx-auto">
-        <small>Copyright &copy; QURAS 2018</small>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</footer>
+</section>
+<section class="section-main-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="footer-copyright">Copyright © <script>document.write(new Date().getFullYear());</script> <a href="#">Quras</a>. All Rights Reserved.</p>
+      </div>
+      <div class="col-md-6 info-email">
+        <a href="mailto:info@quras.io">info@quras.io</a>
+      </div>
+    </div>
+  </div>
+</section>
 <div id="back-to-top">
 
 </div>
