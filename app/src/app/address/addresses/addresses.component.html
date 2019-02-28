@@ -21,9 +21,9 @@
                 <tbody>
                   <tr *ngFor="let address of addresses">
                     <td><a [routerLink]="['/addresses', address.address]">{{ address.address }}</a></td>
-                    <td class="date-time">{{ address.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td class="date-time">{{ address.block_time * 1000 | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                     <td class="text-right">{{ address.transaction_count | number }}</td>
-                    <td class="date-time">{{ address.last_block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td class="date-time">{{ address.last_block_time * 1000 | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                     <td class="text-right"><span *ngFor="let balance of address.balances">{{ balance.amount | number:'1.0-4' }} <a [routerLink]="['/assets', balance.asset_hash]">{{ balance.asset_symbol }}</a><br></span></td>
                   </tr>
                 </tbody>

@@ -21,7 +21,7 @@
                 <tbody>
                   <tr *ngFor="let block of blocks">
                     <td><a [routerLink]="['/blocks', block.height]">{{ block.height }}</a></td>
-                    <td class="date-time">{{ block.time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td class="date-time">{{ block.time * 1000 | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                     <td class="text-right">{{ block.transaction_count }}</td>
                     <td><a [routerLink]="['/addresses', block.producer]">{{ block.producer }}</a></td>
                     <td class="text-right">{{ block.size | number }} Bytes</td>

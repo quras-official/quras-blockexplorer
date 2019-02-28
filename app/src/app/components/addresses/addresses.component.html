@@ -20,9 +20,9 @@
               <tbody>
                 <tr *ngFor="let address of addresses">
                   <td><a [routerLink]="['/addresses', address.address]">{{ address.address }}</a></td>
-                  <td>{{ address.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                  <td>{{ address.block_time * 1000 | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                   <td class="text-right">{{ address.transaction_count | number }}</td>
-                  <td class="date-time">{{ address.last_block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                  <td class="date-time">{{ address.last_block_time * 1000 | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                   <td class="text-right">{{ address.balance_amount | number:'1.0-4' }} {{ symbol }}</td>
                 </tr>
               </tbody>

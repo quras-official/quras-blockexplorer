@@ -24,7 +24,7 @@
                     <td><a [routerLink]="['/assets', asset.hash]">{{ asset.name }}</a></td>
                     <td>{{ asset.symbol }}</td>
                     <td>{{ asset.type }}</td>
-                    <td class="date-time">{{ asset.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td class="date-time">{{ asset.block_time * 1000 | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                     <td class="text-right">{{ asset.address_count | number }}</td>
                     <td class="text-right">{{ asset.transaction_count | number }}</td>
                   </tr>

@@ -22,7 +22,7 @@
                   </tr>
                   <tr>
                     <th scope="row">{{ 'Time' | translate }}</th>
-                    <td>{{ block.time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td>{{ block.time * 1000 | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                   </tr>
                   <tr>
                     <th scope="row">{{ 'Producer' | translate }}</th>
@@ -85,7 +85,7 @@
                   <tr *ngFor="let tx of block.transactions">
                     <td>{{ tx.type }}</td>
                     <td><a [routerLink]="['/txs', tx.txid]">{{ tx.txid }}</a></td>
-                    <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td>{{ tx.block_time * 1000 | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                     <td>{{ 'Show/Hide' | translate }}</td>
                   </tr>
                 </tbody>

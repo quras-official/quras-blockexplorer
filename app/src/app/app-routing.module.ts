@@ -2,17 +2,24 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search/search.component';
-import {HashLocationStrategy, Location, LocationStrategy} from '@angular/common';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { ApiHeaderComponent } from './api-header/api-header.component';
+import { HomeHeaderComponent } from './home-header/home-header.component';
 
 const routes: Routes = [
-  //Site routes goes here 
+  //Home page 
   {
+    path: '', 
+    component: HomeHeaderComponent,
+    children: [
+      { path: '', component: HomeComponent, pathMatch: 'full'}
+    ]
+  },
+
+  { //Main menu items
     path: '', 
     component: AppHeaderComponent,
     children: [
-      { path: '', component: HomeComponent, pathMatch: 'full'},
       { path: 'blocks', loadChildren: './block/block.module#BlockModule' },
       { path: 'txs', loadChildren: './tx/tx.module#TxModule' },
       { path: 'addresses', loadChildren: './address/address.module#AddressModule' },
@@ -22,7 +29,8 @@ const routes: Routes = [
       { path: 'search', component: SearchComponent }
     ]
   },
-  { 
+
+  { //API page 
     path: '', 
     component: ApiHeaderComponent,
     children: [

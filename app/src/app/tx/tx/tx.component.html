@@ -22,7 +22,7 @@
                   </tr>
                   <tr>
                     <th scope="row">{{ 'Time' | translate }}</th>
-                    <td>{{ tx.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td>{{ tx.block_time * 1000 | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                   </tr>
                   <tr>
                     <th scope="row">{{ 'Network Fee' | translate }}</th>
@@ -50,7 +50,7 @@
   </div>
 </section>
   
-<section class=""component-transactions-section">
+<section class="component-transactions-section">
   <div class="container">
     <div class="table-content">
       <div class="row mb-4" *ngIf="tx.script.length > 0">

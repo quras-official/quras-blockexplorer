@@ -26,7 +26,7 @@
                     <td><a [routerLink]="['/addresses', transfer.address_to]">{{ transfer.address_to | cut:20 }}</a></td>
                     <td class="text-right">{{ transfer.amount | number:'1.0-4' }}</td>
                     <td><a [routerLink]="['/assets', transfer.asset_hash]">{{ transfer.asset_symbol }}</a></td>
-                    <td class="date-time">{{ transfer.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td class="date-time">{{ transfer.block_time * 1000 | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                   </tr>
                 </tbody>
               </table>
