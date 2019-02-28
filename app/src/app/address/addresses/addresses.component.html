@@ -13,17 +13,17 @@
               <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle">
                 <thead>
                   <th scope="col">{{ 'Address' | translate }}</th>
-                  <th scope="col">{{ 'Created' | translate }}</th>
+                  <th scope="col" class="date-time">{{ 'Created' | translate }}</th>
                   <th scope="col" class="text-right">{{ 'Transactions' | translate }}</th>
-                  <th scope="col">{{ 'Last Transaction' | translate }}</th>
+                  <th scope="col" class="date-time">{{ 'Last Transaction' | translate }}</th>
                   <th scope="col" class="text-right">{{ 'Coins' | translate }}</th>
                 </thead>
                 <tbody>
                   <tr *ngFor="let address of addresses">
                     <td><a [routerLink]="['/addresses', address.address]">{{ address.address }}</a></td>
-                    <td>{{ address.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td class="date-time">{{ address.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                     <td class="text-right">{{ address.transaction_count | number }}</td>
-                    <td>{{ address.last_block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td class="date-time">{{ address.last_block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                     <td class="text-right"><span *ngFor="let balance of address.balances">{{ balance.amount | number:'1.0-4' }} <a [routerLink]="['/assets', balance.asset_hash]">{{ balance.asset_symbol }}</a><br></span></td>
                   </tr>
                 </tbody>

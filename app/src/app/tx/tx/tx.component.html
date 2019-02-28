@@ -50,7 +50,7 @@
   </div>
 </section>
   
-<section class=""recent-transactions-section">
+<section class=""component-transactions-section">
   <div class="container">
     <div class="table-content">
       <div class="row mb-4" *ngIf="tx.script.length > 0">
@@ -61,7 +61,7 @@
             </div>
             <div class="card-body">
               <p class="card-text">{{ script_ops[0] ? tx.script.invocation_op : tx.script.invocation }}</p>
-              <a [routerLink]="" (click)="toggleScript(0)" class="btn btn-primary float-right">{{ 'View Opcode' | translate }}</a>
+              <a [routerLink]="" (click)="toggleScript(0)" class="btn btn-theme float-right">{{ 'View Opcode' | translate }}</a>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="card-body">
               <p class="card-text">{{ script_ops[1] ? tx.script.verification_op : tx.script.verification }}</p>
-              <a [routerLink]="" (click)="toggleScript(1)" class="btn btn-primary float-right">{{ 'View Opcode' | translate }}</a>
+              <a [routerLink]="" (click)="toggleScript(1)" class="btn btn-theme float-right">{{ 'View Opcode' | translate }}</a>
             </div>
           </div>
         </div>

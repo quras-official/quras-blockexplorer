@@ -1,4 +1,4 @@
-<section class="market-section bg-theme">
+<section class="market-section status-page bg-theme">
   <div class="container">
     <div class="hero-over">
       <div class="row">
@@ -15,7 +15,7 @@
                   <th scope="col">{{ 'Name' | translate }}</th>
                   <th scope="col">{{ 'Symbol' | translate }}</th>
                   <th scope="col">{{ 'Type' | translate }}</th>
-                  <th scope="col">{{ 'Created' | translate }}</th>
+                  <th scope="col" class="date-time">{{ 'Created' | translate }}</th>
                   <th scope="col" class="text-right">{{ 'Addresses' | translate }}</th>
                   <th scope="col" class="text-right">{{ 'Transactions' | translate }}</th>
                 </thead>
@@ -24,7 +24,7 @@
                     <td><a [routerLink]="['/assets', asset.hash]">{{ asset.name }}</a></td>
                     <td>{{ asset.symbol }}</td>
                     <td>{{ asset.type }}</td>
-                    <td>{{ asset.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td class="date-time">{{ asset.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                     <td class="text-right">{{ asset.address_count | number }}</td>
                     <td class="text-right">{{ asset.transaction_count | number }}</td>
                   </tr>

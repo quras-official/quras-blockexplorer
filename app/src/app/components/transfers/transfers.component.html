@@ -1,4 +1,4 @@
-<section class="recent-transactions-section" *ngIf="transfers.length > 0">
+<section class="component-transactions-section" *ngIf="transfers.length > 0">
   <div class="container">
     <div class="table-content">
       <div class="row">
@@ -17,7 +17,7 @@
                   <th scope="col">{{ 'To' | translate }}</th>
                   <th scope="col" class="text-right">{{ 'Amount' | translate }}</th>
                   <th scope="col">{{ 'Asset' | translate }}</th>
-                  <th scope="col">{{ 'Time' | translate }}</th>
+                  <th scope="col" class="date-time">{{ 'Time' | translate }}</th>
                 </thead>
                 <tbody>
                   <tr *ngFor="let transfer of transfers">
@@ -26,7 +26,7 @@
                     <td><a [routerLink]="['/addresses', transfer.address_to]">{{ transfer.address_to | cut:20 }}</a></td>
                     <td class="text-right">{{ transfer.amount | number:'1.0-4' }}</td>
                     <td><a [routerLink]="['/assets', transfer.asset_hash]">{{ transfer.asset_symbol }}</a></td>
-                    <td>{{ transfer.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
+                    <td class="date-time">{{ transfer.block_time * 1000 | amFromUtc | amDateFormat:'YYYY/M/D h:m:s A' }}</td>
                   </tr>
                 </tbody>
               </table>

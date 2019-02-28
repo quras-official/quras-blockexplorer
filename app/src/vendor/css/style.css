@@ -122,7 +122,7 @@ nav#mainNav ul li ul.dropdown-menu li a { color: #6A7A8E; }
 @media only screen and (max-width: 575px) { .recent-blocks-section { padding-top: 0; } }
 .recent-blocks-section .table-content { margin-bottom: -300px; }
 
-.recent-transactions-section { padding-bottom: 4rem; }
+.recent-transactions-section { padding-top: 300px; padding-bottom: 4rem; }
 
 .section-content { background: #74BCE4; color: #fff; padding-top: 1rem; }
 .section-content .section-heading { color: #fff; }
