@@ -1,6 +1,6 @@
 export const environment = {
   env: 'production',
   production: true,
-  apiServer: 'http://13.230.62.42:3001/v1',
+  apiServer: 'https://blockapi.quraswallet.org:9009/v1',
   network: 'testnet'
 };

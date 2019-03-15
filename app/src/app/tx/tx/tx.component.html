@@ -9,7 +9,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="bg-white p-4 border-radius mb-3">
-            <div class="table table-responsive">
+            <div class="table table-responsive text-left">
               <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle" *ngIf="tx">
                 <tbody>
                   <tr>
@@ -50,46 +50,46 @@
   </div>
 </section>
   
-<section class="component-transactions-section">
+<!-- <section class="component-transactions-section"  *ngIf="tx.script[0]">
   <div class="container">
     <div class="table-content">
-      <div class="row mb-4" *ngIf="tx.script.length > 0">
-        <div class="col-lg-6" *ngIf="tx.script.invocation">
+      <div class="row mb-4" *ngIf="tx.script[0]">
+        <div class="col-lg-6" *ngIf="tx.script[0].invocation">
           <div class="card mb-3">
             <div class="card-header">
               {{ 'Invocation Script' | translate }}
             </div>
             <div class="card-body">
-              <p class="card-text">{{ script_ops[0] ? tx.script.invocation_op : tx.script.invocation }}</p>
+              <p class="card-text">{{ script_ops[0] ? tx.script[0].invocation_op : tx.script[0].invocation }}</p>
               <a [routerLink]="" (click)="toggleScript(0)" class="btn btn-theme float-right">{{ 'View Opcode' | translate }}</a>
             </div>
           </div>
         </div>
-        <div class="col-lg-6" *ngIf="tx.script.verification">
+        <div class="col-lg-6" *ngIf="tx.script[0].verification">
           <div class="card mb-3">
             <div class="card-header">
               {{ 'Verification Script' | translate }}
             </div>
             <div class="card-body">
-              <p class="card-text">{{ script_ops[1] ? tx.script.verification_op : tx.script.verification }}</p>
+              <p class="card-text">{{ script_ops[1] ? tx.script[0].verification_op : tx.script[0].verification }}</p>
               <a [routerLink]="" (click)="toggleScript(1)" class="btn btn-theme float-right">{{ 'View Opcode' | translate }}</a>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-6" *ngIf="tx.script.script">
+        <div class="col-lg-6" *ngIf="tx.script[0].script">
           <div class="card mb-3">
             <div class="card-header">
               {{ 'Script' | translate }}
             </div>
             <div class="card-body">
-              <p class="card-text">{{ script_ops[2] ? tx.script.script_op : tx.script.script }}</p>
+              <p class="card-text">{{ script_ops[2] ? tx.script[0].script_op : tx.script[0].script }}</p>
               <!-- <a [routerLink]="" (click)="toggleScript(2)" class="btn btn-primary float-right">{{ 'View Opcode' | translate }}</a> -->
-            </div>
+            <!-- </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
