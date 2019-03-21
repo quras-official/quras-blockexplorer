@@ -8,7 +8,6 @@ import { ToKbPipes } from './pipes/tokb.pipes';
 import { CutStringPipe } from './pipes/cut.pipes';
 import { TranslateModule } from '@ngx-translate/core';
 import { SearchComponent } from '../search/search/search.component';
-import { SpinnerComponent } from '../components/spinner/spinner.component';
 
 const sharedModules = [
   CommonModule,
@@ -21,7 +20,6 @@ const sharedModules = [
 
 const sharedComponents = [
   SearchComponent,
-  SpinnerComponent
 ];
 
 const sharedPipes = [

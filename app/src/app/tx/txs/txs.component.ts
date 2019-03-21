@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Tx } from 'src/app/models/tx';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-txs',
@@ -18,7 +18,6 @@ export class TxsComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
@@ -26,14 +25,14 @@ export class TxsComponent implements OnInit {
   }
 
   getTxs(): void {
-    this.ngxService.start();
+    $('#mydiv').show();
     this.apiService.getTxs()
     .subscribe((data: any) => {
       this.txs = data.txs;
       this.total = data.total;
       setTimeout(() => {
-        this.ngxService.stop();
-      }, 2000);
+        $('#mydiv').hide();
+      }, 1000);
     });
   }
 

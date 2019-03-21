@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Address } from 'src/app/models/address';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-address',
@@ -16,18 +16,17 @@ export class AddressComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
-    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params.id;//+this.route.snapshot.paramMap.get('id');
-    this.ngxService.start();
+    $('#mydiv').show();
     this.apiService.getAddress(id)
       .subscribe(address => {
         this.address = address;
         setTimeout(() => {
-          this.ngxService.stop();
-        }, 2000);
+          $('#mydiv').hide();
+        }, 1000);
       });
   }
 

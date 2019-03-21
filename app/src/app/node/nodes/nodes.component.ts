@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Node } from 'src/app/models/node';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-nodes',
@@ -18,7 +18,6 @@ export class NodesComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
@@ -26,26 +25,26 @@ export class NodesComponent implements OnInit {
   }
 
   getNodes(): void {
-    this.ngxService.start();
+    $('#mydiv').show();
     this.apiService.getNodes(0, 0)
     .subscribe((data: any) => {
       this.nodes = data.nodes
       this.total = data.total//nodes.length * 20;
       setTimeout(() => {
-        this.ngxService.stop();
-      }, 2000);
+        $('#mydiv').hide();
+      }, 1000);
     });
   }
 
   onPaging(page: number) {
-    this.ngxService.start();
+    $('#mydiv').show();
     this.apiService.getNodes((page - 1) * this.pageSize, this.pageSize)
     .subscribe((data: any) => {
       this.nodes = data.nodes
       this.total = data.total//nodes.length * 20;
       setTimeout(() => {
-        this.ngxService.stop();
-      }, 2000);
+        $('#mydiv').hide();
+      }, 1000);
     });
   }
 

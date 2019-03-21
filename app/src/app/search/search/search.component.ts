@@ -4,7 +4,7 @@ import { catchError, switchMap, tap, map } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-search',
@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private http: HttpClient,
-    private ngxService: NgxUiLoaderService
   ) {
     this.apiServer = environment.apiServer;
   }
@@ -30,6 +29,7 @@ export class SearchComponent implements OnInit {
     this.query$ = this.route.queryParams.pipe(
       map(queryParams => queryParams.q)
     );
+    $('#mydiv').show();
     this.result$ = this.query$.pipe(
       switchMap(query => this.tryBlockHeight(query)),
       switchMap(query => this.tryTransaction(query)),
@@ -42,19 +42,15 @@ export class SearchComponent implements OnInit {
   private tryBlockHeight(query: string): Observable<string> {
     const blockHeight = Number(query);
     if (!isNaN(blockHeight) && query.length < 64) {
-      this.ngxService.start();
       return this.http.get(this.apiServer + `/blocks/${blockHeight}`).pipe(
         catchError(() => {
-          setTimeout(() => {
-            this.ngxService.stop();
-          }, 2000);
           return of(null)
         }),
         switchMap(data => {
-          setTimeout(() => {
-            this.ngxService.stop();
-          }, 2000);
           if (data) {
+            setTimeout(() => {
+              $('#mydiv').hide();
+            }, 2000);
             this.router.navigate(['/blocks', blockHeight], { replaceUrl: true });
             return empty();
           }
@@ -67,19 +63,15 @@ export class SearchComponent implements OnInit {
 
   private tryTransaction(query: string): Observable<string> {
     if (query.length >= 66) {
-      this.ngxService.start();
       return this.http.get(this.apiServer + `/txs/${query}`).pipe(
         catchError(() => {
-          setTimeout(() => {
-            this.ngxService.stop();
-          }, 2000);
           return of(null)
         }),
         switchMap(transaction => {
-          setTimeout(() => {
-            this.ngxService.stop();
-          }, 2000);
           if (transaction) {
+            setTimeout(() => {
+              $('#mydiv').hide();
+            }, 2000);
             this.router.navigate(['/txs', transaction.txid], { replaceUrl: true });
             return empty();
           }
@@ -92,19 +84,15 @@ export class SearchComponent implements OnInit {
 
   private tryBlockHash(query: string): Observable<string> {
     if (query.length >= 64) {
-      this.ngxService.start();
       return this.http.get(this.apiServer + `/blocks/${query}`).pipe(
         catchError(() => {
-          setTimeout(() => {
-            this.ngxService.stop();
-          }, 2000);
           return of(null)
         }),
         switchMap(block => {
-          setTimeout(() => {
-            this.ngxService.stop();
-          }, 2000);
           if (block) {
+            setTimeout(() => {
+              $('#mydiv').hide();
+            }, 2000);
             this.router.navigate(['/blocks', block.block_height], { replaceUrl: true });
             return empty();
           }
@@ -117,17 +105,16 @@ export class SearchComponent implements OnInit {
 
   private tryAddress(query: string): Observable<string> {
     if (query.length <= 40) {
-      this.ngxService.start();
       return this.http.get(this.apiServer + `/addresses/${query}`).pipe(
         catchError(() => {
           setTimeout(() => {
-            this.ngxService.stop();
+            $('#mydiv').hide();
           }, 2000);
           return of(null)
         }),
         switchMap(address => {
           setTimeout(() => {
-            this.ngxService.stop();
+            $('#mydiv').hide();
           }, 2000);
           if (address) {
             this.router.navigate(['/addresses', address.address], { replaceUrl: true });

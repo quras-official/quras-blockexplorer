@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Block } from '../../models/block';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-block',
@@ -16,20 +16,19 @@ export class BlockComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
-    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: any) =>{
       const id = params.id;
+      $('#mydiv').show();
       // const id = +this.route.snapshot.paramMap.get('id');
-      this.ngxService.start();
       this.apiService.getBlock(id)
         .subscribe(block => {
           this.block = block
           setTimeout(() => {
-            this.ngxService.stop();
-          }, 2000);
+            $('#mydiv').hide();
+          }, 1000);
         });
     })
   }

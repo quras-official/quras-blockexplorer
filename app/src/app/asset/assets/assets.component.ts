@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Asset } from 'src/app/models/asset';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-assets',
@@ -18,7 +18,6 @@ export class AssetsComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
@@ -26,26 +25,26 @@ export class AssetsComponent implements OnInit {
   }
 
   getAssets(): void {
-    this.ngxService.start();
+    $('#mydiv').show();
     this.apiService.getAssets(0, 0)
     .subscribe((data: any) => {
       this.assets = data.assets;
       this.total = data.total;
       setTimeout(() => {
-        this.ngxService.stop();
-      }, 2000);
+        $('#mydiv').hide();
+      }, 1000);
     });
   }
 
   onPaging(page: number) {
-    this.ngxService.start();
+    $('#mydiv').show();
     this.apiService.getAssets((page - 1) * this.pageSize, this.pageSize)
     .subscribe((data: any) => {
       this.assets = data.assets;
       this.total = data.total;
       setTimeout(() => {
-        this.ngxService.stop();
-      }, 2000);
+        $('#mydiv').hide();
+      }, 1000);
     });
   }
 

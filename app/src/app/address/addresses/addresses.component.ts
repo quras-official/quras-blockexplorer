@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Address } from 'src/app/models/address';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-addresses',
@@ -24,10 +25,14 @@ export class AddressesComponent implements OnInit {
   }
 
   getAddresses(): void {
+    $('#mydiv').show();
     this.apiService.getAddresses()
     .subscribe((data: any) => {
       this.addresses = data.data.addresses;
       this.total = data.total;
+      setTimeout(() => {
+        $('#mydiv').hide();
+      }, 1000);
     });
   }
 

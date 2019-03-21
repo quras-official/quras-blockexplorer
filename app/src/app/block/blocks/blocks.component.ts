@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Block } from '../../models/block';
 import { ApiService } from '../../services/api.service';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-blocks',
@@ -18,7 +18,6 @@ export class BlocksComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
-    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
@@ -26,26 +25,26 @@ export class BlocksComponent implements OnInit {
   }
 
   getBlocks(offset: Number, limit: Number): void {
-    this.ngxService.start();
+    $('#mydiv').show();
     this.apiService.getBlocks(offset, limit)
     .subscribe((data: any) => {
       this.blocks = data.blocks;
       this.total = data.total;
       setTimeout(() => {
-        this.ngxService.stop();
-      }, 2000);
+        $('#mydiv').hide();
+      }, 1000);
     });
   }
 
   onPaging(page: number) {
-    this.ngxService.start();
+    $('#mydiv').show();
     this.apiService.getBlocks((page - 1) * this.pageSize, this.pageSize)
     .subscribe((data: any) => {
       this.blocks = data.blocks;
       this.total = data.total;
       setTimeout(() => {
-        this.ngxService.stop();
-      }, 2000);
+        $('#mydiv').hide();
+      }, 1000);
     });
   }
 

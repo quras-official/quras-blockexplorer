@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Tx } from 'src/app/models/tx';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-tx',
@@ -17,19 +17,18 @@ export class TxComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
-    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params.id;
     // const id = +this.route.snapshot.paramMap.get('id');
-    this.ngxService.start();
+    $('#mydiv').show();
     this.apiService.getTx(id)
       .subscribe(tx => {
         this.tx = tx
         setTimeout(() => {
-          this.ngxService.stop();
-        }, 2000);
+          $('#mydiv').hide();
+        }, 1000);
       });
   }
 

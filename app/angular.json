@@ -31,7 +31,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/vendor/jquery/jquery.min.js",
+              "node_modules/jquery/dist/jquery.js",
               "src/vendor/bootstrap/js/bootstrap.bundle.min.js",
               "src/vendor/js/jquery.nicescroll.min.js",
               "src/vendor/js/custom.js"

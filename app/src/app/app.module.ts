@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import {NgxWebstorageModule} from 'ngx-webstorage';
-import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -46,7 +45,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     StatusModule,
 
     NgxWebstorageModule.forRoot(),
-    NgxUiLoaderModule,
     
     TranslateModule.forRoot({
       loader: {

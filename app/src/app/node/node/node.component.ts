@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Node } from 'src/app/models/node';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-node',
@@ -16,19 +16,18 @@ export class NodeComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
-    private ngxService: NgxUiLoaderService
   ) { }
 
   ngOnInit() {
+    $('#mydiv').show();
     const id = this.route.snapshot.paramMap.get('id');
-    this.ngxService.start();
     // const id = +this.route.snapshot.paramMap.get('id');
     this.apiService.getNode(id)
       .subscribe(node => {
         this.node = node
         setTimeout(() => {
-          this.ngxService.stop();
-        }, 2000);
+          $('#mydiv').hide();
+        }, 1000);
       });
   }
 
