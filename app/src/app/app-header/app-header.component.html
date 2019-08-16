@@ -35,7 +35,8 @@
             <a href="#" class="dropdown-toggle dropdown-nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe"></i> {{ 'Languages' | translate }} <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a routerLink="" (click)="setLang('en')" class="nav-link">EN</a></li>
-              <li><a routerLink="" (click)="setLang('ja')" class="nav-link">日本語</a></li>
+              <li><a routerLink="" (click)="setLang('zh')" class="nav-link">中文（简体）</a></li>
+              <!-- <li><a routerLink="" (click)="setLang('ja')" class="nav-link">日本語</a></li> -->
             </ul>
           </li>
         </ul>
@@ -49,16 +50,16 @@
     <div class="row">
       <div class="col-md-12">
         <div class="banner-title mb-3">
-          <span class="white-color">Block Explorer</span>
+          <span class="white-color">{{ 'Block Explorer' | translate }}</span>
         </div>
         <div class="register-content">
-          Search for block, transaction or address
+          {{ 'Search for block height, hash, txid or address' | translate }}
         </div>
         <form (ngSubmit)="search()" class="subscribe">
           <div class="input-group mb-3">
             <input type="text" class="form-control form-control-lg" placeholder="Text..." [(ngModel)]="q" name="search">
             <div class="input-group-append">
-              <button class="btn btn-secondary" type="submit">Search</button>
+              <button class="btn btn-secondary" type="submit">{{ 'Search' | translate }}</button>
             </div>
           </div>
         </form>
