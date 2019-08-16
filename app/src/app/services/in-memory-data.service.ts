@@ -259,8 +259,8 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 1,
         hash: '602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7',
         type: 'GoverningToken',
-        symbol: 'QRS',
-        name: 'QRS',
+        symbol: 'XQC',
+        name: 'XQC',
         amount: 10000000,
         issued: 90000000,
         precision: 5,
@@ -367,7 +367,7 @@ export class InMemoryDataService implements InMemoryDbService {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
             address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
@@ -378,8 +378,8 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 2,
         hash: '602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7',
         type: 'GoverningToken',
-        symbol: 'QRS',
-        name: 'QRS',
+        symbol: 'XQC',
+        name: 'XQC',
         amount: 10000000,
         issued: 90000000,
         precision: 5,
@@ -486,7 +486,7 @@ export class InMemoryDataService implements InMemoryDbService {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
             address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
@@ -504,23 +504,23 @@ export class InMemoryDataService implements InMemoryDbService {
         balances: [
           {
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5
           },
           {
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5
           },
           {
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5
           }
         ],
         unclaimed: {
           asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-          asset_symbol: 'QRG',
+          asset_symbol: 'XQG',
           amount: 5
         },
         transaction_count: 10,
@@ -545,7 +545,7 @@ export class InMemoryDataService implements InMemoryDbService {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
             address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
@@ -553,7 +553,7 @@ export class InMemoryDataService implements InMemoryDbService {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
             address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
@@ -561,7 +561,7 @@ export class InMemoryDataService implements InMemoryDbService {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
             address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
@@ -576,23 +576,23 @@ export class InMemoryDataService implements InMemoryDbService {
         balances: [
           {
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5
           },
           {
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5
           },
           {
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5
           }
         ],
         unclaimed: {
           asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-          asset_symbol: 'QRG',
+          asset_symbol: 'XQG',
           amount: 5
         },
         transaction_count: 10,
@@ -617,7 +617,7 @@ export class InMemoryDataService implements InMemoryDbService {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
             address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
@@ -625,7 +625,7 @@ export class InMemoryDataService implements InMemoryDbService {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
             address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
@@ -633,7 +633,7 @@ export class InMemoryDataService implements InMemoryDbService {
             txid: '65d00139de722db2c7ff956824031219d7d472110b17497d6aefc29fbd8af729',
             block_time: 1542683357,
             asset_hash: '948adac0ec6fa054d47c667ba2a068f538019cf1d8b6a366755721a05f085818',
-            asset_symbol: 'QRG',
+            asset_symbol: 'XQG',
             amount: 5,
             address_from: 'Em4FP643TZYpqPaDM4sHzqya19zkYS2yzAcxUaDoS1VM',
             address_to: 'AifCpFXZzj7PnnbtjCj6xBG3WR3KoYdFcngv2BUCzwgf'
@@ -653,7 +653,7 @@ export class InMemoryDataService implements InMemoryDbService {
         position: 1,
         daily_reward: {
           asset_hash: 'c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b',
-          asset_symbol: 'QRG',
+          asset_symbol: 'XQG',
           amount: 2
         }
       },
@@ -667,7 +667,7 @@ export class InMemoryDataService implements InMemoryDbService {
         position: 1,
         daily_reward: {
           asset_hash: 'c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b',
-          asset_symbol: 'QRG',
+          asset_symbol: 'XQG',
           amount: 2
         }
       },
@@ -681,7 +681,7 @@ export class InMemoryDataService implements InMemoryDbService {
         position: 1,
         daily_reward: {
           asset_hash: 'c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b',
-          asset_symbol: 'QRG',
+          asset_symbol: 'XQG',
           amount: 2
         }
       },
@@ -695,7 +695,7 @@ export class InMemoryDataService implements InMemoryDbService {
         position: 1,
         daily_reward: {
           asset_hash: 'c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b',
-          asset_symbol: 'QRG',
+          asset_symbol: 'XQG',
           amount: 2
         }
       }
