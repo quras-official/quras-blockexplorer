@@ -96,5 +96,9 @@
     "Network Info": "网络信息",
     "Nodes": "节点",
     "Block Explorer": "区块浏览器",
-    "Market": "市场"
+    "Market": "市场",
+
+    "Other": "Other",
+    "Terms of Service": "服务条款",
+    "Privacy Policy": "隐私政策"
 }
