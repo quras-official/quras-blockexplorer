@@ -12,4 +12,5 @@ export class Tx {
     public readonly block_height: number;
     public readonly block_hash: string;
     public readonly script: any;
+    public hasSpent: any;
 }
