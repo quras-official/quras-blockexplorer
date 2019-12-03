@@ -53,7 +53,7 @@ a:hover { color: #4780A0; -moz-transition: all 0.2s ease-in-out 0s; -ms-transiti
 
 .bg-theme { background-image: linear-gradient(#fff, #F9F9F9); }
 
-table.tabel-content-vertical-middle > thead > tr > th, table.tabel-content-vertical-middle > tbody > tr > th, table.tabel-content-vertical-middle > tbody > tr > td, table.tabel-content-vertical-middle > tfoot > tr > th { vertical-align: middle; }
+table.tabel-content-vertical-middle > thead > tr > th, table.tabel-content-vertical-middle > tbody > tr > th, table.tabel-content-vertical-middle > tbody > tr > td, table.tabel-content-vertical-middle > tfoot > tr > th { vertical-align: middle;min-width: 145px; }
 
 div.table.table-responsive { background: #fff; border: 1px solid rgba(106, 122, 142, 0.25); box-sizing: border-box; border-radius: 6px; text-align: center; }
 div.table.table-responsive table { margin-bottom: 0; }

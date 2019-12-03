@@ -46,16 +46,17 @@
           </div>
         </div>
       </div>
-      <div class="row" *ngIf="tx && tx.hasSpent">
+      <div class="row" *ngIf="tx && tx.exclusive">
         <div class="col-lg-12">
           <div class="bg-white p-4 border-radius mb-3">
             <div class="table table-responsive text-left">
               <table class="table table-borderless table-striped table-hover tabel-content-vertical-middle">
                 <tbody>
-                  <tr *ngFor="let vv of tx.vouts">
-                    <td *ngIf="vv.status == 'spent'"><i class="fa fa-arrow-right"></i></td>
-                    <td *ngIf="vv.status == 'spent'">{{ vv.address }}</td>
-                    <td *ngIf="vv.status == 'spent'">{{ vv.value }}  {{ vv.name }}</td>
+                  <tr *ngFor="let vv of tx.exclusive">
+                    <td *ngIf="tx.type == 'ContractTransaction'">{{ vv._from }}</td>
+                    <td><i class="fa fa-arrow-right"></i></td>
+                    <td *ngIf="tx.type == 'ContractTransaction'">{{ vv._to }}</td>
+                    <td>{{ vv.amount }}  {{ vv.name }}</td>
                   </tr>
                 </tbody>
               </table>

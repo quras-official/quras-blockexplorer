@@ -26,11 +26,6 @@ export class TxComponent implements OnInit {
     this.apiService.getTx(id)
       .subscribe(tx => {
         this.tx = tx
-        this.tx.hasSpent = false
-        tx.vouts.forEach(vv => {
-          if (vv.status == "spent")
-            this.tx.hasSpent = true
-        });
         setTimeout(() => {
           $('#mydiv').hide();
         }, 1000);
