@@ -1,11 +1,11 @@
 # Introduction
 
+BlockExplorer of Quras blockchain.
+
 # Dependencies
 angular 7.x
 
 # Installation
-
-# Make Project History
 
 1. Platform
 
@@ -53,22 +53,3 @@ angular 7.x
 2. fix block detail page's previous block
 
 3. responsive to mobile
-
-# See Also
-https://angular.io/guide/quickstart
-
-https://angular.io/tutorial/
-
-https://angular.io/api
-
-https://www.npmjs.com/package/@ng-bootstrap/ng-bootstrap
-
-https://www.npmjs.com/package/ngx-moment
-
-https://www.npmjs.com/package/ngx-webstorage
-
-Angular BlockExplorer Source
-
-- https://github.com/EOSEssentials/EOSTracker
-
-- https://github.com/bitpay/insight
