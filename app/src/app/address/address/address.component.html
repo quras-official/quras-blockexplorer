@@ -33,7 +33,10 @@
                 </tr>
                 <tr>
                   <th scope="row">{{ 'Unclaimed' | translate }}</th>
-                  <td>{{ address.unclaimed.amount | number:'1.0-4' }} <a [routerLink]="['/assets', address.unclaimed.asset_hash]">{{ address.unclaimed.asset_symbol }}</a></td>
+                  <td>
+                    <span *ngIf="address.unclaimed.available">{{ address.unclaimed.available.amount | number:'1.0-4' }} <a [routerLink]="['/assets', address.unclaimed.available.asset_hash]">{{ address.unclaimed.available.asset_symbol }}</a>&nbsp;&nbsp;(Available)<br></span>
+                    <span *ngIf="address.unclaimed.unavailable">{{ address.unclaimed.unavailable.amount | number:'1.0-4' }} <a [routerLink]="['/assets', address.unclaimed.unavailable.asset_hash]">{{ address.unclaimed.unavailable.asset_symbol }}</a>&nbsp;&nbsp;(Unavailable)</span>
+                  </td>
                 </tr>
               </tbody>
             </table>
